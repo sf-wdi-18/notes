@@ -2,110 +2,243 @@
 
 ##Learning Objectives
 
+* Articulate the importance of functions in a computer language
+* Contrast an algorithm with a function
 * Create Javascript functions with parameters
 * Distinguish between returning and printing a value
 * Deferential global vs local scopes
 
 ---
 
-##What is a function?
+##What are functions?
 
-Computer science can essentially be divided into two elements: **data structures** & **algorithms**.
+Computer science can essentially be divided into two core elements: **data structures** & **algorithms**.
 
-An **algorithm** is an abstract concept, describing how to manipulate data to solve a problem.
+A **data structure** organizes data.
 
-A **function** is a concrete implementation of an algorithm in a computer language. A function encapsulates any *modular behavior* you've defined.
+An **algorithm** abstractly describes how to manipulate data to solve a problem.
+
+A [**function**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) is a concrete implementation of an algorithm in a computer language. *It encapsulates modular behavior.*
 
 ---
 
-##Example
+##Why do we care?
 
-What if we wanted to describe `adding` two numbers in an algorithm and in a function?
+"Functions are the *bread and butter* of JavaScript programming.
+
+The concept of wrapping a *piece of program* in a value has many uses.
+
+It is a *tool to structure* larger programs, to *reduce repetition*, to *associate names with subprograms*, and to isolate these subprograms from each other."
+
+-Marjin Haverbeke, *Eloquent Javascript*.
+
+Question: Why are functions important?
+
+---
+
+##Algorithms vs functions
+
+How could we describe the function `square` in an algorithm and in a function?
+
+Assume have a number, represented by the variable `num`.
 
 **Algorithm —**
 *abstract*
 
 ```
-Start counting from num1, count upwards as many units as the num2 represents.
+Take the number, multiply it by itself, and output the product.
 ```
 
 **Function —**
 *concrete*
 
 ```
-var addTwoNumbers = function(num1, num2) {
-	return num1 + num2;
+var square = function(num) {
+	return num * num;
 }
 ```
+Question: What is the fundamental difference between an algorithm and a function?
+
 ---
 
-##Challenge: Defining a function
+##Challenge: Define a function
 
-Define a function, named `schoolHouseRock`, that prints `Conjunction Junction, what's your function?` to the console. Then call your newly created function and test if it works!
+Define a function, named `computerNoises`, that prints `beep beep boop bap!` to the console. Then call your newly created function and test if it works!
 
 ---
 
 ##All together now!
 
 ```
-var schoolHouseRock = function() {
-	console.log("Conjunction Junction, what's your function?");
+var computerNoises = function() {
+	console.log("beep beep boop bap!");
 }
 
-schoolHouseRock();
+computerNoises();
 ```
 
 ---
 
 ##I/O
 
-While common, not every function has an **input** or an **output**.
+Although not necessary, functions typically have **inputs** & **outputs**. Let's explore each different combination:
+
+######No Input or Output
 
 ```
-noIO = function() {
+var noIO = function() {
      console.log("This function has no parameters & does not return anything");
 }
 ```
+######Just an Input
 
 ```
-justI = function(number) {
+var justI = function(number) {
       console.log(number);
 };
 ```
+######Just an Output
 
 ```
-justO = function() {
+var justO = function() {
       return "I am the output, also known as the return statement";  
 }
 ```
+######Both an Input & and Output
 
 ```
-fullIO = function(number) {
+var fullIO = function(number) {
        return number + 1;
 }
 ```
 
-What endows a function with an input? What endows a function with an output? Discuss amongst yourselves.
+Can you identify what feature endows a function with an input? How about an output?
+
+Can you distinguish between between a function that `console.log`'s a variable vs one that `return`s it? 
 
 ---
 
-##Parameters & Return Statements
+##Components of a function
 
-**Parameters** are the input to a function, there can be multiple.
+The **parameters** are what is passed into the function, aka the *input*. There can be multiple parameters.
 
-**Return Statements** are the output of a function, there can be only one.
+```
+var iHaveParameters = function(firstParam, secondParam, heyImTheThirdParam) {
+  //do something with the parameters
+}
+```
+
+The **return statement** is what the function returns, aka the *output* of a function. There can be only one return statement.
+
+```
+var functionThatReturns = function() {
+  return true;  //simply returns true
+}
+```
+
+The **function body** is everything inside the actual function. I.e.:
+
+```
+var rockingBod = function() {
+  //this is the body of the function
+}
+```
 
 ---
 
-##Scoping
+##Break Time
 
-**A new function means a new scope**
+###15 minutes
+
+<img src="http://i.giphy.com/wsEX8uMrTRDoI.gif" style="width: 250px;">
+
+---
+
+##Challenge: Variable output
+
+In the next **10m**:
+
+1) Define a function `sorting` that takes two numbers and a boolean.
+
+2) If the boolean is true have it return the larger number and if false have it return the lesser number. 
+
+Advice:
+
+* Break down the problem into descrete pieces and build the pieces separately before synthesizing them.
+
+* Write in sublime and paste you code into Chrome's developer tools to make sure it does what you expect.
+
+---
+
+##Example solution
+
+```
+function sorting(num1, num2, max) {
+    //sort the numbers
+    var sorted = [num1, num2].sort();
+    if(max) {
+    	//if max is true return the greater number
+        return sorted[1];
+    } else {
+    	//otherwise return the lesser number
+        return sorted[0];
+    }
+}
+```
+
+---
+
+##Scope
+
+Understanding this concept is essential to a proper foundation of JavaScript. Scoping rules vary from language to language. JavaScript has two scopes: *global* & *local* scope.
+
+
+Quite simply, a **scope** represents the area of your program where variable is defined. You can think of scope 
+
+As a rule: **A new function introduces a new scope**
+
+---
+
+##Scope Example
+
+```
+var test = "I'm global";
+ 
+function testScope() {
+  var test = "I'm local";
+ 
+  console.log (test);     
+}
+ 
+testScope();          
+ 
+console.log(test);     
+```
 
 
 
-###Sources
+---
 
-* [Cho](https://github.com/sf-wdi-14/notes/blob/master/lectures/week-1/_3_wednesday/dawn/introduction-to-functions.md)
-* [Tim](https://github.com/wdi-sf-fall/notes/blob/master/week_01_fundamentals/day_3_intro_to_javascript/dusk_control_flow_and_functions/functions.md)
-* [Brett](https://github.com/sf-wdi-17/notes/blob/master/lectures/week-01/_3_wednesday/dusk/javascript_functions.md)
+##Discussion Questions
+
+What are the values of having local scopes?
+
+What happens if you forget to a variable's scope if you forget to declare it using the keyword `var`?
+
+What does *polluting the global namespace* refer to?
+
+---
+<img src="http://i.giphy.com/dsKnRuALlWsZG.gif" style="width:350px">
+
+---
+
+##Further Discussion Topics
+
+We discuss these concepts at a later date. They are related, but more advanced. So have a solid understanding of these topics before you move on.
+
+* [Variable Hoisting](http://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/#hoisting) – Sitepoint article
+* [Closures](http://stackoverflow.com/questions/111102/how-do-javascript-closures-work#answer-111200) – Stack Overflow post
+* [Recursion](http://www.codecademy.com/courses/javascript-lesson-205/0/1) — Code Academy lesson
+
+---
 
