@@ -89,11 +89,13 @@ What endows a function with an input? What endows a function with an output? Dis
 
 ---
 
-**Blah**
+##Parameters & Return Statements
 
-##Return Statements
+**Parameters** are the input to a function, there can be multiple.
 
-**Blah**
+**Return Statements** are the output of a function, there can be only one.
+
+---
 
 ##Scoping
 
