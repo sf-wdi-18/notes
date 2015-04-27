@@ -2,9 +2,14 @@
 ## Articulating Tech
 
 
+## Vocab
+
 * Git
   * `git clone`
 * GitHub
+* Shell (Computing)
+* C.L.I.
+* G.U.I. 
 * bash
 * Rubber Duck Debugging
 * UNIX
@@ -14,4 +19,21 @@
 * `>` or `>>` (UNIX redirect)
 * UNIX Commands
   * `grep`
+  * `man`
+  * `--help`
+  * Symbolic Link
+* UNIX Command Options
 * R.E.P.L.
+
+
+## People
+
+* Ada Lovelace
+* Kurt Godel
+* Alan Turing
+* Tim Burners Lee
+* Donald Knuth
+
+
+
+
