@@ -13,6 +13,16 @@ y == "a"; //=> true
 ```
 *Note:* Think about why we cant just do something like `x=y` followed by `y=x`. What goes wrong when we try to do this?
 
+```
+var a = "a";
+var b = "b";
+
+var swapAandB = function() {
+  c = a;
+  a = b;
+  b = c;
+}
+```
 
 ##Problem 2: Reverse a String
 Write a function `reverse` that takes in a string, and returns the reverse of the string. For example:
@@ -21,5 +31,20 @@ reverse('Hello'); //=> returns "olleH"
 ```
 *Note:* You cannot use any built-in array or string methods!
 
+```
+var reverse = function(input) {
+  var reversedString =  "";
+  for (var i = 1; i < input.length + 1; i++) {
+    reversedString += input[input.length - i];
+  }
+  return reversedString;
+}
+```
+
 ##Problem 3: Stacks and Queues
 How would you store a List of people who were waiting in line?
+
+
+```
+A Queue! 
+```
