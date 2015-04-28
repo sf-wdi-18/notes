@@ -80,6 +80,22 @@ Strings are collections of letters and symbols known as **Characters**, and we u
 ```
 
 
+## RegExp (Regular Expresssions)
+
+Very similar to Strings is a pattern matching type called a **REGULAR EXPRESSION**. These types allow you to match patterns in strings.
+
+```javascript
+// we can match a number
+ "I am 5".match(/\d/);
+ // => ["5"]
+
+// we can check for a string
+"My password is nacho".match(/nacho/)
+// => ["nacho"]
+
+
+```
+
 
 ## Values and Expressions
 
