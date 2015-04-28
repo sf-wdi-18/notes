@@ -1,5 +1,11 @@
 #Intro Control Flow
 
+| Objectives |
+| :---- |
+|   Identify and discuss boolean operators and truthyness |
+|   Apply logical operators and comparators to structure control flow |
+|   Discuss and apply iterating and looping patterns |
+
 `true` and `false` are important keywords in both Ruby and Javascript.
 
 ##Boolean Logic
