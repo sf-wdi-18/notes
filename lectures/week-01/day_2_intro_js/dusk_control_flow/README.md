@@ -99,7 +99,7 @@ These can be combined to make longer assertions that evaluate to either `true` o
 Beware loose equality!
 
 * Strict equality (`===`) is the best practice!
-* Here's why: [Javascript Equality Table](https://dorey.github.io/)
+* Here's why: [Javascript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/)
 
 
 ## Conditionals
