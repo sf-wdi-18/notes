@@ -30,8 +30,8 @@ To do so, we need to use some "logical operators":
 
 | English | "and" | "or" | "not" |
 | ------------- |:-------------|:-------------|:-------------|
-| Javascript | `&&` | `\|\|` | `!` |
-| e.g. | `a && b` | `a \|\| b` | `!b` |
+| Javascript | `&&` | &#124;&#124; | `!` |
+| e.g. | `a && b` | a  &#124;&#124; b | `!b` |
 
 Each example above will evaluate to either `true` or `false`.
 
