@@ -52,7 +52,7 @@ OR is only `false` if *both* statements are false:
 hasCoconuts || hasQuest; // true or false
 ```
 
-| OR `\|\|` | **true** | **false** |
+| OR &#124;&#124; | **true** | **false** |
 | ------------- |:-------------|:-------------|
 | **true** | `true` | `true` |
 | **false** | `true` | `false` |
