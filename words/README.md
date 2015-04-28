@@ -24,7 +24,9 @@
   * Symbolic Link
 * UNIX Command Options
 * R.E.P.L.
-
+* Destructive Method
+* Side Effect (Programming)
+* Reference Type
 
 ## People
 
