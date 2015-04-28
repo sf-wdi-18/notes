@@ -96,6 +96,7 @@ Very similar to Strings is a pattern matching type called a **REGULAR EXPRESSION
 
 ```
 
+To learn more, try [RUBULAR](http://rubular.com)
 
 ## Values and Expressions
 
