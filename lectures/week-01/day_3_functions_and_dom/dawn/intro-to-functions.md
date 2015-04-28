@@ -18,7 +18,7 @@ A **data structure** organizes data.
 
 An **algorithm** abstractly describes how to manipulate data to solve a problem.
 
-A [**function**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) is a concrete implementation of an algorithm in a computer language. *It encapsulates modular behavior.*
+A [**function**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) is a concrete implementation of an algorithm in a computer language. *It is a "subprogram" that encapsulates a specific behavior.*
 
 ---
 
@@ -38,7 +38,7 @@ Question: Why are functions important?
 
 ##Algorithms vs functions
 
-How could we describe the function `square` in an algorithm and in a function?
+How could we describe the function `square` in an algorithm vs in a function?
 
 Assume have a number, represented by the variable `num`.
 
@@ -58,63 +58,6 @@ var square = function(num) {
 }
 ```
 Question: What is the fundamental difference between an algorithm and a function?
-
----
-
-##Challenge: Define a function
-
-Define a function, named `computerNoises`, that prints `beep beep boop bap!` to the console. Then call your newly created function and test if it works!
-
----
-
-##All together now!
-
-```
-var computerNoises = function() {
-	console.log("beep beep boop bap!");
-}
-
-computerNoises();
-```
-
----
-
-##I/O
-
-Although not necessary, functions typically have **inputs** & **outputs**. Let's explore each different combination:
-
-######No Input or Output
-
-```
-var noIO = function() {
-     console.log("This function has no parameters & does not return anything");
-}
-```
-######Just an Input
-
-```
-var justI = function(number) {
-      console.log(number);
-};
-```
-######Just an Output
-
-```
-var justO = function() {
-      return "I am the output, also known as the return statement";  
-}
-```
-######Both an Input & and Output
-
-```
-var fullIO = function(number) {
-       return number + 1;
-}
-```
-
-Can you identify what feature endows a function with an input? How about an output?
-
-Can you distinguish between between a function that `console.log`'s a variable vs one that `return`s it? 
 
 ---
 
