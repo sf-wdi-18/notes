@@ -61,7 +61,7 @@ Question: What are the fundamental differences between an algorithm and a functi
 
 ##Components of a function
 
-The **parameters** also known as *arguments* are what is passed into the function; there can be multiple.
+The **parameters** are what you delare as being passed into the fuction in its definition, while *arguments* are what is actually passed into the function when called.
 
 ```
 var iHaveParameters = function(firstParam, secondParam, heyImTheThirdParam) {
@@ -69,7 +69,7 @@ var iHaveParameters = function(firstParam, secondParam, heyImTheThirdParam) {
 }
 ```
 
-The **return statement** is what the function outputs; there can be only one.
+The **return statement** is what the function outputs; you only have one thing return from a function.
 
 ```
 var functionThatReturns = function() {
