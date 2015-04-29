@@ -1,4 +1,4 @@
-#Intro to Functions
+#Intro to JavaScript Functions
 
 ##Learning Objectives
 
@@ -40,13 +40,11 @@ Question: Why are functions important?
 
 How could we describe the function `square` in an algorithm vs in a function?
 
-Assume have a number, represented by the variable `num`.
-
 **Algorithm —**
 *abstract*
 
 ```
-Take the number, multiply it by itself, and output the product.
+Take a number, multiply it by itself, and return the product.
 ```
 
 **Function —**
@@ -57,13 +55,13 @@ var square = function(num) {
 	return num * num;
 }
 ```
-Question: What is the fundamental difference between an algorithm and a function?
+Question: What are the fundamental differences between an algorithm and a function?
 
 ---
 
 ##Components of a function
 
-The **parameters** also known as **arguments* are what is passed into the function, aka the *input*. There can be multiple parameters.
+The **parameters** also known as *arguments* are what is passed into the function; there can be multiple.
 
 ```
 var iHaveParameters = function(firstParam, secondParam, heyImTheThirdParam) {
@@ -71,7 +69,7 @@ var iHaveParameters = function(firstParam, secondParam, heyImTheThirdParam) {
 }
 ```
 
-The **return statement** is what the function returns, aka the *output* of a function. There can be only one return statement.
+The **return statement** is what the function outputs; there can be only one.
 
 ```
 var functionThatReturns = function() {
@@ -79,12 +77,45 @@ var functionThatReturns = function() {
 }
 ```
 
-The **function body** is everything inside the actual function. I.e.:
+The **function body** is everything inside the actual function.
 
 ```
 var rockingBod = function() {
   //this is the body of the function
 }
+```
+
+---
+
+##Declaring a function
+
+Either:
+
+```
+var sweetFunk = function() {
+	//sweetness
+} 
+```
+
+or:
+
+```
+function sweetFunk() {
+	//sweetness
+}
+```
+is acceptable for declaring a function; just stick to one convention.
+
+Note, a function can also be a key to an object; as a result it can more specifically be referred to as a method.
+
+```
+duck = {
+  cheer: function() {
+    console.log("quack! quack! quack!");
+  }
+}
+
+duck.cheer()    // => "quack! quack! quack!"
 ```
 
 ---
@@ -101,22 +132,16 @@ var rockingBod = function() {
 
 In the next **10m**:
 
-1) Define a function `sorting` that takes two numbers and a boolean.
+1) Define a function `maxOrMin` that takes three parameters: two numbers and a boolean.
 
-2) If the boolean is true have it return the larger number and if false have it return the lesser number. 
-
-Advice:
-
-* Break down the problem into descrete pieces and build the pieces separately before synthesizing them.
-
-* Write in sublime and paste you code into Chrome's developer tools to make sure it does what you expect.
+2) Have it return the larger of the two numbers if the boolean is true, otherwise have it return the lesser of the numbers.
 
 ---
 
 ##Example solution
 
 ```
-function sorting(num1, num2, max) {
+function maxOrMin(num1, num2, max) {
     //sort the numbers
     var sorted = [num1, num2].sort();
     if(max) {
@@ -145,17 +170,17 @@ As a rule: **A new function introduces a new scope**
 ##Scope Example
 
 ```
-var test = "I'm global";
+var cityBoy = "I'm global";
  
-function testScope() {
-  var test = "I'm local";
+function smallTown() {
+  var cityBoy = "I'm local";
  
-  console.log (test);     
+  console.log ("local:", cityBoy);     
 }
  
-testScope();          
+smallTown();          
  
-console.log(test);     
+console.log("global:", cityBoy);     
 ```
 
 Question: What happens if you forget to a variable's scope if you forget to declare it using the keyword `var`?
@@ -186,7 +211,7 @@ Create a function called `sweetNothings` that takes a name as a parameter and ou
 
 Create another funtion called `swoon` that also takes in a name and a callback as parameters and in the body of the function calls the callback with the name passed in.
 
-Finally try calling `swoon("Delmer", "sweetNothings");`
+Finally try calling `swoon("Delmer", "sweetNothings");` so that a love poem is written to Del.
 
 ---
 <img src="http://i.giphy.com/dsKnRuALlWsZG.gif" style="width:350px">
