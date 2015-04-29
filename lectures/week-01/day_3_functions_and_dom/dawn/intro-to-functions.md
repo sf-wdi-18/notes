@@ -14,9 +14,9 @@
 
 Computer science can essentially be divided into two core elements: **data structures** & **algorithms**.
 
-A **data structure** organizes data.
+A **data structure** organizes information.
 
-An **algorithm** abstractly describes how to manipulate data to solve a problem.
+An **algorithm** *abstractly* describes how to manipulate data to solve a problem.
 
 A [**function**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) is a concrete implementation of an algorithm in a computer language. *It encapsulates modular behavior.*
 
