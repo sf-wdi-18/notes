@@ -18,7 +18,7 @@ A **data structure** organizes information.
 
 An **algorithm** *abstractly* describes how to manipulate data to solve a problem.
 
-A [**function**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) is a concrete implementation of an algorithm in a computer language. *It encapsulates modular behavior.*
+A [**function**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) is a concrete implementation of an algorithm in a computer language. *It is a "subprogram" that encapsulates a specific behavior.*
 
 ---
 
@@ -38,7 +38,7 @@ Question: Why are functions important?
 
 ##Algorithms vs functions
 
-How could we describe the function `square` in an algorithm and in a function?
+How could we describe the function `square` in an algorithm vs in a function?
 
 Assume have a number, represented by the variable `num`.
 
@@ -61,66 +61,9 @@ Question: What is the fundamental difference between an algorithm and a function
 
 ---
 
-##Challenge: Define a function
-
-Define a function, named `computerNoises`, that prints `beep beep boop bap!` to the console. Then call your newly created function and test if it works!
-
----
-
-##All together now!
-
-```
-var computerNoises = function() {
-	console.log("beep beep boop bap!");
-}
-
-computerNoises();
-```
-
----
-
-##I/O
-
-Although not necessary, functions typically have **inputs** & **outputs**. Let's explore each different combination:
-
-######No Input or Output
-
-```
-var noIO = function() {
-     console.log("This function has no parameters & does not return anything");
-}
-```
-######Just an Input
-
-```
-var justI = function(number) {
-      console.log(number);
-};
-```
-######Just an Output
-
-```
-var justO = function() {
-      return "I am the output, also known as the return statement";  
-}
-```
-######Both an Input & and Output
-
-```
-var fullIO = function(number) {
-       return number + 1;
-}
-```
-
-Can you identify what feature endows a function with an input? How about an output?
-
-Can you distinguish between between a function that `console.log`'s a variable vs one that `return`s it? 
-
----
-
 ##Components of a function
 
-The **parameters** are what is passed into the function, aka the *input*. There can be multiple parameters.
+The **parameters** also known as **arguments* are what is passed into the function, aka the *input*. There can be multiple parameters.
 
 ```
 var iHaveParameters = function(firstParam, secondParam, heyImTheThirdParam) {
@@ -215,17 +158,35 @@ testScope();
 console.log(test);     
 ```
 
-
+Question: What happens if you forget to a variable's scope if you forget to declare it using the keyword `var`?
 
 ---
 
-##Discussion Questions
+##Callbacks
 
-What are the values of having local scopes?
+A **callback** is a function that is passed into another function. A function that can take a callback is known as a **first-class function**.
 
-What happens if you forget to a variable's scope if you forget to declare it using the keyword `var`?
+```
+var consoleMe = function(message) {
+  console.log("I'm the callback, now displaying message...");
+  console.log(message);
+}
+var firstClassFunction = function(message, callback) {
+  console.log("I'm the first class function, now calling the callback...");
+  callback(message);
+}
+firstClassFunction("AYO!", consoleMe);
+```
 
-What does *polluting the global namespace* refer to?
+---
+
+##Challenge: Callbacks
+
+Create a function called `sweetNothings` that takes a name as a parameter and outputs a love poem to that person.
+
+Create another funtion called `swoon` that also takes in a name and a callback as parameters and in the body of the function calls the callback with the name passed in.
+
+Finally try calling `swoon("Delmer", "sweetNothings");`
 
 ---
 <img src="http://i.giphy.com/dsKnRuALlWsZG.gif" style="width:350px">
