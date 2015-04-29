@@ -211,7 +211,7 @@ Create a function called `sweetNothings` that takes a name as a parameter and ou
 
 Create another funtion called `swoon` that also takes in a name and a callback as parameters and in the body of the function calls the callback with the name passed in.
 
-Finally try calling `swoon("Delmer", "sweetNothings");` so that a love poem is written to Del.
+Finally try calling `swoon("Delmer", sweetNothings);` so that a love poem is written to Del.
 
 ---
 <img src="http://i.giphy.com/dsKnRuALlWsZG.gif" style="width:350px">
