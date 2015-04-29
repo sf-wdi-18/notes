@@ -15,22 +15,22 @@
 
 This history of [Cryptography](http://en.wikipedia.org/wiki/Cryptography), which flourished during the Renaissance, has heavily influenced and inspired the history of modern computing.
 
-Essentially both are a system that take in an input and produce an output. As a result, the knowledge gained during the Renaissance of the algorithm and data structure would later benefit the world of computing.
+Essentially both are a system that heavily leverage the power of algorithms and data structures. As a result, knowledge in this field would later benefit the world of computing.
 
-Also, much later, during the Allied-Axis computing-race of WWII, encryption and decryption was the raison-d'être for justifying initial investments made in the modern computer.
+Additionally, during the Allied-Axis computing-race of WWII, cryptography was the raison-d'être for the birth of the modern computer.
 
-If interested in the cryptography's modern history with computer, read [The Code Book](http://www.amazon.com/The-Code-Book-Science-Cryptography/dp/0385495323).
+If interested in this subject, read [The Code Book](http://www.amazon.com/The-Code-Book-Science-Cryptography/dp/0385495323).
 
 ##The Beginnings of Programming
 
 [**Ada Lovelace**](https://www.sdsc.edu/ScienceWomen/lovelace.html):
 1815 - 1852
 
-A British mathematician regarded as being the first computer programmer. She wrote out algorithms for Charles Babbage's [Analytical Engine's](http://en.wikipedia.org/wiki/Analytical_Engine) design, which was the first general-purpose computer described as Turing-complete.
+A British mathematician regarded as being the first computer programmer. She wrote out algorithms for the design of Charles Babbage's [Analytical Engine's](http://en.wikipedia.org/wiki/Analytical_Engine), the first general-purpose, Turing-complete computer.
 
-Babbage was inspired by the automated [Jacquard Loom](http://en.wikipedia.org/wiki/Jacquard_loom) to produce a more general purpose automated machine. Ada was one of the first who recognized the machine's value in being programmable and the first to actually attempt doing so.
+Babbage was inspired by the automated [Jacquard Loom](http://en.wikipedia.org/wiki/Jacquard_loom) to produce a general purpose automated machine. Ada was one of the first to theoretically attempt to design the patterns in which to feed it operating instructions.
 
-Though her programs were not actually implemented, due to  the age in which she lived, her most famous work is her "plan" instructing a computer to calculate the [Bernoulli numbers](http://en.wikipedia.org/wiki/Bernoulli_number). 
+Though her programs were not actually implemented, her most famous work is her "plan" (aka program) for computer to calculate the [Bernoulli numbers](http://en.wikipedia.org/wiki/Bernoulli_number). 
 
 She self described her work as "poetical science" and first coined the computing term "library".
 
