@@ -63,7 +63,7 @@ Question: What is the fundamental difference between an algorithm and a function
 
 ##Components of a function
 
-The **parameters** are what is passed into the function, aka the *input*. There can be multiple parameters.
+The **parameters** also known as **arguments* are what is passed into the function, aka the *input*. There can be multiple parameters.
 
 ```
 var iHaveParameters = function(firstParam, secondParam, heyImTheThirdParam) {
@@ -158,17 +158,35 @@ testScope();
 console.log(test);     
 ```
 
-
+Question: What happens if you forget to a variable's scope if you forget to declare it using the keyword `var`?
 
 ---
 
-##Discussion Questions
+##Callbacks
 
-What are the values of having local scopes?
+A **callback** is a function that is passed into another function. A function that can take a callback is known as a **first-class function**.
 
-What happens if you forget to a variable's scope if you forget to declare it using the keyword `var`?
+```
+var consoleMe = function(message) {
+  console.log("I'm the callback, now displaying message...");
+  console.log(message);
+}
+var firstClassFunction = function(message, callback) {
+  console.log("I'm the first class function, now calling the callback...");
+  callback(message);
+}
+firstClassFunction("AYO!", consoleMe);
+```
 
-What does *polluting the global namespace* refer to?
+---
+
+##Challenge: Callbacks
+
+Create a function called `sweetNothings` that takes a name as a parameter and outputs a love poem to that person.
+
+Create another funtion called `swoon` that also takes in a name and a callback as parameters and in the body of the function calls the callback with the name passed in.
+
+Finally try calling `swoon("Delmer", "sweetNothings");`
 
 ---
 <img src="http://i.giphy.com/dsKnRuALlWsZG.gif" style="width:350px">
