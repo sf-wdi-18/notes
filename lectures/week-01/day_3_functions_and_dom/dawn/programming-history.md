@@ -4,12 +4,15 @@
 <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/640px-Ada_Lovelace_portrait.jpg" style="width: 200px;" >
 <figcaption>The first (and most stylish) programmer</figcaption>
 
+---
 
 ##Ancient Computers
 
 [Abacus](http://en.wikipedia.org/wiki/Abacus) — Babylon, 2400 BC. Earliest known tool for computation. 
 
 [Antikythera Mechanism](http://en.wikipedia.org/wiki/Antikythera_mechanism) — Greece, 205 BCE. First mechanical analog computer, purposed for astronomy.
+
+---
 
 ##Cryptography
 
@@ -20,6 +23,8 @@ Essentially both are a system that heavily leverage the power of algorithms and 
 Additionally, during the Allied-Axis computing-race of WWII, cryptography was the raison-d'être for the birth of the modern computer.
 
 If interested in this subject, read [The Code Book](http://www.amazon.com/The-Code-Book-Science-Cryptography/dp/0385495323).
+
+--
 
 ##The Beginnings of Programming
 
@@ -34,6 +39,8 @@ Though her programs were not actually implemented, her most famous work is her "
 
 She self described her work as "poetical science" and first coined the computing term "library".
 
+--
+
 ##Modern Computers
 
 Not until WWII would the first true computers be created. The argument for what the first computer is heavily depends on how you define one. Here are some of the earliest examples:
@@ -43,6 +50,8 @@ Not until WWII would the first true computers be created. The argument for what 
 [Colossus](http://en.wikipedia.org/wiki/Colossus_computer) — *Britain, 1943.* First electric programmable computer.
 
 [ENIAC](http://en.wikipedia.org/wiki/ENIAC) — *USA, 1946.* First digital computer.
+
+--
 
 ##Initial Programming Languages
 
@@ -60,6 +69,8 @@ Limitations of speed and memory forced programmer to write in [assembly language
 
 [C](http://en.wikipedia.org/wiki/C_%28programming_language%29) — *AT&T Bell Labs, 1969.* A prolific language due in part to it's implementation into [UNIX](http://en.wikipedia.org/wiki/Unix) and a set standardization by the American National Standards Institute.
 
+--
+
 ##Modern Computer Languages
 
 [C++](http://en.wikipedia.org/wiki/C%2B%2B), [C#](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29), [Objective-C](http://en.wikipedia.org/wiki/Objective-C) — *AT&T Bell Labs, Microsoft, Apple, mid 80s.* Different flavors of C that build upon the the language's core components.
@@ -69,6 +80,8 @@ Limitations of speed and memory forced programmer to write in [assembly language
 [Python](http://en.wikipedia.org/wiki/Python_%28programming_language%29), [Ruby](http://en.wikipedia.org/wiki/Ruby_%28programming_language%29), & [PHP](http://en.wikipedia.org/wiki/PHP) — *Individuals, mid 90s.* Very high-level, general-purpose, scripting languages.
 
 [JavaScript](http://en.wikipedia.org/wiki/JavaScript) aka ECMAscript — *Netscape, 1995.* The linga-franca of the browser. Not explicitly related to Java. Apparently designed in 10 days; it has come a long way since its inception.
+
+--
 
 ##The Future of Computing?
 
