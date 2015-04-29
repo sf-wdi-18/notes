@@ -205,6 +205,8 @@ var firstClassFunction = function(message, callback) {
 firstClassFunction("AYO!", consoleMe);
 ```
 
+Question: Consider the JS function `sort`, is it a firstclass function?
+
 ---
 
 ##Challenge: Callbacks
