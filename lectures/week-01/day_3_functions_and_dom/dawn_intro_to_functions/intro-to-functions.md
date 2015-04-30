@@ -185,7 +185,7 @@ smallTown();
 console.log("global:", cityBoy);     
 ```
 
-Question: What happens if you forget to a variable's scope if you forget to declare it using the keyword `var`?
+Question: What happens to a variable's scope if you forget to declare the variable by using the keyword `var`?
 
 ---
 
