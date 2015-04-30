@@ -4,6 +4,7 @@
 <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/640px-Ada_Lovelace_portrait.jpg" style="width: 200px;" >
 <figcaption>The first (and most stylish) programmer</figcaption>
 
+---
 
 ##Ancient Computers
 
@@ -11,28 +12,34 @@
 
 [Antikythera Mechanism](http://en.wikipedia.org/wiki/Antikythera_mechanism) — Greece, 205 BCE. First mechanical analog computer, purposed for astronomy.
 
+---
+
 ##Cryptography
 
 This history of [Cryptography](http://en.wikipedia.org/wiki/Cryptography), which flourished during the Renaissance, has heavily influenced and inspired the history of modern computing.
 
-Essentially both are a system that take in an input and produce an output. As a result, the knowledge gained during the Renaissance of the algorithm and data structure would later benefit the world of computing.
+Essentially both are a system that heavily leverage the power of algorithms and data structures. As a result, knowledge in this field would later benefit the world of computing.
 
-Also, much later, during the Allied-Axis computing-race of WWII, encryption and decryption was the raison-d'être for justifying initial investments made in the modern computer.
+Additionally, during the Allied-Axis computing-race of WWII, cryptography was the raison-d'être for the birth of the modern computer.
 
-If interested in the cryptography's modern history with computer, read [The Code Book](http://www.amazon.com/The-Code-Book-Science-Cryptography/dp/0385495323).
+If interested in this subject, read [The Code Book](http://www.amazon.com/The-Code-Book-Science-Cryptography/dp/0385495323).
+
+--
 
 ##The Beginnings of Programming
 
 [**Ada Lovelace**](https://www.sdsc.edu/ScienceWomen/lovelace.html):
 1815 - 1852
 
-A British mathematician regarded as being the first computer programmer. She wrote out algorithms for Charles Babbage's [Analytical Engine's](http://en.wikipedia.org/wiki/Analytical_Engine) design, which was the first general-purpose computer described as Turing-complete.
+A British mathematician regarded as being the first computer programmer. She wrote out algorithms for the design of Charles Babbage's [Analytical Engine's](http://en.wikipedia.org/wiki/Analytical_Engine), the first general-purpose, Turing-complete computer.
 
-Babbage was inspired by the automated [Jacquard Loom](http://en.wikipedia.org/wiki/Jacquard_loom) to produce a more general purpose automated machine. Ada was one of the first who recognized the machine's value in being programmable and the first to actually attempt doing so.
+Babbage was inspired by the automated [Jacquard Loom](http://en.wikipedia.org/wiki/Jacquard_loom) to produce a general purpose automated machine. Ada was one of the first to theoretically attempt to design the patterns in which to feed it operating instructions.
 
-Though her programs were not actually implemented, due to  the age in which she lived, her most famous work is her "plan" instructing a computer to calculate the [Bernoulli numbers](http://en.wikipedia.org/wiki/Bernoulli_number). 
+Though her programs were not actually implemented, her most famous work is her "plan" (aka program) for computer to calculate the [Bernoulli numbers](http://en.wikipedia.org/wiki/Bernoulli_number). 
 
 She self described her work as "poetical science" and first coined the computing term "library".
+
+--
 
 ##Modern Computers
 
@@ -43,6 +50,8 @@ Not until WWII would the first true computers be created. The argument for what 
 [Colossus](http://en.wikipedia.org/wiki/Colossus_computer) — *Britain, 1943.* First electric programmable computer.
 
 [ENIAC](http://en.wikipedia.org/wiki/ENIAC) — *USA, 1946.* First digital computer.
+
+--
 
 ##Initial Programming Languages
 
@@ -60,6 +69,8 @@ Limitations of speed and memory forced programmer to write in [assembly language
 
 [C](http://en.wikipedia.org/wiki/C_%28programming_language%29) — *AT&T Bell Labs, 1969.* A prolific language due in part to it's implementation into [UNIX](http://en.wikipedia.org/wiki/Unix) and a set standardization by the American National Standards Institute.
 
+--
+
 ##Modern Computer Languages
 
 [C++](http://en.wikipedia.org/wiki/C%2B%2B), [C#](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29), [Objective-C](http://en.wikipedia.org/wiki/Objective-C) — *AT&T Bell Labs, Microsoft, Apple, mid 80s.* Different flavors of C that build upon the the language's core components.
@@ -69,6 +80,8 @@ Limitations of speed and memory forced programmer to write in [assembly language
 [Python](http://en.wikipedia.org/wiki/Python_%28programming_language%29), [Ruby](http://en.wikipedia.org/wiki/Ruby_%28programming_language%29), & [PHP](http://en.wikipedia.org/wiki/PHP) — *Individuals, mid 90s.* Very high-level, general-purpose, scripting languages.
 
 [JavaScript](http://en.wikipedia.org/wiki/JavaScript) aka ECMAscript — *Netscape, 1995.* The linga-franca of the browser. Not explicitly related to Java. Apparently designed in 10 days; it has come a long way since its inception.
+
+--
 
 ##The Future of Computing?
 
