@@ -78,12 +78,12 @@ Given the following html:
 Which color wins? Round 1.
 
 ```
-  div {
+  p {
      color: red;
      color: green;
   }
   
-  div {
+  p {
      color: blue;
   }
 ```
@@ -91,7 +91,7 @@ Which color wins? Round 1.
 Which color wins? Round 2.
 
 ```
-  html body div {
+  html body p {
      color: orange;
   }
   
@@ -103,11 +103,11 @@ Which color wins? Round 2.
      color: green;
   }
   
-  div#pick-me.pick_me {
+  p#pick-me.pick_me {
      color: red;
   }
   
-  div.pick-me {
+  p.pick-me {
      color: yellow;
   }
 ```
@@ -119,11 +119,11 @@ Which color wins? Round 3.
      color: blue;
   }
   
-  div#pick-me {
+  p#pick-me {
      color: orange;
   }
   
-  div {
+  p {
       color: red !important;
   }
 ```
@@ -151,11 +151,13 @@ Solutions:
 
 
 ```
-  <h1>Balloon Sale! <small>Today Only!</small></h1>
-  <div class="info-box">
-      <h1>Sorry! <small>We messed up.</small></h1>
-      <p>There are no balloons.</p>
-  </div>
+    <h1>Cheese Sale! <button>Buy Now!</button></h1>
+    <p>We are selling cheese.</p>
+    <div class="info-box">
+        <h1>Sorry!</h1>
+        <p>We're out of cheese.</p>
+        <button>Complain</button>
+    </div>
 ```
 
 ```
