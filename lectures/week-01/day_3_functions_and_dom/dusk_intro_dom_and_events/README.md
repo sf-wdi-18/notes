@@ -3,8 +3,8 @@
 | Objectives |
 | :---- |
 | Students should be able to select elements from the DOM using selectors |
-| Students should be able to add events to elements in the DOM |
-| Students should be able to manage scope and control logic with the page. |
+| Students should be able to manipulate the css style of DOM elements |
+| Students should be able to add events to elements |
 
 
 ## Outline
