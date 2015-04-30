@@ -176,12 +176,12 @@ Solutions:
 
 What color is...
 
-1. "Cheese Sale"? <!-- blue -->
-1. "We are selling cheese"?  <!-- black -->
-1. "Sorry!"? <!-- blue -->
-1. "We're out of cheese"? <!-- orange -->
-1. "Buy Now"? <!-- blue -->
-1. "Complain"? <!-- orange -->
+1. "Cheese Sale"?
+1. "We are selling cheese"? 
+1. "Sorry!"?
+1. "We're out of cheese"?
+1. "Buy Now"?
+1. "Complain"?
 
 When you've made your guesses, you can play with the code here:
 [Inheritance Demo](http://codepen.io/pen/def?fork=WvvORV)
