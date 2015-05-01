@@ -86,7 +86,7 @@ numberProperty(10) // ==> [false, true,  true]
 
 Solution
 
-```
+```js
 function numberProperty(n){
   return [isPrime(n), isEven(n), isMultipleOf10(n)];
 };
