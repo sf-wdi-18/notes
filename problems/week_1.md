@@ -14,12 +14,59 @@ y == "a"; //=> true
 *Note:* Think about why we cant just do something like `x=y` followed by `y=x`. What goes wrong when we try to do this?
 
 
+----
+
+Solution
+
+```
+var x = "a";
+var y = "b";
+
+// hold onto the value of x;
+var temp = x;
+// set the value of x to be y
+x = y;
+// if we hadn't saved x's value
+// we would have lost it
+// but we can use temp to set y's 
+// value to x's old value
+y = temp;
+
+```
+
 ##Problem 2: Reverse a String
 Write a function `reverse` that takes in a string, and returns the reverse of the string. For example:
 ```js
 reverse('Hello'); //=> returns "olleH"
 ```
 *Note:* You cannot use any built-in array or string methods!
+
+-----
+
+Solution
+
+```javascript
+
+var reverse = function (str) {
+  var arr = str.split("");
+  var len = arr.length;
+  var mid = len/2;
+  var holder;
+
+  for (var i = 0; i < mid; i += 1) {
+    holder = arr[i];
+    arr[i] = arr[len - 1 - i];
+    arr[len - 1 - i] = holder;
+  }
+
+  return arr.join("");
+}
+
+
+
+```
+
+
 
 ##Problem 3: Stacks and Queues
 How would you store a List of people who were waiting in line?
