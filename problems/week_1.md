@@ -68,7 +68,7 @@ How would you store a List of people who were waiting in line?
 > You should use a Queue, because a stack is a very first-in-last-out datastructure, which would mean the first person in line would get in last. A queue is a first-in-first-out structure, which means you get priority if you get there first.
 
 
-###Problem 4: Number Property
+##Problem 4: Number Property
 
 Create a function which checks a number for three different properties.
 
