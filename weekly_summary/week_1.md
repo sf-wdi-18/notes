@@ -1,4 +1,9 @@
 
+## Weekly Problems
+
+* [Problem Set](https://github.com/sf-wdi-18/notes/blob/master/problems/week_1.md)
+
+
 ## Monday
 
 * [Command Line](https://github.com/sf-wdi-18/notes/tree/master/lectures/week-01/day_1_getting_started/dusk_workflow_cmd_line)
