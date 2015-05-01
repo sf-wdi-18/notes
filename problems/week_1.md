@@ -13,19 +13,6 @@ y == "a"; //=> true
 ```
 *Note:* Think about why we cant just do something like `x=y` followed by `y=x`. What goes wrong when we try to do this?
 
-```
-var a = "a";
-var b = "b";
-
-var swapAandB = function() {
-  c = a;
-  a = b;
-  b = c;
-}
-```
-
-----
-
 Solution
 
 ```
@@ -81,13 +68,13 @@ How would you store a List of people who were waiting in line?
 > You should use a Queue, because a stack is a very first-in-last-out datastructure, which would mean the first person in line would get in last. A queue is a first-in-first-out structure, which means you get priority if you get there first.
 
 
-###Problem 4: Number Property
+##Problem 4: Number Property
 
 Create a function which checks a number for three different properties.
 
-is the number even?
-is the number a multiple of 10?
-is the number prime?
+* is the number even?
+* is the number a multiple of 10?
+* is the number prime?
 
 Each should return either true or false, which should be given as an array. 
 
@@ -97,13 +84,29 @@ numberProperty(7)  // ==> [true,  false, false]
 numberProperty(10) // ==> [false, true,  true]
 ```
 
+Solution
 
-```
-var reverse = function(input) {
-  var reversedString =  "";
-  for (var i = 1; i < input.length + 1; i++) {
-    reversedString += input[input.length - i];
+```js
+function numberProperty(n){
+  return [isPrime(n), isEven(n), isMultipleOf10(n)];
+};
+
+function isPrime(n) {
+  var isPrime = true;
+  if(n < 2) { isPrime = false; } 
+  for(var i = 2; i <= Math.sqrt(n); i++) {
+    if(n % i === 0) {
+      isPrime = false;
+    } 
   }
-  return reversedString;
+  return isPrime;
+}
+
+function isEven(n) {
+  return n % 2 === 0 ? true : false;
+}
+
+function isMultipleOf10(n) {
+  return n % 10 === 0 ? true : false;
 }
 ```
