@@ -72,9 +72,9 @@ How would you store a List of people who were waiting in line?
 
 Create a function which checks a number for three different properties.
 
-is the number even?
-is the number a multiple of 10?
-is the number prime?
+* is the number even?
+* is the number a multiple of 10?
+* is the number prime?
 
 Each should return either true or false, which should be given as an array. 
 
