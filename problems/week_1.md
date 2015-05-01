@@ -13,19 +13,6 @@ y == "a"; //=> true
 ```
 *Note:* Think about why we cant just do something like `x=y` followed by `y=x`. What goes wrong when we try to do this?
 
-```
-var a = "a";
-var b = "b";
-
-var swapAandB = function() {
-  c = a;
-  a = b;
-  b = c;
-}
-```
-
-----
-
 Solution
 
 ```
