@@ -84,6 +84,7 @@ numberProperty(7)  // ==> [true,  false, false]
 numberProperty(10) // ==> [false, true,  true]
 ```
 
+Solution
 
 ```
 var reverse = function(input) {
