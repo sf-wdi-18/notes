@@ -13,6 +13,16 @@ y == "a"; //=> true
 ```
 *Note:* Think about why we cant just do something like `x=y` followed by `y=x`. What goes wrong when we try to do this?
 
+```
+var a = "a";
+var b = "b";
+
+var swapAandB = function() {
+  c = a;
+  a = b;
+  b = c;
+}
+```
 
 ----
 
@@ -41,8 +51,6 @@ reverse('Hello'); //=> returns "olleH"
 ```
 *Note:* You cannot use any built-in array or string methods!
 
------
-
 Solution
 
 ```javascript
@@ -66,14 +74,11 @@ var reverse = function (str) {
 
 ```
 
-
-
 ##Problem 3: Stacks and Queues
 
 How would you store a List of people who were waiting in line?
 
 > You should use a Queue, because a stack is a very first-in-last-out datastructure, which would mean the first person in line would get in last. A queue is a first-in-first-out structure, which means you get priority if you get there first.
-
 
 
 ###Problem 4: Number Property
@@ -93,6 +98,12 @@ numberProperty(10) // ==> [false, true,  true]
 ```
 
 
-
-
-
+```
+var reverse = function(input) {
+  var reversedString =  "";
+  for (var i = 1; i < input.length + 1; i++) {
+    reversedString += input[input.length - i];
+  }
+  return reversedString;
+}
+```
