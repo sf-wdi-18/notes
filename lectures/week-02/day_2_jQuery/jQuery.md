@@ -87,7 +87,7 @@ Thinking of a restaurant: the menu is the API, ordering is executing an API call
 
 ---
 
-###Example: Make Images Dissapear
+###Example: Make Images Disappear
 
 Using the standard DOM API:
 
@@ -101,7 +101,7 @@ for (var i = 0; i< elems.length; i++) {
 In jQuery, this is a one-liner:
 
 ```
-$('img').hide()
+$('img').hide();
 ```
 
 ---
@@ -123,7 +123,7 @@ $('img').hide()
 
 ---
 
-###Selecting Elements
+##Selector
 
 `$('p')`  **selects** `<p>Welcome!</p>`
 
@@ -135,14 +135,14 @@ $('img').hide()
 
 ---
 
-###Challenge: Translate this code into jQuery
+###Challenge: Translate to jQuery
 
 On [reddit](www.reddit.com) perform the following using jQuery instead:
 
 #####Change All Headlines
 
 ```
-var headlines = document.querySelectorAll(".title")
+var headlines = document.querySelectorAll(".title");
 for (var i = 0; i < headlines.length; i++) {
   headlines[i].innerText = "WDI Rules";
 }
@@ -150,19 +150,19 @@ for (var i = 0; i < headlines.length; i++) {
 
 #####Redirect to Digg
 ```
-var logo = document.querySelector("#header-bottom-left a")
-logo.href = "http://www.digg.com"
+var logo = document.querySelector("#header-bottom-left a");
+logo.href = "http://www.digg.com";
 ```
 
 #####Start Searching
 ```
-var searchBox = document.querySelector("#search input")
-searchBox.value = "BsS"
+var searchBox = document.querySelector("#search input");
+searchBox.value = "BsS";
 ```
 
 ---
 
-###Creating Elements
+##Element Creation
 
 Standard DOM API
 
@@ -172,20 +172,57 @@ p.appendChild(document.createTextNode('Hello WDI!!!!!'));
 p.style.cssFloat = 'left';
 p.style.backgroundColor = 'red';
 p.style.fontSize = '100px';
-document.getElementById('header-bottom-left').appendChild(p);​
+var logo = document.querySelector('#header-bottom-left')
+logo.appendChild(p)
 ```
 
 jQuery's API
 
 ```
 var newP = $('<p>Hello WDI!!!!!</p>');
-newP.css({'float': 'left', 'background-color': 'red', 'font-size': '100px'});
+newP.css({
+	'float': 'left',
+	'background-color': 'red',
+	'font-size': '100px'
+});
 $('#header-bottom-left').append(newP);
 ```
 
 ---
 
-###Example: Animating Elements
+###Challenge: Translate to jQuery
+
+#####Clone and insert a new button
+```
+var btn = document.querySelectorAll(".spacer")[2];
+var newBtn = btn.cloneNode(true);
+var anchorChild = newBtn.children[0].children[0].children[0];
+anchorChild.text = "Party like it's 1999";
+btn.appendChild(newBtn);
+```
+
+---
+
+## Events
+
+jQuery makes event handeling easy and consistent across browsers. Events such as `.click()`, `.mousedown()`, `.change()`, `.keydown()`, etc, simply take a function as a parameter. Otherwise use `.bind()` and specify the event and function.
+
+### Example: Hover and Click Events
+
+```
+var allPosts = $("body #siteTable > div");
+
+allPosts
+.not(":first")
+.hover( function() {			//using the event as the function
+    $(this).css({"background-color": "orange"});
+})
+.bind("click", function() {	//using bind and passing in an event
+    alert("That's Rank: " + $(this).find(".rank").text());
+})
+```
+
+##Animations
 
 ```
 // get a list of all posts, they are in siteTable in div elements.
@@ -196,13 +233,13 @@ var $allPosts = $('body #siteTable > div');
 var $topPost = $allPosts.first();
 
 // Let's make sure, what's the rank?
-$topPost.find('.rank').text()
+$topPost.find('.rank').text();
 
 // What's the title
-$topPost.find('.title').text()
+$topPost.find('.title').text();
 
 // Let's change it
-$topPost.find('.title').text('WDI students are pretty awesome')
+$topPost.find('.title').text('WDI students are pretty awesome');
 
 // And it's gone
 $topPost.animate({height: 'toggle' }, 5000);
@@ -212,26 +249,6 @@ $topPost.animate({ opacity: 0.25 }, 5000);
 ```
 
 ---
-### Events
-
-Event handling is one of the nicest aspects of jQuery because it makes the process easy and consistent across browsers. jQuery provides the high level .bind() and .unbind() functions to generically attach and detach event handlers on matched sets. In addition most of the common events like click, key and mouse events have dedicated handler functions like .click(), .mousedown(), change() and .keydown(). jQuery event handlers simply take a function as a parameter and jQuery tracks these handlers so that they can also be unbound later.
-
----
-
-### Example: hover and click
-
-```
-var $allPosts = $('body #siteTable > div');
-
-$allPosts
-.not(":first")
-.hover( function() {
-    $(this).css({'background-color': 'red'});
-})
-.bind('click', function(e) {
-    alert("That's Rank: " + $(this).find('.rank').text());
-})
-```
 
 ### [jQuery UI](http://jqueryui.com/)
 
