@@ -6,18 +6,58 @@ Lesson on object oriented programming (OOP).
 | Understand the core principles of OOP |
 | Create custom objects and constructors |
 
+## Objects Review
+
+```
+var dictionary = {
+	computer: "A person who makes calculations",
+	hypertext: "text which is not constrained to be linear"
+}
+```
+
+* A object is a unordered collection of key-value pairs.
+* Keys are strings.
+* Keys are unique.
+
+**Get/Set**
+
+We differentiate between "getting" (or "reading") a value, and "setting" (or "writing"/"overwriting" a value).
+
+
+**Dot Notation vs. Bracket Notation**
+
+These work:
+
+* `el['innerText']`
+* `"hello"["length"]`
+* `10["toString"]()`
+* `someList['pop']()`
+* `$(".balloon")["addClass"]("exploded")`
+
+But...
+
+* `el.style.padding-right` (bad)
+	* `el["style"]["padding-right"]` (good)
+	* `el.style.paddingRight` (good)
+* `["big", "medium", "small"].0` (bad)
+	* `["big", "medium", "small"][0]` (good)
+
+Can you describe what breaks?
+
 ## Introduction to OOP
 What is OOP? Let's ask Steve Jobs...
 
     Steve Jobs: Objects are like people. They’re living, breathing things that have knowledge inside them about how to do things and have memory inside them so they can remember things. And rather than interacting with them at a very low level, you interact with them at a very high level of abstraction, like we’re doing right here.
     Here’s an example: If I’m your laundry object, you can give me your dirty clothes and send me a message that says, “Can you get my clothes laundered, please.” I happen to know where the best laundry place in San Francisco is. And I speak English, and I have dollars in my pockets. So I go out and hail a taxicab and tell the driver to take me to this place in San Francisco. I go get your clothes laundered, I jump back in the cab, I get back here. I give you your clean clothes and say, “Here are your clean clothes.”
     You have no idea how I did that. You have no knowledge of the laundry place. Maybe you speak French, and you can’t even hail a taxi. You can’t pay for one, you don’t have dollars in your pocket. Yet I knew how to do all of that. And you didn’t have to know any of it. All that complexity was hidden inside of me, and we were able to interact at a very high level of abstraction. That’s what objects are. They encapsulate complexity, and the interfaces to that complexity are high level.
-    [source](http://www.edibleapple.com/2011/10/29/steve-jobs-explains-object-oriented-programming/)
+
+[source](http://www.edibleapple.com/2011/10/29/steve-jobs-explains-object-oriented-programming/)
 
 In summary:
-    * Objects encapsulate data and behavior
-    * Objects communicate by passing "messages" back and forth.
-    * Objects know as litle about each other and their environment as possible.
+
+* Objects encapsulate data and behavior
+* Objects communicate by passing "messages" back and forth.
+* Objects know as litle about each other and their environment as possible.
 
 Finaly, in Javascript it turns out that...
 **EVERYTHING IS AN OBJECT**
@@ -190,24 +230,27 @@ var car2 = new Car('black', 'Porsche');
 Partner up with your buddy!
 
 Create a genie constructor. Each genie should have the following:
-    * name
-    * color
-    * wishes
-    * a grantWish() method
+
+* name
+* color
+* wishes
+* a grantWish() method
 
 Create a "wish" object. It should (eventually) have the following properties:
-  * The wish
-  * Whether the wish was granted
-  * Optional: When the wish was made
-  * Optional: Who granted the wish
-  * Optional: Who made the wish
+
+* The wish
+* Whether the wish was granted
+* Optional: When the wish was made
+* Optional: Who granted the wish
+* Optional: Who made the wish
 
 How would you use your new wish object in conjunction with a genie? How would you pass it in? What would you have to modify in your existing genie-code?
 
 Finally, create a "person" object. They should have the following properties:
-  * name
-  * a makeWish method
-  * a list of past wishes
+
+* name
+* a makeWish method
+* a list of past wishes
 
 How does your person and the genie communicate? How do you make a wish? How would you get that wish granted?
 
