@@ -1,6 +1,13 @@
 # Constructors Cont.
 ## A Prototype In JS
 
+* Recap the constructor pattern
+* Discuss the benefits and pitfalls of constructors
+* Introduce the `prototype` for constructors
+* Explain and apply some Object Oriented terminology
+* Recap the benefits of the `prototype` system.
+  * Efficiently creating methods
+  * Efficiently updating objects.
 
 ## Review and Motivation 
 
