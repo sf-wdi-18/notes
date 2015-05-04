@@ -28,7 +28,7 @@ jQuery is a small, feature-rich JavaScript library. It makes things like DOM man
 
 ###Library
 
-A *library* is a collection of reusable methods 
+A *library* is a collection of reusable methods organized together to solve problems of a specific domain.
 
 ---
 
