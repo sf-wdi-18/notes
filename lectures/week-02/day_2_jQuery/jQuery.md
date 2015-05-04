@@ -123,7 +123,7 @@ $('img').hide();
 
 ---
 
-##Selector
+##Selectors
 
 `$('p')`  **selects** `<p>Welcome!</p>`
 
@@ -203,7 +203,7 @@ btn.appendChild(newBtn);
 
 ---
 
-## Events
+## [Events](http://api.jquery.com/category/events/)
 
 jQuery makes event handeling easy and consistent across browsers. Events such as `.click()`, `.mousedown()`, `.change()`, `.keydown()`, etc, simply take a function as a parameter. Otherwise use `.bind()` and specify the event and function.
 
@@ -211,66 +211,67 @@ jQuery makes event handeling easy and consistent across browsers. Events such as
 
 ```
 var allPosts = $("body #siteTable > div");
-
 allPosts
 .not(":first")
 .hover( function() {			//using the event as the function
     $(this).css({"background-color": "orange"});
 })
 .bind("click", function() {	//using bind and passing in an event
-    alert("That's Rank: " + $(this).find(".rank").text());
+	var rank = $(this).find(".rank").text();
+    alert("That's Rank: " + rank);
 })
 ```
 
-##Animations
+##[Animations](http://api.jquery.com/animate/)
+
+We can use `.animate()`, which takes an object and a time (in milliseconds) and will change the existing css to the one passed in that amount of time. See example below. 
 
 ```
-// get a list of all posts, they are in siteTable in div elements.
-// Good practice: Prepend $ to indicate that it's a jQuery object.
+// Good practice: Prepend $ to indicate that it's a jQuery object
 var $allPosts = $('body #siteTable > div');
 
-// the first is the top post, duh
+// the first is the top post
 var $topPost = $allPosts.first();
 
-// Let's make sure, what's the rank?
+// Let's find the rank
 $topPost.find('.rank').text();
 
-// What's the title
+// & the title
 $topPost.find('.title').text();
 
-// Let's change it
+// Change it!
 $topPost.find('.title').text('WDI students are pretty awesome');
 
-// And it's gone
-$topPost.animate({height: 'toggle' }, 5000);
+// Collapse the search bar
+$("#search").animate({width: '100px'}, 5000)
 
-//Fade ...
+//Fade out...
 $topPost.animate({ opacity: 0.25 }, 5000);
 ```
 
 ---
 
-### [jQuery UI](http://jqueryui.com/)
+##[Plugins](https://learn.jquery.com/plugins/)
+
+Plugins are "to extend jQuery's prototype object. By extending the prototype object you enable all jQuery objects to inherit any methods that you add." These plugins are open source and there are many of them to accomplish most needs you can think of. On your own spend time exploring what's out there!
 
 ---
 
-### Challenge: Tic Tac Toe
+##[jQuery UI](http://jqueryui.com/)
+
+jQuery's UI library are a set of plug-and-play widgets that accelerates certain aspects of development. Widgets include date-pickers, menus, progress bars, spinners, accordions, etc. Feel free to explore these on your own time.
+
+---
+
+### Challenge: Tic Tac Toe (time permitting)
 
 * Include jQuery in your project
 * Trade computers with someone else
-* Navigate while they refactor your code
+* Navigate while they refactor a piece of your code (don't overwrite, just comment out)
 * After 15 minutes switch roles
 
 ---
 
 ###Learn More
 
-Take some time to explore [You Might Not Need jQuery](youmightnotneedjquery.com)
-
-We're going to use it as a learning resource to compare how we might solve a problem in jQuery vs. vanilla javascript
-
-**For more examples, see [You Might Not Need jQuery](youmightnotneedjquery.com)**
-
-###Ref
-
-* [Prev Lesson](https://github.com/wdi-sf-fall/notes/edit/master/week_05_project1_week/jquery/README.md)
+Take some time to explore [You Might Not Need jQuery](youmightnotneedjquery.com) to see side-by-side examples of the DOM's API vs jQuery's API.
