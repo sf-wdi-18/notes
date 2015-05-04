@@ -2,6 +2,15 @@
 
 > By the end of this lecture, students will understand constructors in a javascript. A way of create objects that share the same methods and attributes
 
+
+## Outline
+
+* Discuss the object construction process
+  * Explain the constructor pattern
+* Apply the `new` keyword
+* Explain the use of the `this` keyword.
+
+
 ## Constructors
 
 There is a lot of different ways to create objects. 
@@ -59,7 +68,7 @@ Note: A constructor has a few key differences.
 We can use our constructor to quickly create new people.
 
 ```
-var jane = Person("Taylor", "Swift");
+var tswift = Person("Taylor", "Swift");
 var john = Person("John", "Doe");
 ```
 
