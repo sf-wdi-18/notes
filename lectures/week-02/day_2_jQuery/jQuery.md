@@ -137,7 +137,27 @@ $('img').hide()
 
 ###Challenge: Translate this code into jQuery
 
+On [reddit](www.reddit.com) perform the following using jQuery instead:
+
+#####Change All Headlines
+
 ```
+var headlines = document.querySelectorAll(".title")
+for (var i = 0; i < headlines.length; i++) {
+  headlines[i].innerText = "WDI Rules";
+}
+```
+
+#####Redirect to Digg
+```
+var logo = document.querySelector("#header-bottom-left a")
+logo.href = "http://www.digg.com"
+```
+
+#####Start Searching
+```
+var searchBox = document.querySelector("#search input")
+searchBox.value = "BsS"
 ```
 
 ---
