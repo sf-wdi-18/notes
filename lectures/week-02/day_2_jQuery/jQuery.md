@@ -17,6 +17,13 @@ jQuery is a small, feature-rich JavaScript library. It makes things like DOM man
 
 ---
 
+###In other words
+
+####IT'S RADICAL
+![party time!](http://i.giphy.com/V0BIjUQRfl8tO.gif)
+
+---
+
 ###Terminology
 
 * Library
