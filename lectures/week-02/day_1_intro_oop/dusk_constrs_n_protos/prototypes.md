@@ -194,7 +194,7 @@ That's kinda cool, so we won't typically have to worry too much about getters an
 * Make a `Dice` constructor that takes a `numberOfSides`. Add a method called `roll` that randomly returns a number from `1` up to the `numberOfSides`.
   * Modify your `roll` method to record the returned side in a `lastRoll` property.
 * Make a `CardDeck` constructor that returns an object with a `cards` property that is an array of `52` numbers, `1..52`.
-	* Write a method called `deal` that removes that randomly returns a number from `cards` and removes it from the `cards` array.
+	* Write a method called `deal` that randomly returns a number from `cards` and removes it from the `cards` array.
 	* Write a method called `isFull` that returns `true` or `false` if all `52` cards are present.
 	* Write a method called `cut` that randomly picks an index and returns an array of two arrays where the deck was split at that index.
 	* BONUS: write a `shuffle` method that mixes up all the cards. How does this change your `deal` method?
