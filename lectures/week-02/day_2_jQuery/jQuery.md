@@ -144,7 +144,7 @@ $('img').hide();
 
 ###Challenge: Translate to jQuery
 
-On [reddit](https://www.reddit.com) perform the following using jQuery instead:
+On [reddit](http://www.reddit.com) perform the following using jQuery instead:
 
 #####Change All Headlines
 
@@ -154,6 +154,8 @@ for (var i = 0; i < headlines.length; i++) {
   headlines[i].innerText = "WDI Rules";
 }
 ```
+Hint: Use jQuery's [`.each()`](https://api.jquery.com/jquery.each/) method
+Hint: Inside your loop, if you are using a jQuery method, you may need to wrap the instance of each iteration inside the jQuery object, `$()`
 
 #####Redirect to Digg
 ```
