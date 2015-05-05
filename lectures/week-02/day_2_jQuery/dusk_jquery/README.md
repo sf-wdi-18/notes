@@ -7,7 +7,7 @@ In this session you will learn how to:
 * include jQuery in a project
 * add jQuery selectors to manipulate DOM elements
 * bind events with jQuery
-* existing knowledge to jQuery
+* transfer existing knowledge to jQuery
 
 ---
 
