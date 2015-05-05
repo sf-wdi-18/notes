@@ -144,7 +144,7 @@ $('img').hide();
 
 ###Challenge: Translate to jQuery
 
-On [reddit](www.reddit.com) perform the following using jQuery instead:
+On [reddit](https://www.reddit.com) perform the following using jQuery instead:
 
 #####Change All Headlines
 
