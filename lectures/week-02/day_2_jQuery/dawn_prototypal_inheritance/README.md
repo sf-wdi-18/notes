@@ -70,7 +70,7 @@ Person.prototype.addFriend = function(name){
 };
 
 function Student(name){
-    Person.call(this, name)
+    this.name = name;
 };
 
 Student.prototype = new Person()
@@ -78,6 +78,22 @@ Student.prototype.constructor = Student;
 ```
 
 * Create a person and a student and add different friends to each. Can you see the persons' friends from the student object? What about the other way around?
+
+
+One approach would be to make these changes:
+
+```
+function Person(name){
+    this.name = name;
+    //this.friends = [];
+}
+
+Person.prototype.addFriend = function(name){
+    this.friends = this.friends || []; // make a new array if it doesn't exist
+    this.friends.push(new Person(name));
+};
+```
+
 
 
 ### `call` and `apply`
