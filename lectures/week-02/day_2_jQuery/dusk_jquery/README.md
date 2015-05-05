@@ -78,7 +78,7 @@ Let's examine the end of this file and try to decipher what is happening with th
 
 ###Documentation
 
-It is necessary to reference the [jQuery Documentation](api.jquery.com) in order to get the most out of the library.
+It is necessary to reference the [jQuery Documentation](http://api.jquery.com) in order to get the most out of the library.
 
 The website refers to its **API Documentation**.
 
