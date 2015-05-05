@@ -283,4 +283,4 @@ jQuery's UI library are a set of plug-and-play widgets that accelerates certain 
 
 ###Learn More
 
-Take some time to explore [You Might Not Need jQuery](youmightnotneedjquery.com) to see side-by-side examples of the DOM's API vs jQuery's API.
+Take some time to explore [You Might Not Need jQuery](http://youmightnotneedjquery.com/) to see side-by-side examples of the DOM's API vs jQuery's API.
