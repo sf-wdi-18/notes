@@ -8,29 +8,14 @@
 | Students should be able to require installed packages in a javascript file |
 
 ---
-##Install Homebrew
 
-```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
----
+##Why do we care?
+Nodejs is a platform for building fast, scalable network application. Its advantages over other server side languages is that it uses event-driven, non-blocking I/O model that makes it light-weight and efficient. It is built on top of Google's [V8 Javascript engine](http://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29) to execute code, the same engine that powers Chrome, implemented in C++.
 
 ## Install Node
-Since we all have homebrew installed on our computers, we can use the `brew` command to install node. To do so, run the following commands into your terminal from any directory:
+Head to [node's homepage](https://nodejs.org/) & click install.
 
-```bash
-$ brew update
-```
-```bash
-$ brew install node
-```
-And then to check that things have installed properly try running the following command:
-
-```bash
-$ npm
-```
-If you get a response you're good.
+Here are the [docs](https://nodejs.org/api) for future reference.
 
 ## Playing with the Node REPL
 Let's get started by opening up a node REPL. We can do this by running the `node` command in our terminal. 
@@ -42,7 +27,7 @@ $ node
 ```
 **Note:** to exit type `Control-c` twice.
 
-### A brief overview of the history of Javascript
+### Serverside Javascript
 
 This gives us a javascript REPL, that is exactly like the one that we have in our browser. This is something interesting. Pre 2008, this idea wouldn't have been taken seriously. At the time essentially no one took javascript seriously. It was a language that you used in the browser, when you had to. It was slow and had a lot of quirks.
 
@@ -50,16 +35,47 @@ In 2008-2009, two big things happened. First, Douglas Crockford release a book c
 
 This allowed, developers, for the first time, to use javascript outside of the browser. For the first time developers could using a single programming language for both client and server.
 
-## Using node to run a javascript file
+## [Global Objects](https://nodejs.org/api/globals.html#globals_process)
+
+* Global : Its a global namespace object
+* Process : Its also a global object but it provides essential functionality to transform a synchronous function into a asynchronous callback.
+* Buffer : Raw data is stored in instances of the Buffer class.
+
+	
+## [Debugging](https://nodejs.org/api/debugger.html)
+
+* `debug myScript.js`
+* `debugger` keyword
+
+Basic Commands
+* `c` or `continue` to move to next breakpoint
+* `n` or `next` to step to next line
+* `repl` to begin playing
+
+##Use of the Underscore
+
+* The underscore keyword allows you to access the last return statement.
+
+```
+> x = "Node"
+'Node'
+> y = _ + " is sweet!"
+'Node is sweet!'
+> y === "Node is sweet!"
+true
+```
+
+
+## Running a JS File
 
 In addition to giving us a javascript REPL, we can use the node command to run a javascript file. To see this in action, first create a file and open it in sublime by typing the following commands into your terminal:
-```bash
+```
 $ touch hello.js
 $ subl hello.js
 ```
 Then in sublime add the following content:
 
-```js
+```
 var hello = function() {
   return "Hello, World";
 };
@@ -152,6 +168,42 @@ var rainbow = chalk.red('r') + chalk.yellow('a') + chalk.green('i')
 console.log(rainbow);
 ```
 
-See the [documentation](https://www.npmjs.com/package/chalk) for chalk to see what else you can do.
+See the chalk [documentation](https://www.npmjs.com/package/chalk) for chalk to see what else you can do.
+
+##Creating your own module
+
+* Touch a file in the same directory named `greetings.js`
+* Inside `greetings.js` type:
+
+
+```
+//define a function
+var myPersonalGreeting = function() {
+  return "Hey buddyguy!";
+}
+
+//export it as a module
+exports.greeting = myPersonalGreeting;
+```
+
+Adding our function to the exports object allows it to be exported!
+
+* Inside `play.js` we can now require our new module by giving specifying the path:
+
+```
+var greet = require('./greetings');
+```
+
+* And then call it with `greet.sayHi()`
+
+##Underscore
+
+
+* mkdir `underscorePractice` and `cd` into it 
+* `npm install underscore`
+* touch `app.js`
+* 
+
+
 
 
