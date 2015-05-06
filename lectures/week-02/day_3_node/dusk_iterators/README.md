@@ -61,7 +61,7 @@ Juniper thinks her prices are scaring off customers. Subtracting one penny might
 ```
 var prices = [3.00,4.00,10.00,2.25,3.01];
 prices.SOMEMETHOD(callbackfn);
-//[2.99, 3.99, 9.99]
+//[2.99, 3.99, 9.99, 2.24, 3.00]
 ```
 
 
