@@ -1,4 +1,4 @@
-# Intro Node 
+# Intro to Node 
 
 ##Learning Objectives
 
@@ -7,7 +7,7 @@ By the end of this session, students should be able to...
 * Articulate the history of Node
 * Explore the Node REPL & global objects
 * Run a JS file from Node
-* Debug your code
+* Use the Node debugger
 * ~~ Break ~~
 * Spin up a simple node server & use the event loop
 * Require custom modules
@@ -16,26 +16,37 @@ By the end of this session, students should be able to...
 
 ---
 
+##Terminology
+
+* Ryan Dahl
+* V8
+* Event loop
+* Node.js
+* npm
+* Isomorphic JavaScript
+
+
 ##What is Node?
+
 Node is a platform for building **fast, scalable network applications**. Its advantages over other server side languages is that it uses **event-driven, non-blocking I/O model** that makes it light-weight and efficient. It is **built on top of Google's [V8 Javascript engine](http://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29)**, the same engine powering the Chrome browser.
 
 ##Installation
-Head to [node's homepage](https://nodejs.org/) & click install.
 
-Here are the [docs](https://nodejs.org/api).
+Head to [node's homepage](https://nodejs.org/) & click install. Make sure to reference the [Node docs](https://nodejs.org/api) in the future.
 
 ##Serverside JS
 
-In 2008 Google released the [V8 Engine](http://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29) for the Chrome Browser which transformed javascript into something fast by compiles Javascript to native machine code before executing it. Ryan Dhal, the creator of Node, then took the V8 Engine and ported it to it's own runtime platform called 'Node.js'.
+In 2008 Google **released the [V8 Engine](http://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29) in the Chrome Browser** which transformed JavaScript into something fast. Rather than interpreting the language on the fly, it began **compiling Javascript to native machine code** before executing it. [Ryan Dhal](), the creator of Node, then took the V8 Engine and ported it to it's own runtime platform called 'Node.js'.
 
-This allowed, developers, for the first time, to use javascript outside of the browser. Also for the first time, developers were using **a single programming language for both client and server**.
+This allowed developers to use JavaScript outside of the browser and for the first time developers were using **a single programming language for both client and server**!
+
+Running the *same code* on the client & server is known as **isomorphic JavaScript**
 
 
 ##Entering the REPL
 Let's get started by opening up a node REPL. We can do this by running the `node` command in our terminal. 
 
 ```
-bash
 $ node
 >
 ```
@@ -205,8 +216,9 @@ Explore the underscore docs [here](http://underscorejs.org/). Some great methods
 
 ##Further Learning
 
-* [Introduction to Node.js with Ryan Dahl](https://www.youtube.com/watch?v=jo_B4LTHi3I)
+* [Introduction to Node.js](https://www.youtube.com/watch?v=jo_B4LTHi3I)
 * [History of Node.js](https://www.youtube.com/watch?v=SAc0vQCC6UQ)
+* [Ryan Dahl's AMA](http://www.reddit.com/r/node/comments/h1m2o/i_am_ryan_dahl_creator_of_nodejs_ama)
 
 
 
