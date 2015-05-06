@@ -3,7 +3,6 @@ Build your own.
 
 | Objectives |
 | :--- |
-|  |
 | Identify iterators, and how and when to use them |
 | Differentiate `forEach`, `map`, and `reduce` |
 | Construct iterator functions and test them together |
@@ -144,12 +143,23 @@ DO NOT USE ANY BUILT IN ITERATOR METHODS: `forEach`, `map`, `reduce`, etc.
 * Create a function `hereYaGo`.
     *  Input: an array.
     *  Output: the same array.
+    ```
+        someArray === hereYaGo(someArray);
+    ```
 * Create a function `first`.
     * Input: an array.
     * Output: the first item in that array.
+    ```
+        first(["apple", "toast", "cheese"]);
+        // "apple"
+    ```
 * Create a function `last`.
     * Input: an array.
     * Output: the last item in that array.
+    ```
+        last(["apple", "toast", "cheese"]);
+        // "cheese"
+    ```
 * Create a function `printEach`:
     * Input: an array.
         * On each iteration, print the item to the console.
@@ -158,10 +168,26 @@ DO NOT USE ANY BUILT IN ITERATOR METHODS: `forEach`, `map`, `reduce`, etc.
     * Input: an array and `function(){return "!"}`
         * On each iteration, print the item to the console PLUS the output of the callback function.
     * Output: undefined;
+    ```
+        printEachPlus(["apple", "toast", "cheese"], function(){
+            return "!"
+        });
+        // "apple!"
+        // "toast!"
+        // "cheese!"
+    ```
 * Modify the above to become `printEachSuperPlus`:
     * Input: an array and `function(v){return v + "!"}`
         * On each iteration, print the output of calling the callback function with the current item as an argument.
     * Output: undefined;
+    ```
+        printEachPlus(["apple", "toast", "cheese"], function(item){
+            return item + "!"
+        });
+        // "apple!"
+        // "toast!"
+        // "cheese!"
+    ```
 
 **The Challenge**
 
@@ -206,8 +232,8 @@ customers.forEach(function(v,i){
     console.log( v + ", " + i*2 + " minutes");
 });
 
-prices.map(function(v){
-    return v - .01;
+prices.map(function(p){
+    return p - .01;
 });
 
 prices.map(function(v){
@@ -226,8 +252,8 @@ earnings.reduce(function(a,b){
     return a + b;
 }, 500);
 
-earnings.filter(function(a){
-    return a === 20;
+earnings.filter(function(n){
+    return n === 20;
 });
 
 var startData = ["a","b","c"];
