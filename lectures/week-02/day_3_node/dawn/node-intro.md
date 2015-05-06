@@ -118,7 +118,8 @@ http.createServer(function (req, res) {
 }).listen(8000);
 ```
 
-Sexy!
+#####Sexy!
+
 ![dancing bots](http://i.giphy.com/Lj4W2cgweVUkM.gif)
 
 ##Node Event Loop
