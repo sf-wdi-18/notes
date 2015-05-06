@@ -118,6 +118,9 @@ http.createServer(function (req, res) {
 }).listen(8000);
 ```
 
+Sexy!
+![dancing bots](http://i.giphy.com/Lj4W2cgweVUkM.gif)
+
 ##Node Event Loop
 ![Node event loop](http://i.stack.imgur.com/YCTgK.png)
 
