@@ -169,15 +169,17 @@ Much of node's most powerful capabilities are unlocked when leveraging the power
 
 In sublime add the following content to the play.js file
 
-var chalk = require('chalk');
+`var chalk = require('chalk');`
 
-console.log(chalk.red('Hello World'));
+
+`console.log(chalk.red('Hello World'));`
 To run the file type node play.js in your terminal.
 
 We can add more things like the following
 
-var chalk = require('chalk');
+`var chalk = require('chalk');`
 
+```
 console.log(chalk.red('Hello World'));
 console.log(chalk.bold.blue('glad you made it :)'));
 
@@ -185,7 +187,9 @@ var rainbow = chalk.red('r') + chalk.yellow('a') + chalk.green('i')
                 + chalk.cyan('n') + chalk.blue('b') + chalk.magenta('o')
                 + chalk.white('w');
 console.log(rainbow);
-See the documentation for chalk to see what else you can do.
+```
+
+See the [docs](https://www.npmjs.com/package/chalk) for chalk to see what else you can do.
 
 ##Require Underscore
 
