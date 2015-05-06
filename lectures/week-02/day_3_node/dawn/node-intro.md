@@ -167,7 +167,9 @@ Much of node's most powerful capabilities are unlocked when leveraging the power
 
 ##Playing w/ Chalk
 
-In sublime add the following content to the play.js file
+In sublime add the following content to the `play.js` file
+
+`npm install chalk`
 
 `var chalk = require('chalk');`
 
