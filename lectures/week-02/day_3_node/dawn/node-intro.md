@@ -165,6 +165,28 @@ NPM is the [Node Package Manager](https://www.npmjs.com/) which helps us **manag
 
 Much of node's most powerful capabilities are unlocked when leveraging the power of the packages it has available to it. Let's take a second to explore! 
 
+##Playing w/ Chalk
+
+In sublime add the following content to the play.js file
+
+var chalk = require('chalk');
+
+console.log(chalk.red('Hello World'));
+To run the file type node play.js in your terminal.
+
+We can add more things like the following
+
+var chalk = require('chalk');
+
+console.log(chalk.red('Hello World'));
+console.log(chalk.bold.blue('glad you made it :)'));
+
+var rainbow = chalk.red('r') + chalk.yellow('a') + chalk.green('i')
+                + chalk.cyan('n') + chalk.blue('b') + chalk.magenta('o')
+                + chalk.white('w');
+console.log(rainbow);
+See the documentation for chalk to see what else you can do.
+
 ##Require Underscore
 
 Now let's add underscore to our project:
