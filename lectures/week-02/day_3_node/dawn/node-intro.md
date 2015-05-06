@@ -1,23 +1,37 @@
 # Intro Node 
-| Objectives |
-| :---- |
-| Students should have node and npm installed on their computers |
-| Students should be able to use the node REPL |
-| Students should be able to use node to run javascript files in the terminal |
-| Students should be able to use npm to install node packages |
-| Students should be able to require installed packages in a javascript file |
+
+##Learning Objectives
+
+By the end of this session, students should be able to...
+
+* Articulate the history of Node
+* Explore the Node REPL & global objects
+* Run a JS file from Node
+* Debug your code
+* ~~ Break ~~
+* Spin up a simple node server & use the event loop
+* Require custom modules
+* Install and require an npm
+* Begin using Underscore
 
 ---
 
-##Why do we care?
-Nodejs is a platform for building fast, scalable network application. Its advantages over other server side languages is that it uses event-driven, non-blocking I/O model that makes it light-weight and efficient. It is built on top of Google's [V8 Javascript engine](http://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29) to execute code, the same engine that powers Chrome, implemented in C++.
+##What is Node?
+Node is a platform for building **fast, scalable network applications**. Its advantages over other server side languages is that it uses **event-driven, non-blocking I/O model** that makes it light-weight and efficient. It is **built on top of Google's [V8 Javascript engine](http://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29)**, the same engine powering the Chrome browser.
 
-## Install Node
+##Installation
 Head to [node's homepage](https://nodejs.org/) & click install.
 
-Here are the [docs](https://nodejs.org/api) for future reference.
+Here are the [docs](https://nodejs.org/api).
 
-## Playing with the Node REPL
+##Serverside JS
+
+In 2008 Google released the [V8 Engine](http://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29) for the Chrome Browser which transformed javascript into something fast by compiles Javascript to native machine code before executing it. Ryan Dhal, the creator of Node, then took the V8 Engine and ported it to it's own runtime platform called 'Node.js'.
+
+This allowed, developers, for the first time, to use javascript outside of the browser. Also for the first time, developers were using **a single programming language for both client and server**.
+
+
+##Entering the REPL
 Let's get started by opening up a node REPL. We can do this by running the `node` command in our terminal. 
 
 ```
@@ -25,53 +39,32 @@ bash
 $ node
 >
 ```
+*Try writing some JS!*
+
 **Note:** to exit type `Control-c` twice.
 
-### Serverside Javascript
+## [Global Objects](https://nodejs.org/api/globals.html#globals_global_objects)
 
-This gives us a javascript REPL, that is exactly like the one that we have in our browser. This is something interesting. Pre 2008, this idea wouldn't have been taken seriously. At the time essentially no one took javascript seriously. It was a language that you used in the browser, when you had to. It was slow and had a lot of quirks.
 
-In 2008-2009, two big things happened. First, Douglas Crockford release a book called [Javascript the Good Parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742). And second, Google released the [V8 Engine](http://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29) for the Chrome Browser which transformed javascript into something fast. This caught the eye of Ryan Dhal, the creator of Node, who took the V8 Engine and ported it to it's own runtime platform called 'Node.js'.
 
-This allowed, developers, for the first time, to use javascript outside of the browser. For the first time developers could using a single programming language for both client and server.
+* global: This is the global scope, the highest namespace
+* process: Is an instance of the EventEmitter class, representing the current node session
+* Buffer: Raw data is stored in instances of the Buffer class
+* console: Used to print stdout and stderr (standard output & standard errors).
+* require
+* module
+* exports: An alias for (module.exports)
+* _: An alias for the previous return statement
 
-## [Global Objects](https://nodejs.org/api/globals.html#globals_process)
-
-* Global : Its a global namespace object
-* Process : Its also a global object but it provides essential functionality to transform a synchronous function into a asynchronous callback.
-* Buffer : Raw data is stored in instances of the Buffer class.
-
-	
-## [Debugging](https://nodejs.org/api/debugger.html)
-
-* `debug myScript.js`
-* `debugger` keyword
-
-Basic Commands
-* `c` or `continue` to move to next breakpoint
-* `n` or `next` to step to next line
-* `repl` to begin playing
-
-##Use of the Underscore
-
-* The underscore keyword allows you to access the last return statement.
-
-```
-> x = "Node"
-'Node'
-> y = _ + " is sweet!"
-'Node is sweet!'
-> y === "Node is sweet!"
-true
-```
-
+Full list [here](https://nodejs.org/api/globals.html#globals_global_objects)
 
 ## Running a JS File
 
 In addition to giving us a javascript REPL, we can use the node command to run a javascript file. To see this in action, first create a file and open it in sublime by typing the following commands into your terminal:
+
 ```
-$ touch hello.js
-$ subl hello.js
+$ touch myApp.js
+$ subl myApp.js
 ```
 Then in sublime add the following content:
 
@@ -80,95 +73,50 @@ var hello = function() {
   return "Hello, World";
 };
 
-hello();
-```
-Now if we go back to our terminal and run
-
-```
-$ node hello.js
-```
-What should we see?
-If you guess nothing, you're correct. Why don't we see anything?
-The reason we don't see anything is because we haven't told our program to print out anything. So to fix this we should probably do that.
-
-```
-var hello = function() {
-  return "Hello, World";
-};
-
 console.log(hello());
 ```
-
 Now if we go back to our terminal and run
 
 ```
-$ node hello.js
+$ node myApp.js
 ```
+	
+## [Debugging](https://nodejs.org/api/debugger.html)
 
-We see that "Hello, World" is printed out as we would expect.
+* Place the `debugger` keyword where you want to insert a line break
+* Then run: `node debug myApp.js`
 
+When paused in the debugger type...
 
-## Installing packages using NPM
-As you may have noticed earlier, when we installed node, we also installed another command called `npm`.
+* `c` or `continue` to move to next breakpoint
+* `n` or `next` to step to next line
+* `repl` allows you to start typing JS and checking variable definitions (easy to forget!)
 
-NPM is the [Node Package Manager](https://www.npmjs.com/), which as you may have guessed, helps us manage our node packages. Now you may be asking what is a node package? In short, it's javascript code that is bundled together so that it can be used by others, much like jQuery.
+Full debugger commands [here](https://nodejs.org/api/debugger.html#debugger_commands_reference)
 
-### Install the chalk.js package
-To get a better Idea of what a node package is lets play around with installing one called [chalk](https://www.npmjs.com/package/chalk).
+---
+10m break
 
-First lets create a new directory to work in by running the following commands in terminal:
+---
 
-```
-$ mkdir play
-$ cd play
-```
-
-Then we'll want to install the chalk package by running
-
-```
-$ npm install chalk
-```
-To check to see that it installed properly, we can run the list command in our terminal to see that a 'node_modules' directory has been installed.
-
-Now that we've got chalk installed, the question you should all be asking is 'How do I use it?'. 
-
-The answer is `require`. Node provides us a function called `require` that bundles up all of the functionality that `chalk`, or any other node package, has to offer and gives us access to it.
-
-To see what I'm talking about lets open up a new file to work in
+##A Simple Webserver
 
 ```
-$ ls
-```
-Now lets add a new file and open it in sublime:
-
-```
-$ touch play.js
-$ subl play.js
-```
-In sublime add the following content to the play.js file
-
-```
-var chalk = require('chalk');
-
-console.log(chalk.red('Hello World'));
-```
-To run the file type `node play.js` in your terminal.
-
-We can add more things like the following
-
-```
-var chalk = require('chalk');
-
-console.log(chalk.red('Hello World'));
-console.log(chalk.bold.blue('My name is Michael'));
-
-var rainbow = chalk.red('r') + chalk.yellow('a') + chalk.green('i')
-                + chalk.cyan('n') + chalk.blue('b') + chalk.magenta('o')
-                + chalk.white('w');
-console.log(rainbow);
+http.createServer(function (req, res) {
+  res.end('Hello world!');
+}).listen(8000);
 ```
 
-See the chalk [documentation](https://www.npmjs.com/package/chalk) for chalk to see what else you can do.
+##Node Event Loop
+![Node event loop](http://i.stack.imgur.com/YCTgK.png)
+
+Simple example of non-blocking I/O
+
+```
+function sayHi() { console.log('Hi there') }
+setTimeout(sayHi, 5000);
+console.log('Oh hey')
+```
 
 ##Creating your own module
 
@@ -177,18 +125,18 @@ See the chalk [documentation](https://www.npmjs.com/package/chalk) for chalk to 
 
 
 ```
-//define a function
+//function definition
 var myPersonalGreeting = function() {
   return "Hey buddyguy!";
 }
 
-//export it as a module
+//module export
 exports.greeting = myPersonalGreeting;
 ```
 
 Adding our function to the exports object allows it to be exported!
 
-* Inside `play.js` we can now require our new module by giving specifying the path:
+* Inside `myApp.js` we can now require our new module by giving specifying the path:
 
 ```
 var greet = require('./greetings');
@@ -196,14 +144,78 @@ var greet = require('./greetings');
 
 * And then call it with `greet.sayHi()`
 
-##Underscore
+##Installing packages using NPM
 
+NPM is the [Node Package Manager](https://www.npmjs.com/) which helps us **manage 3rd party, opensource modules**, similar to the one we just created.
 
-* mkdir `underscorePractice` and `cd` into it 
+Much of node's most powerful capabilities are unlocked when leveraging the power of the packages it has available to it. Let's take a second to explore! 
+
+##Require Underscore
+
+Now let's add underscore to our project:
+
 * `npm install underscore`
-* touch `app.js`
-* 
+* `ls` to see what changes were made to your directory
+* Require underscore with `var _ = require('underscore');
 
+##On Your Own
+
+
+Explore the underscore docs [here](http://underscorejs.org/). Some great methods include:
+
+**Collections**
+
+* `.each`
+* `.map`
+* `.filter`
+* `.reduce`
+* `.pluck`
+* `.shuffle`
+* `.sample`
+
+**Arrays**
+
+* `.compact`
+* `.flatten`
+* `.without`
+* `.uniq`
+* `.object`
+* `.range`
+
+**Functions**
+
+* `.memoize`
+* `.throttle`
+* `.once`
+* `.after`
+
+**Object**
+
+* `.invert`
+* `.functions`
+* `.extend`
+* `.pick`
+* `.isEqual`
+
+**Utility**
+
+* `.times`
+* `.random`
+* `.mixin`
+
+##Further Learning
+
+* [Introduction to Node.js with Ryan Dahl](https://www.youtube.com/watch?v=jo_B4LTHi3I)
+* [History of Node.js](https://www.youtube.com/watch?v=SAc0vQCC6UQ)
+
+
+
+<!--Syntax highlighting-->
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
 
 
 
