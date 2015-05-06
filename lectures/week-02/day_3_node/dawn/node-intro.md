@@ -172,11 +172,11 @@ Using a package manager helps manage dependencies. This allows developers to sha
 ####To add a dependency to your project
 
 ```
-npm init						//Creates a package.json file.
+npm init									//Creates a package.json file.
 npm install underscore chalk bower --save	//When installing, adding '--save'
-							//adds dependencies to the 
-							//package.json (you can chain
-							//packages together).
+											//adds dependencies to the 
+											//package.json (you can chain
+											//packages together).
 ```
 
 It is bad practice to commit your `node_modules` directory to github (it's unnecessary remote storage); instead, you `package.json` contains all the information anyone contributing to the project will need. 
