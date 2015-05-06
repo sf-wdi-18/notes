@@ -165,6 +165,24 @@ NPM is the [Node Package Manager](https://www.npmjs.com/) which helps us **manag
 
 Much of node's most powerful capabilities are unlocked when leveraging the power of the packages it has available to it. Let's take a second to explore! 
 
+## NPM Version Managing
+
+Using a package manager helps manage dependencies. This allows developers to share code and ensure that and requirements/dependencies to other libraries are versioned correctly. The `package.json` file contains the information of the project and, even more importantly, all it's dependencies!
+
+####To add a dependency to your project
+
+```
+npm init					//Creates a package.json file.
+npm install underscore chalk bower --save	//When installing, adding '--save' adds your dependencies
+						//to the package.json (you can chain packages together).
+```
+
+It is bad practice to commit your `node_modules` directory to github (it's unnecessary remote storage); instead, you `package.json` contains all the information anyone contributing to the project will need. 
+
+####To bring dependencies into you project
+
+The command: `npm install` will look for a `package.json` file and install all of the dependencies into your project. Sweet!
+
 ##Playing w/ Chalk
 
 In sublime add the following content to the `play.js` file
