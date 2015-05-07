@@ -36,7 +36,7 @@ By the time you submit this project, you will have leveled-up in many big themes
 - **Terminal**: Practice interacting with the computer and navigating the filesystem from the command line.
 - **Git**: Manage and interact with a git repository to store changes to code.
 - **JavaScript**: Work with objects, constructors, and events, while learning how to strategically solve problems and resolve errors.
-- **Front-End**:  Structure, style, and animate documents within a browser. Also learn how to respond to actions your users take and the data they input into the browser.
+- **Front-End**:  Structure, style, and animate documents within a browser. Also, learn how to respond to actions your users take and the data they input into the browser.
 - **Documentation**: Document your code and your code repository so others understand what you've built.
 
 
@@ -60,10 +60,11 @@ Your app must:
 
 * Integrate **Object Oriented Programming** design patterns
 * Use **jQuery**
-* Abide to the **separation of concerns** principle with different HTML, CSS, & JavaScript files
+* Abide by the **separation of concerns** principle with different HTML, CSS, & JavaScript files
 * **Make it beautiful!**
 * Stick with the **KISS**(Keep It Simple Stupid)and **DRY**(Don’t Repeat Yourself) principles
-* Save your work to **a public Github repository** and commit frequently!
+* Include  **a public Github repository** with frequent commits and helpful commit messages!
+* Have useful documentation that you or other developers can reference later.
 
 ---
 
