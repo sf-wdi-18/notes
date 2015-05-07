@@ -21,7 +21,7 @@
 
 Let's build our final game, synthesizing all the knowledge you've packed into your brain over the past two weeks!
 
-We'll be making one last version of **Tic Tac Toe** again with a few more twists. We'll be asking you to design the game with **Object Oriented Programming** patterns in mind as well as leveraging the power of **jQuery** to write more imperative code.
+We'll be making one last version of **Tic Tac Toe** with a few more twists. We'll be asking you to design the game with **Object Oriented Programming** patterns in mind, as well as leveraging the power of **jQuery** to write more imperative code.
 
 
 **You will be working individually for this project**, but we'll be guiding you along the process and helping as you go.. Show us what you've got!
@@ -35,7 +35,7 @@ By the time you submit this project, you will have leveled-up in many big themes
 
 - **Terminal**: Practice interacting with the computer and navigating the filesystem from the command line.
 - **Git**: Manage and interact with a git repository to store changes to code.
-- **JavaScript**: Work with objects, constructors, events, while learning how to strategically solve problems and resolve errors.
+- **JavaScript**: Work with objects, constructors, and events, while learning how to strategically solve problems and resolve errors.
 - **Front-End**:  Structure, style, and animate documents within a browser. Also learn how to respond to actions your users take and the data they input into the browser.
 - **Documentation**: Document your code and your code repository so others understand what you've built.
 
