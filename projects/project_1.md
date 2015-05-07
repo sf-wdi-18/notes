@@ -75,7 +75,6 @@ The user should...
 * see a **game board** on page load
 * **switch turns** between playing X and O
 * be able to see **which side won** or if was a draw
-* 
 
 ---
 
