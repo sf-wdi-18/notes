@@ -318,6 +318,21 @@ Now this might seem fine, but we aren't done here yet. the `setColor` function s
 
 
 function RaveDiv() {
+   	this.$raveEl = $("<div id='rave'>");  
+	this.$raveEl.css({						
+		width: "100px",
+		height:  "100px"
+	});
+	
+	this.$colorDetails = $("<form id='colorDetails'>")
+	this.$colorDetails.append("<input id='red'>")
+				  .append("<input id='green'>")
+   	  		      .append("<input id='blue'>");
+	
+	this.$raveEl.append(this.$colorDetails)
+	$("body").append(this.$raveEl);
+	
+	
 	this.colors = {
 						red: 255,
 						green: 255,
