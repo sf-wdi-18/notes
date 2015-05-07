@@ -94,7 +94,7 @@ The user should...
 * **Break the project down into different components** (data, presentation, views, style, DOM manipulation) and brainstorm each component individually. Use whiteboards!
 * **Use your Development Tools** (console.log, inspector, alert statements, etc) to debug and solve problems
 * **Use your classmates as resources**, once you have asked 3 people & Googled it, feel free to ask an instructor.
-* **Commit early, commit often.**
+* **Commit early, commit often.**  Write commit messages that help you remember what you've changed in each commit.
 * **Don’t be afraid to break something** because you can always go back in time to a previous version (given you have followed the previous tip).
 * **Use the docs and be a Google wizard** This is what developers spend most of their time doing!
 * **Don’t be afraid to write code that you know you will have to remove later.** Create temporary elements (buttons, links, etc) that trigger events if real data is not available. For example, if you’re trying to figure out how to change some text when the game is over but you haven’t solved the win/lose game logic, you can create a button to simulate that until then.
@@ -107,7 +107,7 @@ The user should...
 * Head to the starter project [repo](https://github.com/sf-wdi-18/Project_1_TTT) & **FORK IT**
 * Clone you forked version of the repo locally to your computer
 * Use the code inside `app.js`, `index.html`, and `main.css` to get started on your project
-* Read this entire document before writing a line of code
+* **Read this entire document before writing a line of code.**
 
 ---
 
