@@ -84,7 +84,8 @@ The user should...
 
 * A **working game, built by you**
 * A **git repository hosted on Github** with frequent commits dating back to the very beginning of the project
-* **A ``readme.md`` file** with explanations of the **technologies used**, **existing features**, **planned features**, and anything else you'd like to add.
+* **A `readme.md` file** with explanations of the **technologies used**, **existing features**, **planned features**, and anything else you'd like to add.
+
 ---
 
 ### Tips
