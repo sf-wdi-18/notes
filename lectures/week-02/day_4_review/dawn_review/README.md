@@ -146,7 +146,7 @@ Use jQuery to try the following:
 
 ### Stage 2
 
-* **Refactor:** let's get rid of our `Less Blue` button. Instead create a form with id `colorDetails`. Give the `colorDetails` form three inputs. Use the `change` event to listen for when the form *changes*. When the form changes `console.log` the `event.target.value` and `event.target.id`. **Discusss in your groups how you can use this to update the `backgroundColor` of the `colorDetails`.**
+* **Refactor:** let's get rid of our `Less Blue` button. Instead create a form with id `colorDetails`. Give the `colorDetails` form three inputs. Use the `change` event to listen for when the form *changes*. When the form changes `console.log` the `event.target.value` and `event.target.id`. **Discusss in your groups how you can use this to update the `backgroundColor` of the `#rave` element.**
 * **Refactor:** take the logic for updating your background-color and put it into a function called `setColor`.
 * **Feature Creep**: create a button inside your `#rave` with id of `toggleDetails`. When the `#toggleDetails` button is clicked you should show/hide the `colorDetails` form. 
 	* NOTE: due to the performance problems of using **jQuery's** built-in show/hide methods try toggling a class of `hidden`.
