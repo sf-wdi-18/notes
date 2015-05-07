@@ -41,13 +41,13 @@ var isPalindrome = function(str) {
 Write a function `isMagic` that takes in a matrix, represented as an array of arrays of length N and returns true if the matrix is a magic square and false otherwise. For Example:
 
 ```
-isMagic[[1,2,3], => false
+isMagic([[1,2,3], => false
         [4,5,6],
-        [7,8,9]]
+        [7,8,9]])
         
-isMagic[[2,7,6], => true
+isMagic([[2,7,6], => true
         [9,5,1],
-        [4,3,8]]
+        [4,3,8]])
 ```
 
 Here is some starter code:
