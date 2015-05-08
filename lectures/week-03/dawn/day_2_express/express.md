@@ -2,9 +2,9 @@
 
 ##Objectives
 
-* Initialize an express app
-* Pull information out of the req object
-* Build a calculator app
+* Initialize an express app (20m)
+* Pull information out of the req object (30m)
+* Build a calculator app (30m)
 
 
 ##Work flow
@@ -16,7 +16,7 @@
 
 * The navigator must have their computer closed.
 * The driver is the only touching the computer.
-* We will switch roles every 15m.
+* We will switch roles every 10m.
 * Switching will involve the previous driver pushing to github and the previous navigator pulling down the changes. Do this every time you switch.
   
 
@@ -33,7 +33,31 @@ On [GitHub](http://www.github.com)
 
 Install express globally: `npm install express`. Installing it globally allows us to use it as a CLI to generate apps.
 
-##D
+##Notes
+
+#####Checkins
+
+Either choose pair to present solution
+
+*or*
+
+list of pain points and call on students to address them & give color
+
+#####Timing
+
+* Intro 5m — pair programming guidelines
+* Init app — 10m work & 5m discussion
+* Req obj — 20m & 10m
+* Break - 10m
+* Cal app — 20m & 10m 
+
+* 80m total
+
+
+
+#####Framing
+
+Frame that the last exercise may not be complete
 
 ##Ref
 * [WDI 17](https://github.com/sf-wdi-17/notes/blob/master/lectures/week-03/_1_monday/dusk/README.md)
