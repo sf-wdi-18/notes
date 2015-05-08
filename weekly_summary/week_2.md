@@ -25,4 +25,18 @@
 
 ### [Iterator Challenge](https://github.com/sf-wdi-18/iterators_hmwk)
 
-  
+## Thursday
+
+* [jQuery/prototypes REVIEW DAY](https://github.com/sf-wdi-18/notes/tree/master/lectures/week-02/day_4_review/dawn_review)
+
+### [Weekend Lab](https://github.com/sf-wdi-18/Project_1_TTT)
+
+## Friday Review
+
+Breakout Groups For
+
+* Intro Bootstrap led by Ryan
+* Iterators Callbacks led by Nathan
+* Prototypes, OOP, Constructors led by Brianna
+* Productivity led by Ilias
+
