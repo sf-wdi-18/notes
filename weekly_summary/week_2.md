@@ -12,5 +12,11 @@
 
 ## Tuesday
 
+* [Prototypical Inheritance](https://github.com/sf-wdi-18/notes/tree/master/lectures/week-02/day_2_jQuery/dawn_prototypal_inheritance)
+* [Intro jQuery](https://github.com/sf-wdi-18/notes/tree/master/lectures/week-02/day_2_jQuery/dusk_jquery)
+
+### [Tic-Tac-Toe jQuery Refactor](https://github.com/sf-wdi-18/tic_tac_toe_jquery_refactor)
+
+
 
   
