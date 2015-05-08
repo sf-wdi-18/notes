@@ -17,6 +17,12 @@
 
 ### [Tic-Tac-Toe jQuery Refactor](https://github.com/sf-wdi-18/tic_tac_toe_jquery_refactor)
 
+## Wednesday
 
+* [Intro Node](https://github.com/sf-wdi-18/notes/blob/master/lectures/week-02/day_3_node/dawn/node-intro.md)
+  * [Inclass Activity](https://github.com/sf-wdi-18/notes/tree/master/lectures/week-02/day_3_node/dawn/in-class-activity)
+* [Iterators](https://github.com/sf-wdi-18/notes/tree/master/lectures/week-02/day_3_node/dusk_iterators)
+
+### [Iterator Challenge](https://github.com/sf-wdi-18/iterators_hmwk)
 
   
