@@ -158,7 +158,7 @@ var greet = require('./greetings');
 ```
 
 * And then call it with `greet.greeting();`
-* // => "Hey buddyguy!"
+* `"Hey buddyguy!"`
 
 ##Installing packages using NPM
 
