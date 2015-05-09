@@ -157,7 +157,8 @@ Adding our function to the exports object allows it to be exported!
 var greet = require('./greetings');
 ```
 
-* And then call it with `greet.sayHi()`
+* And then call it with `greet.greeting();`
+* // => "Hey buddyguy!"
 
 ##Installing packages using NPM
 
