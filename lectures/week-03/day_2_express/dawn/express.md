@@ -6,32 +6,65 @@
 * Pull information out of the req object (30m)
 * Build a calculator app (30m)
 
+##Intro
 
-##Work flow
+#####Express
+* [Express](http://expressjs.com/) is a configurable, minimalist web framework for Node.js.
 
-* Work with the person sitting next to you, you guys will **pair program**
-* The person whose name is alphabetically first will navigate first.
+#####Goal
+* Today we will be starting
 
-##Pair programming
+##Workflow Guidelines
 
-* The navigator must have their computer closed.
-* The driver is the only touching the computer.
-* We will switch roles every 10m.
-* Switching will involve the previous driver pushing to github and the previous navigator pulling down the changes. Do this every time you switch.
+* Stand-up-hand-up, head to another table, high-five someone and both put your hands down. You have a partner to **pair program** with!
+* The person whose name is alphabetically first will be the first navigator.
+
+###Pair programming
+
+* Only one computer is used at a time between two people. The person doing the coding is the **driver** the one spot checking & guiding is the **navigator**
+* We will switch roles every **10m**.
+* Switching roles will involve the driver pushing to Github and the navigator pulling down the changes.
   
 
-##Setup
+##Project Initialization
 
-#####Local project directory
-`mkdir learningExpress`, `cd` into it & `git init`
+#####Create a project directory
+* `mkdir learningExpress` & `cd` into it
+* touch `app.js`
+* `npm init` and just press <enter> until it generates a `package.json` file for you
+* Initialize git with `git init`
+* Add & commit your changes
 
-#####Remote project repository
-On [GitHub](http://www.github.com) 
+#####Initialize a Github repo
+* Head to [GitHub](http://www.github.com) and click on the `+New repository` button
+* Name the repo `ExpressCalculator`
+* Check the box `Initialize this repository with a README`
+* Add the preset `.gitignore` for Node
 
-#####Add
+#####Add a collaborator
+* In your new repo, click on `settings`
+* In settings, navigate to the `collaborators` tab
+* Search for your teammate's Github handle, to add them as a project collaborator
+
+#####Link your local directory to your remote repo
+* Point your local project repo to your remote Github repo with `git remote add origin <clone-url>`, replace with the actual `clone-url` of your project (it should end in .git)
+*  Finally `git pull origin master` to merge changes locally
+*  Git add, commit, and push to commit the entire repo to Github
+
+##Using Express
 
 
-Install express globally: `npm install express`. Installing it globally allows us to use it as a CLI to generate apps.
+#####Add express to the project
+
+* `npm install express --save` adds Express to the project in a `node_modules` directory and saves it to the `package.json` file as a dependency.
+
+---
+
+
+---
+
+
+
 
 ##Notes
 
