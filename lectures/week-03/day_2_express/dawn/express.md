@@ -35,6 +35,9 @@ Install express globally: `npm install express`. Installing it globally allows u
 
 ##Notes
 
+#####Picking partners
+Standup hand-up: high-five someone, they are your partner! Partner from a diff table. Then have them make a repo together.
+
 #####Checkins
 
 Either choose pair to present solution
@@ -45,13 +48,13 @@ list of pain points and call on students to address them & give color
 
 #####Timing
 
-* Intro 5m — pair programming guidelines
+* Intro 10m — pair programming guidelines
 * Init app — 10m work & 5m discussion
 * Req obj — 20m & 10m
 * Break - 10m
 * Cal app — 20m & 10m 
 
-* 80m total
+* 85m total
 
 
 
