@@ -2,9 +2,10 @@
 
 ##Objectives
 
-* Initialize an express app *(~20m)*
-* Pull information out of the req object *(~30m)*
-* Build a calculator app *(~30m)*
+* Begin pair programming (*10m discussion*)
+* Initialize an express app *(10m pairing, 5m discussion)*
+* Pull information out of the req object *(20m pairing, 10m discussion)*
+* Build a calculator app *(20m pairing, 10m discussion)*
 
 ##Goal
 * Today we will be building a calculator web app. If we don't finish the whole exercise in class, that's OK, complete it for HW.
@@ -138,27 +139,45 @@ Let's build a calculator with our knowledge of express. Below you will find inst
 
 #####Addition
 
+* Let's create a function that will add two numbers as strings and sum them. It will be useful for this function to expect strings as inputs because our params will come into our application as strings.
+
+```
+var sum = function(num1, num2) { return parseInt(num1, 10) + parseInt(num2, 10) }
+```
 
 
-##Foot Notes
+* Let's create a new route for our application that will simulate a calculator
 
-#####Timing
+```
+//operation, num1, and num2 will all be parameters passed to the application by the user
+app.get("/:operation/:num1/:num2", function(req, res) {
+  var operation = req.params.operation;	//find specific param inside the req.params obj
+  var num1 = req.params.num1;				//same as above
+  var num2 = req.params.num2;
+  var response = "The answer is: ";
+  if (operation === "add") {
+    response += sum(num1, num2);			//string concatenation
+  } else {
+    response = "Makes no sense. 404 >_<";	//404 message
+  }
+  res.send(response); 						//final server response
+});
+```
 
-* Intro 10m — pair programming guidelines
-* Init app — 10m work & 5m discussion
-* Req obj — 20m & 10m
-* Break - 10m
-* Cal app — 20m & 10m 
+* KEEP IN MIND: If you make changes to your code you **must restart your server** before those changes will have any effect.
 
-* 85m total
+#####More Features!
 
-#####Framing
+* Now your turn, add the ability for the calculator to have the operations: subtraction, multiplication, and division.
 
-Frame that the last exercise may not be complete
+#####Bonus
 
-##Ref
-* [WDI 17](https://github.com/sf-wdi-17/notes/blob/master/lectures/week-03/_1_monday/dusk/README.md)
-* [WDI 14](https://github.com/sf-wdi-14/notes/blob/master/lectures/week-3/_2_tuesday/dusk/introduction-to-express.md)
-* [WDI Fall Dawn](https://github.com/wdi-sf-fall/notes/tree/master/week_03_intro_web_applications/day_01_intro_to_express/dawn_intro_express)
-* [WDI Fall Dusk](https://github.com/wdi-sf-fall/notes/tree/master/week_03_intro_web_applications/day_01_intro_to_express/dusk_more_express)
-* [Steps to create new express app](https://github.com/sf-wdi-17/notes/blob/master/reading/resources/steps_to_create_new_expressjs_app.md)
+* Add a 4th parameter `:color` that changes the calculator's output to be whatever color the user input
+
+---
+
+##Continued learning
+If you want to get a head start on future topics...
+
+* [Express Docs](http://expressjs.com/api.html) — the reference guide for building express apps
+* [`nodemon`](https://github.com/remy/nodemon) — nifty npm to incorporate code changes without manually restarting your server!
