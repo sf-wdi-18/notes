@@ -94,10 +94,3 @@ list of pain points and call on students to address them & give color
 #####Framing
 
 Frame that the last exercise may not be complete
-
-##Ref
-* [WDI 17](https://github.com/sf-wdi-17/notes/blob/master/lectures/week-03/_1_monday/dusk/README.md)
-* [WDI 14](https://github.com/sf-wdi-14/notes/blob/master/lectures/week-3/_2_tuesday/dusk/introduction-to-express.md)
-* [WDI Fall Dawn](https://github.com/wdi-sf-fall/notes/tree/master/week_03_intro_web_applications/day_01_intro_to_express/dawn_intro_express)
-* [WDI Fall Dusk](https://github.com/wdi-sf-fall/notes/tree/master/week_03_intro_web_applications/day_01_intro_to_express/dusk_more_express)
-* [Steps to create new express app](https://github.com/sf-wdi-17/notes/blob/master/reading/resources/steps_to_create_new_expressjs_app.md)
