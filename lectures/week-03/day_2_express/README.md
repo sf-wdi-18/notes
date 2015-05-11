@@ -1,5 +1,5 @@
 # Intro Express
-## Dawn: Routes, Params, and Queries
+## Routes, Params, and Queries
 
 | Objectives |
 | :---- |
@@ -290,8 +290,106 @@ We learned about
 This will be critical for building applications with multiple resources and interacting with them: `/users`, `/articles`, `/comments`, et cetera.
 
 
-## Dusk: Middleware, Static Files, and Assets
+## Middleware, Static Files, and Assets
 
 | Objectives |
 | :---- |
-| 
+| Review and discuss routing parameters |
+| Explain and apply basic middleware for express |
+| Apply static file serving for views and assets |
+
+
+
+### Outline
+
+* Review routing params
+* Introduce views
+	* Sendfile
+* Using forms
+* Handling form posts
+
+
+### Setting Up
+
+```
+mkdir burger_app/
+cd burger_app
+touch index.js
+npm init
+npm install --save express 
+```
+
+### Routing Params
+
+
+Let's build a `burgers` application. Let's start by creating a root route.
+
+
+
+```
+var express = require("express"),
+	app = express();
+
+
+// the root route
+app.get("/", function (req, res) {
+	var text = "View all burgers at " +
+				"<a href='/burgers'>/burgers</a>";
+	res.send(text);
+});
+
+app.listen(3000, function () {
+	console.log("GO TO localhost:3000");
+});
+
+```
+
+
+When you click the link after starting the server you should get an error. Now, let's add a route to view all burgers.
+
+
+```
+var express = require("express"),
+	app = express();
+
+var burgers = [
+				"Hamburger",
+				"Cheese Burger",
+				"Dble Cheese Burger"
+			   ];
+
+// the root route
+app.get("/", function (req, res) {
+	var text = "View all burgers at " +
+				"<a href='/burgers'>/burgers</a>";
+	res.send(text);
+});
+
+app.get("/burgers", function (req, res) {
+	var burgersText = burgers.join(", ");
+	res.send(burgersText);
+});
+
+app.listen(3000, function () {
+	console.log("GO TO localhost:3000");
+});
+
+```
+
+It is terrible that we are not sending properly formatted HTML responses, and we should build those up, but let's ignore that for now. We don't want to clutter our application right now with string concatentations.
+
+However, if there is a pretty stand HTML file you want to send as a response. There are ways to send files using Express.
+
+
+```
+var path = require("path");
+var views = path.join(__dirname, "views");
+
+...
+
+app.get("/contact", function (req, res) {
+	var contactPath = path.join(views, "contact.html");
+	res.sendFile(contactPath);
+});
+```
+
