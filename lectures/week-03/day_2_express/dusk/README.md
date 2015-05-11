@@ -615,10 +615,50 @@ app.listen(3000, function () {
 });
 ```
 
+-----
+
+### Adding Burgers
+
+Instead of just responding with `Nice ...` let's actually add a burger to our list of burgers.
+
+```
+app.post("/burgers", function (req, res) {
+	var burger = req.body.burger;
+	burgers.push(burger);
+	res.send("Nice " + burger.name);
+});
+
+``` 
+
+That's pretty good! We can also send back a url where they can view their new burger.
 
 
+```
+app.post("/burgers", function (req, res) {
+	var burger = req.body.burger;
+	burgers.push(burger);
+	res.send("See all burgers at localhost:3000/burgers");
+});
 
+```
 
+Even better we could use something called a `redirect` to just send their browser there.
+
+```
+app.post("/burgers", function (req, res) {
+	var burger = req.body.burger;
+	burgers.push(burger);
+	res.redirect("/burgers");
+});
+```
+
+### Adding Assets
+
+With our Express application we want to be able to serve assets **javascripts**, **stylesheets**, and **images**. By convention we generally put all these into a `public/` directory in our project.
+
+```
+app.use(express.static())
+```
 
 
 
