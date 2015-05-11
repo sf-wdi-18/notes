@@ -26,10 +26,12 @@ var $myNum = 1; // bad
 var $myDiv = $("<div>Hello World</div>");
 ```
 
-That would be the equivalent of writing:
+That would be the equivalent of writing out something like the follwoing:
 
 ```
 var myDiv = document.createElement("div");
+var innerText = document.createTextNode("Hello World");
+myDiv.appendChild(innerText);
 ```
 
 
