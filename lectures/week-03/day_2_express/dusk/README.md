@@ -657,8 +657,36 @@ app.post("/burgers", function (req, res) {
 With our Express application we want to be able to serve assets **javascripts**, **stylesheets**, and **images**. By convention we generally put all these into a `public/` directory in our project.
 
 ```
-app.use(express.static())
+app.use(express.static("public"))
+```
+
+Now we can make subfolders in our `public` folder for our assets.
+
+
+```
+mkdir public/javascripts
+mkdir public/stylesheets
+mkdir public/images
+
+touch public/stylesheets/app.css
 ```
 
 
+Inside of our `app.css` we can add some style for the body of our app.
+
+```
+body {
+	background-color: red;
+	color: white;
+}
+```
+
+
+Then we just add `link` tag in our `home.html` or other `view` files.
+
+
+```
+
+
+```
 
