@@ -530,7 +530,7 @@ When we submit this form we'll want to access the data being sent. There is only
 ### Middleware
 
 
-Let's install our first middleware. It's called `body-parser` and it will parse the body of a request being sent to use by the browser when a form is submitted.
+Let's install our first middleware. It's called `body-parser` and it will parse the body of a request being sent to us by the browser when a form is submitted.
 
 
 ```
@@ -549,7 +549,71 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 The `app.use` statement is telling our application to literally use the `body-parser` library before it moves onto route the request.
 
+Now that we have the above setup we can update our `app.post("/burgers", ...)` route to use the `body` params submitted by the form.
 
+```
+app.post("/burgers", function (req, res) {
+	var burger = req.body.burger;
+	res.send("Nice " + burger.name);
+});
+```
+
+
+All together we should have something like the following:
+
+
+```
+var express = require("express"),
+	app = express();
+
+
+var path = require("path");
+// define the ./views directory as a variable
+var views = path.join(process.cwd(), "views");
+
+var bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({extended: true}));
+
+var burgers = [
+				"Hamburger",
+				"Cheese Burger",
+				"Dble Cheese Burger"
+			   ];
+
+// the root route
+app.get("/", function (req, res) {
+	var text = "View all burgers at " +
+				"<a href='/burgers'>/burgers</a>";
+	res.send(text);
+});
+
+app.get("/burgers", function (req, res) {
+	var burgersText = burgers.join(", ");
+	res.send(burgersText);
+});
+
+app.get("/contact", function (req, res) {
+	// helps grab ./views/contact.html
+	var contactPath = path.join(views, "contact.html");
+	console.log(contactPath)
+	res.sendFile(contactPath);
+});
+
+app.get("/home", function (req, res) {
+	var homePath = path.join(views, "home.html");
+	res.sendFile(homePath);
+});
+
+app.post("/burgers", function (req, res) {
+	var burger = req.body.burger;
+	res.send("Nice " + burger.name);
+});
+
+app.listen(3000, function () {
+	console.log("GO TO localhost:3000");
+});
+```
 
 
 
