@@ -7,6 +7,9 @@
 | Describe the parts of an HTTP request and url  |
 | Apply basic routing knowledge to build a simple application |
 
+## Prereading
+
+* [HTTP Intro](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
 
 ## Outline
 
@@ -17,27 +20,18 @@
 	* Request Params
 * Query Params
 
-### Getting Started
-
-Before we get started let's setup a project directory.
-
-```
-mkdir express_examples
-cd express_examples/
-```
-
-## Intro Express
+###Express Context
 
 **Background**
 
-* What is Node.js?
-	* A tool to run JavaScript outside the browser and directly on your OS.
-* What is a *web application framework*?
-	* A tool for handling middleware integration, routing, and other relevant concerns.
-* What is Express?
-	* A relatively small web application for building applications in Node.js.
+* We already know that [Node.js](https://github.com/sf-wdi-18/notes/blob/master/lectures/week-02/day_3_node/dawn/node-intro.md)
+	* **is a tool to run JavaScript outside the browser, directly on your OS.**
+* But what is a *web application framework*?
+	* **A tool for handling middleware integration, routing, and other relevant concerns.**
+* How about [Express](http://expressjs.com/)?
+	* It is a configurable, minimal web framework for Node.
 
-### Setting Up	
+###Setup
 
 Let's start up a simple **Express** application before we go forward:
 
@@ -52,12 +46,12 @@ Let's start up a simple **Express** application before we go forward:
 * Then create a `package.json`, use the method below or substitute it with `npm init`.
 
 	```
-	echo {} > package.json
+	echo {} > package.json		#puts an empty object into a new `package.json`
 	npm install --save express
 	subl .
 	```
-	
-* ![folders](folders.png)
+The folder structure will be as follows:
+<img src="folders.png" style="width:500px;">
 
 
 Now we need write some code for our simple application.
@@ -66,13 +60,17 @@ Now we need write some code for our simple application.
 `index.js`
 
 ```
+// requirements
 var express = require('express'),
 	app = express();
 	
+// a "GET" request to "/" will run the function below
 app.get("/", function (req, res) {
+	// send back the response: 'Hello World'
 	res.send("Hello World");
 });
 
+// start the server
 app.listen(3000, function () {
 	console.log("Go to localhost:3000/");
 });
@@ -90,7 +88,7 @@ node index.js
 
 Go to `localhost:3000`
 
-* This sends a request like the following to the server
+* This sends a request to the server that looks like:
 	
 	```
 	GET / HTTP/1.1
@@ -119,7 +117,7 @@ Go to `localhost:3000`
 ![simple_server](simple_express.gif)
 
 
-## Routing
+##Routing
 
 Building an application will require us to have a firm grasp of something we call **routing**.  Each **route** is a combination of a **Request Type** and **Path**.
 
@@ -155,12 +153,12 @@ app.get("/", function (req, res) {
 });
 
 app.get("/burgers", function (req, res) {
-				   
+	//send all the burgers	   
 	res.send(burgers.join(", "));
 });
 
 app.get("/tacos", function (req, res) {
-				   
+	//send all the tacos		   
 	res.send(tacos.join(", "));
 });
 
@@ -172,14 +170,10 @@ app.listen(3000, function () {
 
 ### Route Params
 
-Typically you will want to interact with a `resource` on a server, but in order to do that you'll have to have specify an `id` of some sort.
 
+What if we want to create an app that can dynamically say hello to anyone?
 
-```
-GET `/tacos` => `Soft Taco, Crunchy Taco, Super Taco`
-```
-
-But that route doesn't really respond to the input we've specified. Fortunately, there is a way to make a route more dynamic. Let's add the following route:
+* Using **url parameters** add a dynamic route to the application, indicated by `:` and the variable name you want to use, we'll use `:name` for the example below.
 
 ```
 app.get("/greet/:name", function (req, res) {
@@ -196,31 +190,20 @@ Here we are seeing the first introduction to parameters that the application can
 
 ### Exercise
 
-* Write a route with to allow you to access a `taco` by it's index in the array.
-* Write a route with to allow you to access a `burger` by it's index in the array.
+* Write a route with to allow you to access a `taco` by it's index in the array, such that one could go to the route: "/taco/2".
+* Write a route with to allow you to access a `burger` by it's index in the array, similar to above.
 
-------
-
-The above routes require a little bit of engineering. We don't want to loose our nice route `/tacos` or `/burgers` that give us a list of burgers. However, we do need to indicate we want either a burger or taco.
-
-```
-app.get("/burgers/:index", function (req, res) {
-	var index = req.params.index;
-	var burger = burgers[index];
-	res.send(burger)
-});
-
-```
-
-Similarly, you do the same for a `taco`.
 
 ### Query Params
 
-Generally, you don't want to cram everything into a route. Just imagine when there can be multiple parameters in route. Or, consider what kind of experience you'd be creating for people if the go the order of parameters wrong. Luckily, there are query parameters you can send with each request to a server that can be used to send back a response.
+Generally, you don't want to cram everything into a route. Just imagine when there are multiple parameters in route. Maybe we don't care about getting the order of the parameters correct. Luckily, there are **query parameters** you can include with each request.
 
 
 Let's see query params in action. Go to [https://google.com/search?q=kittens&tbm=isch](https://google.com/search?q=kittens&tbm=isch)
 
+* `?` denotes the beginning of the query parameters
+* `=` indicates an assignment; anything to the left is the key, while the right represents the value
+* `&` allows for the input of multiple parameters, separating each
 
 Let's add our first route to practice query params.
 
@@ -231,18 +214,15 @@ app.get("/thank", function (req, res) {
 });
 ```
 
-Go to [localhost:3000/thank?name=jane](localhost:3000/thank?name=jane). Note how we are now listing our parameters in the url after a `?`.
-
-Let's continue our exploration of query parameters.
+Reset your server and go to [localhost:3000/thank?name=jane](localhost:3000/thank?name=jane). Note how we can now define parameters in the url after a `?`.
 
 ## Calculator Exercise
 
-* Build a `/multiply` route that uses query params `x` and `y` to multiply numbers and send the result back.
+* Let's pair-up to build a simple calculator app!
+* Integrate the `/multiply` route below into your app
 * Build a `/add` route that uses query params `x` and `y` to add two numbers and send the result back.
 
-----
-
-### Discussion
+###Further discussion
 
 For our `/multiply` route we can try something like the following:
 
@@ -255,39 +235,20 @@ app.get("/multiply", function (req, res) {
 });
 ```
 
-Hmm, that seems like it might work. Let's try that with our `/add` route.
-
-```
-app.get("/add", function (req, res) {
-	var x = req.query.x;
-	var y = req.query.y;
-	var result = x + y;
-	res.send(x + " plus " + y + " is " + result);
-});
-```
-
-Hmm, why doesn't the above work? Well, all parameters are strings so when we add them we are treating them as strings. We want to turn them into numbers first. You should use `parseInt` to convert the numbers to integers.
-
-```
-app.get("/add", function (req, res) {
-	var x = parseInt(req.query.x, 10);
-	var y = parseInt(req.query.y, 10);
-	var result = x + y;
-	res.send(x + " plus " + y + " is " + result);
-});
-```
-
-Note we said `parseInt` with `10` passed in as an argument because the we want integers in `base10`. You should refactor the `/multiply` route to also use `parseInt`.
-
 ## Summary
 
 We learned about 
 
-* Routing to different resources, i.e. `/burgers` and `/tacos`.
-* Using information in our route, i.e. `/burgers/:index` and `/tacos/:index`.
-* Using query paramters to form responses: `/thanks`, `/add`, and `/multiply`.
+* Routing to different resources, i.e. `/burgers` and `/tacos`
+* Using dynamic parameters, i.e. `/burgers/:index` and `/tacos/:index` to request a unique resource
+* Using query parameters for dynamic requests to serve up dynamic responses
 
-This will be critical for building applications with multiple resources and interacting with them: `/users`, `/articles`, `/comments`, et cetera.
+
+This will be essential knowledge for building and interacting with applications that contain multiple resources, such as users, posts, comments, etc.
+
+---
+
+---
 
 
 ## Middleware, Static Files, and Assets
@@ -377,7 +338,7 @@ app.listen(3000, function () {
 
 ```
 
-It is terrible that we are not sending properly formatted HTML responses, and we should build those up, but let's ignore that for now. We don't want to clutter our application right now with string concatentations.
+It is terrible that we are not sending properly formatted HTML responses, and we should build those up, but let's ignore that for now. We don't want to clutter our application right now with string concatenations.
 
 ### Sending A File
 
