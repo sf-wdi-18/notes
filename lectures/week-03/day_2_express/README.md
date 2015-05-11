@@ -309,6 +309,7 @@ This will be critical for building applications with multiple resources and inte
 * Handling form posts
 
 
+
 ### Setting Up
 
 ```
@@ -409,13 +410,32 @@ Then let's put some contact info in our `contact.html`.
 
 In order to send this file we will need to use `res.sendFile`, which is a utility built into Express to help us send files. Next, we want to be able to specify, which file we want to send, `./views/contact.html`. In order to build up the `path` to this file we are going to use a built in Node utility called `path`.
 
+> **path** is  just a utility built into node to help us **correctly** concat file paths
+> 
+> ```
+> var path = require("path");
+>
+> path.join("Documents/", "/Homework");
+> // => "Documents/Homework"
+>
+ ```
 
-Let's add the following lines to our application somewhere.
 
+
+Let's add the following lines to our application somewhere near the top. Then let's make a `views` variable to hold a string that references the `./views` directory. *Note that the `./` means **current working directory***.
+ 
 ```
 var path = require("path");
+// define the ./views directory as a variable
 var views = path.join(process.cwd(), "views");
 
+
+```
+
+
+Then let's add a route to handle grabbing the `contact.html` file from the `./views` directory.
+
+```
 ...
 
 app.get("/contact", function (req, res) {
@@ -433,6 +453,7 @@ var express = require("express"),
 	app = express();
 
 var path = require("path");
+// define the ./views directory as a variable
 var views = path.join(process.cwd(), "views");
 
 
@@ -471,4 +492,4 @@ app.listen(3000, function () {
 
 * Add a `home.html` file to your `views` folder and put some content inside it. Send it as a response when users go to [localhost:3000](localhost:3000/).
 
-Let's make a 
+Let's make a `form` on our page to help us submit data to the browser 
