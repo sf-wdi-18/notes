@@ -233,6 +233,49 @@ app.get("/thank", function (req, res) {
 
 Go to [localhost:3000/thank?name=jane](localhost:3000/thank?name=jane). Note how we are now listing our parameters in the url after a `?`.
 
+Let's continue our exploration of query parameters.
+
+## Calculator Exercise
+
+* Build a `/multiply` route that uses query params `x` and `y` to multiply numbers and send the result back.
+* Build a `/add` route that uses query params `x` and `y` to add two numbers and send the result back.
+
+----
+
+### Discussion
+
+For our `/multiply` route we can try something like the following:
+
+```
+app.get("/multiply", function (req, res) {
+	var x = req.query.x;
+	var y = req.query.y;
+	var result = x * y;
+	res.send(x + " plus " + y + " is " + result);
+});
+```
+
+Hmm, that seems like it might work. Let's try that with our `/add` route.
+
+```
+app.get("/add", function (req, res) {
+	var x = req.query.x;
+	var y = req.query.y;
+	var result = x + y;
+	res.send(x + " plus " + y + " is " + result);
+});
+```
+
+Hmm, why doesn't the above work? Well, all parameters are strings so when we add them we are treating them as strings. We want to turn them into numbers first. You should use `parseInt` to convert the numbers to integers.
+
+```
+app.get("/add", function (req, res) {
+	var x = parseInt(req.query.x, 10);
+	var y = parseInt(req.query.y, 10);
+	var result = x + y;
+	res.send(x + " plus " + y + " is " + result);
+});
+```
 
 
 
