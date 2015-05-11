@@ -576,10 +576,99 @@ app.listen(3000, function () {
 });
 ```
 
+-----
+
+### Adding Burgers
+
+Instead of just responding with `Nice ...` let's actually add a burger to our list of burgers.
+
+```
+app.post("/burgers", function (req, res) {
+	var burger = req.body.burger;
+	burgers.push(burger);
+	res.send("Nice " + burger.name);
+});
+
+``` 
+
+That's pretty good! We can also send back a url where they can view their new burger.
 
 
+```
+app.post("/burgers", function (req, res) {
+	var burger = req.body.burger;
+	burgers.push(burger);
+	res.send("See all burgers at localhost:3000/burgers");
+});
+
+```
+
+Even better we could use something called a `redirect` to just send their browser there.
+
+```
+app.post("/burgers", function (req, res) {
+	var burger = req.body.burger;
+	burgers.push(burger);
+	res.redirect("/burgers");
+});
+```
+
+### Adding Assets
+
+With our Express application we want to be able to serve assets **javascripts**, **stylesheets**, and **images**. By convention we generally put all these into a `public/` directory in our project.
+
+```
+app.use(express.static("public"))
+```
+
+Now we can make subfolders in our `public` folder for our assets.
 
 
+```
+mkdir public/javascripts
+mkdir public/stylesheets
+mkdir public/images
+
+touch public/stylesheets/app.css
+```
 
 
+Inside of our `app.css` we can add some style for the body of our app.
+
+```
+body {
+	background-color: red;
+	color: white;
+}
+```
+
+
+Then we just add `link` tag in our `home.html` or other `view` files.
+
+
+```
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HOME</title>
+	</head>
+	<body>
+	<form action="/burgers" method="POST">
+		<input type="text" name="burger[name]" placeholder="what's your burger?">
+		<button>SEND REQUEST</button>
+	</form>
+	</body>
+</html>
+
+```
+
+### Adding Bower
+
+If you still want to use `bower_components` you'll need to tell express to send assets in the `bower_components` folder. Add the following line to your `index.js`.
+
+
+```
+app.use(express.static("bower_components"));
+
+```
 
