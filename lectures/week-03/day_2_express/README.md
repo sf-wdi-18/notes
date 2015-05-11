@@ -1,4 +1,4 @@
-# Intro Express
+# Intro to Web Frameworks: Express.js
 ## Routes, Params, and Queries
 
 | Objectives |
