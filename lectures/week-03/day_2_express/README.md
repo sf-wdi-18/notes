@@ -279,6 +279,15 @@ app.get("/add", function (req, res) {
 
 Note we said `parseInt` with `10` passed in as an argument because the we want integers in `base10`. You should refactor the `/multiply` route to also use `parseInt`.
 
+## Summary
+
+We learned about 
+
+* Routing to different resources, i.e. `/burgers` and `/tacos`.
+* Using information in our route, i.e. `/burgers/:index` and `/tacos/:index`.
+* Using query paramters to form responses: `/thanks`, `/add`, and `/multiply`.
+
+This will be critical for building applications with multiple resources and interacting with them: `/users`, `/articles`, `/comments`, et cetera.
 
 
 ## Dusk: Middleware, Static Files, and Assets
