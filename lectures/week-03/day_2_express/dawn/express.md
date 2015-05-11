@@ -91,12 +91,6 @@ console.log("listening on port 3000");
 
 ##Requests
 
-#####Custom routes
-
-What if we want to create an app that can dynamically say hello to anyone?
-
-* Using **url parameters** add a dynamic route to the application, indicated by `:someParam`.
-
 ```
 app.get("/:name", function(req, res) {
   var name = req.params.name;  //access the name inside of `req.params`
