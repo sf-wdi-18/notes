@@ -686,7 +686,18 @@ Then we just add `link` tag in our `home.html` or other `view` files.
 
 
 ```
-
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HOME</title>
+	</head>
+	<body>
+	<form action="/burgers" method="POST">
+		<input type="text" name="burger[name]" placeholder="what's your burger?">
+		<button>SEND REQUEST</button>
+	</form>
+	</body>
+</html>
 
 ```
 
