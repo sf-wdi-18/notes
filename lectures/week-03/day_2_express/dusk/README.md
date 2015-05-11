@@ -701,3 +701,13 @@ Then we just add `link` tag in our `home.html` or other `view` files.
 
 ```
 
+### Adding Bower
+
+If you still want to use `bower_components` you'll need to tell express to send assets in the `bower_components` folder. Add the following line to your `index.js`.
+
+
+```
+app.use(express.static("bower_components"));
+
+```
+
