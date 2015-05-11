@@ -277,6 +277,8 @@ app.get("/add", function (req, res) {
 });
 ```
 
+Note we said `parseInt` with `10` passed in as an argument because the we want integers in `base10`. You should refactor the `/multiply` route to also use `parseInt`.
+
 
 
 ## Dusk: Middleware, Static Files, and Assets
