@@ -175,13 +175,3 @@ app.get("/:operation/:num1/:num2", function(req, res) {
 * Add a 4th parameter `:color` that changes the calculator's output to be whatever color the user input
 
 ---
-
-<<<<<<< HEAD
-##Continued learning
-If you want to get a head start on future topics...
-
-* [Express Docs](http://expressjs.com/api.html) — the reference guide for building express apps
-* [`nodemon`](https://github.com/remy/nodemon) — nifty npm to incorporate code changes without manually restarting your server!
-=======
-Frame that the last exercise may not be complete
->>>>>>> a580f56deb017b416875e3a1ea46af5a2cb42b3d
