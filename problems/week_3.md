@@ -1,5 +1,8 @@
 #Week 3 Warmups
 
+"Expect problems and eat them for breakfast."
+-Alfred A. Montapert
+
 ##Problem 1: Simple Search
 Write a function `simpleSearch` that takes a two parameters: `val` and `arr`, where arr = some array to search, and val = the value to search for. If the value is found in the array, your function should return the index of that value. If the value is not found, your function should return -1.
 
