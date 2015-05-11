@@ -7,7 +7,7 @@
 | Describe the parts of an HTTP request and url  |
 | Apply basic routing knowledge to build a simple application |
 
-## Prereading
+## Pre-reading
 
 * [HTTP Intro](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
 
@@ -20,7 +20,7 @@
 	* Request Params
 * Query Params
 
-###Express Context
+##Express Intro (15m)
 
 **Background**
 
@@ -84,7 +84,7 @@ node index.js
 ```
 
 
-### Viewing Our Server 
+###Viewing Our Server 
 
 Go to `localhost:3000`
 
@@ -117,9 +117,9 @@ Go to `localhost:3000`
 ![simple_server](simple_express.gif)
 
 
-##Routing
+## Routing (15m)
 
-Building an application will require us to have a firm grasp of something we call **routing**.  Each **route** is a combination of a **Request Type** and **Path**.
+Building an application will require us to have a firm grasp of something we call **routing**.  Each **route** is a combination of a **Request Type** and **Path**. 
 
 | Request Type | Request Path | Response
 | :--- | :--- | :--- |
@@ -168,7 +168,9 @@ app.listen(3000, function () {
 
 ```
 
-### Route Params
+##BREAK! (10m)
+
+## Url Parameters (10m)
 
 
 What if we want to create an app that can dynamically say hello to anyone?
@@ -188,13 +190,13 @@ Here we are seeing the first introduction to parameters that the application can
 | `GET` | `/greet/:name` | `Hello, :name` |
 
 
-### Exercise
+## Exercise: Indexing a collection (10m)
 
 * Write a route with to allow you to access a `taco` by it's index in the array, such that one could go to the route: "/taco/2".
 * Write a route with to allow you to access a `burger` by it's index in the array, similar to above.
 
 
-### Query Params
+## Query Params (10m)
 
 Generally, you don't want to cram everything into a route. Just imagine when there are multiple parameters in route. Maybe we don't care about getting the order of the parameters correct. Luckily, there are **query parameters** you can include with each request.
 
@@ -216,15 +218,13 @@ app.get("/thank", function (req, res) {
 
 Reset your server and go to [localhost:3000/thank?name=jane](localhost:3000/thank?name=jane). Note how we can now define parameters in the url after a `?`.
 
-## Calculator Exercise
+## Exercise: Calculator app (15M)
 
 * Let's pair-up to build a simple calculator app!
 * Integrate the `/multiply` route below into your app
 * Build a `/add` route that uses query params `x` and `y` to add two numbers and send the result back.
 
-###Further discussion
-
-For our `/multiply` route we can try something like the following:
+For our a `/multiply` route that expects `x` & `y` in the query parameters, we can try something like the following:
 
 ```
 app.get("/multiply", function (req, res) {
@@ -235,12 +235,13 @@ app.get("/multiply", function (req, res) {
 });
 ```
 
-## Summary
+
+## Summary (5m)
 
 We learned about 
 
 * Routing to different resources, i.e. `/burgers` and `/tacos`
-* Using dynamic parameters, i.e. `/burgers/:index` and `/tacos/:index` to request a unique resource
+* Using dynamic parameters, i.e. `/burgers/:index` and `/tacos/:index` to request specific data
 * Using query parameters for dynamic requests to serve up dynamic responses
 
 
