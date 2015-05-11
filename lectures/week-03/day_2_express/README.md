@@ -378,6 +378,8 @@ app.listen(3000, function () {
 
 It is terrible that we are not sending properly formatted HTML responses, and we should build those up, but let's ignore that for now. We don't want to clutter our application right now with string concatentations.
 
+### Sending A File
+
 However, if there is a pretty stand HTML file you want to send as a response. There are ways to send files using Express.
 
 
@@ -463,3 +465,10 @@ app.listen(3000, function () {
 	console.log("GO TO localhost:3000");
 });
 ```
+
+
+### Exercise 
+
+* Add a `home.html` file to your `views` folder and put some content inside it. Send it as a response when users go to [localhost:3000](localhost:3000/).
+
+Let's make a 
