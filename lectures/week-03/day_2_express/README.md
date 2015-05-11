@@ -381,15 +381,85 @@ It is terrible that we are not sending properly formatted HTML responses, and we
 However, if there is a pretty stand HTML file you want to send as a response. There are ways to send files using Express.
 
 
+Let's first create the file we want to send.
+
+```
+mkdir views
+touch views/contact.html
+```
+
+Then let's put some contact info in our `contact.html`.
+
+`views/contact.html`
+
+```
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CONTACT</title>
+	</head>
+	<body>
+	1234567
+	</body>
+</html>
+
+```
+
+In order to send this file we will need to use `res.sendFile`, which is a utility built into Express to help us send files. Next, we want to be able to specify, which file we want to send, `./views/contact.html`. In order to build up the `path` to this file we are going to use a built in Node utility called `path`.
+
+
+Let's add the following lines to our application somewhere.
+
 ```
 var path = require("path");
-var views = path.join(__dirname, "views");
+var views = path.join(process.cwd(), "views");
 
 ...
 
 app.get("/contact", function (req, res) {
+	// helps go to ./views/contact.html
 	var contactPath = path.join(views, "contact.html");
 	res.sendFile(contactPath);
 });
 ```
 
+
+In total we should have the following:
+
+```
+var express = require("express"),
+	app = express();
+
+var path = require("path");
+var views = path.join(process.cwd(), "views");
+
+
+var burgers = [
+				"Hamburger",
+				"Cheese Burger",
+				"Dble Cheese Burger"
+			   ];
+
+// the root route
+app.get("/", function (req, res) {
+	var text = "View all burgers at " +
+				"<a href='/burgers'>/burgers</a>";
+	res.send(text);
+});
+
+app.get("/burgers", function (req, res) {
+	var burgersText = burgers.join(", ");
+	res.send(burgersText);
+});
+
+app.get("/contact", function (req, res) {
+	// helps grab ./views/contact.html
+	var contactPath = path.join(views, "contact.html");
+	console.log(contactPath)
+	res.sendFile(contactPath);
+});
+
+app.listen(3000, function () {
+	console.log("GO TO localhost:3000");
+});
+```
