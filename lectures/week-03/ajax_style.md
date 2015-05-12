@@ -90,7 +90,17 @@ $input.on("change", function (e) {
 });
 ```
 
+If you want to quickly gather all the input field name and value pairs from a form you should use `jQuery#serialize`
 
+
+```
+var $newArticle = $("form#newArticle");
+$newArticle.on("change", function (e) {
+  var $this = $(this);
+  console.log("Article info", $this.serialize());
+});
+
+```
 
 
 
