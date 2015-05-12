@@ -58,7 +58,14 @@ HTTP Related
 * What is the main difference between the two?
 
 
-##
+## Getting Started
+
+Let's setup your application directory:
+
+```
+mkdir todo_app
+cd todo_app
+```
 
 
 
