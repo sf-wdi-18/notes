@@ -192,7 +192,9 @@ $myDiv.data(); // => { count: 1 }
 
 Be sure to only remove elements from the DOM using jQuery though after you do this.
 
+### Avoid Using `hide/show`
 
+Just do not use these methods ever.
 
 
 
