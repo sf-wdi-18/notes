@@ -43,12 +43,52 @@ var $myDiv = $("div#greeting");
 
 ```
 $(function () {
-  console.log("DOCUMENT LOADED!");
-})
+  console.log("DOCUMENT READY!");
+});
+```
+
+Which is equivalent to the following:
+
+```
+$(document).ready("ready", function () {
+  console.log("DOCUMENT READY!");
+});
 ```
 
 
+## Events
 
+When setting events you should use the `jQuery#on` method.
+
+
+```
+var $myDiv = $("div#greeting");
+$myDiv.on("click", function (e) {
+  console.log("clicked");
+});
+```
+
+Be sure to remember to `preventDefault()` for certain events
+
+
+```
+var $articleForm = $("form#newArticle");
+$articleForm.on("click", function (e) {
+  e.preventDefault();
+  console.log("The form was stopped!");
+});
+```
+
+If you just have an `input` field not in a form you might listen for a `change` event.
+
+```
+var $input = $("input#playerName");
+$input.on("change", function (e) {
+  var $this = $(this);
+  var playerName = $this.val();
+  console.log("Player name", playerName);
+});
+```
 
 
 
