@@ -116,6 +116,7 @@ Go to `localhost:3000`
 	```
 We can verify this with the [cURL](http://curl.haxx.se/) command: `curl -I localhost:3000`.
 
+###A request/response cycle
 ![simple_server](simple_express.gif)
 
 
