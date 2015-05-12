@@ -11,6 +11,17 @@
 
 * [HTTP Intro](http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)
 
+## Terminology
+
+* HTTP
+* TCP
+* Resource path
+* Query string
+* HTTP verb
+* Status code
+* Network packet
+* W3C
+
 ## Outline
 
 * Intro to Express
