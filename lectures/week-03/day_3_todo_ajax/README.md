@@ -123,6 +123,18 @@ Let's add the usual boilerplate HTML.
 </html>
 ```
 
+Let's add logic to our **root** route to send this file.
+
+```
+var views = path.join(process.cwd(), "views");
+
+app.get("/", function (req, res) {
+  var homePath = path.join(views, "home.html");
+  res.sendFile(homePath);
+});
+```
+
+
 
 
 
