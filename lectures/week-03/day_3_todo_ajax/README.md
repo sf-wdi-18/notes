@@ -134,9 +134,15 @@ app.get("/", function (req, res) {
 });
 ```
 
+Go to [localhost:3000](localhost:3000/) and verify it is working as expected.
 
+## Adding jQuery
 
+We want to be able to interact with jQuery on our `index.html` page.
 
+```javascript
+
+```
 
 
 
