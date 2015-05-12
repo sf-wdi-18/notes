@@ -108,7 +108,7 @@ If you can get away with using a jQuery helper method for AJAX please use it.
 
 Doing a common `GET`
 
-```
+```javascript
 $.get("/articles").
   done(function (data) {
     console.log(data);
@@ -117,10 +117,40 @@ $.get("/articles").
 
 or a good ole `POST`
 
+```javascript
+$.post("/books", {
+    book: {
+      title: "The Giver",
+      author: "Lowis Lowry"
+    }
+  }).
+  .done(function (data) {
+    console.log(data);
+   });
+```
+
+then you should avoid the `jQuery#ajax` method. If you are doing something a little more interesting or needs more specificty that is not *a **GET** or **POST** type request with just a **data** and a **dataType** to expect back from the server.* Then you should look into using the `jQuery#ajax`.
+
+```javascript
+
+$.ajax({
+  type: "PUT",
+  url: "/books/1",
+  data: {
+          book: {
+                  title: "The Giver",
+                  author: "Lowis Lowry"
+                }
+        },
+  dataType: "json"
+}).done(function (data) {
+  console.log("A book update", data);
+});
+
 ```
 
 
-```
+
 
 
 
