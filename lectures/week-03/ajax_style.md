@@ -149,6 +149,62 @@ $.ajax({
 
 ```
 
+### Event Delegation
+
+If you are using jQuery to set events then you should consider using `jQuery#on` syntax and event delegation when possible.
+
+
+Adding `click` handlers to each `tr` should be avoided.
+
+```javascript
+
+// bad
+$("table#myTable tr").each(function (index, el) {
+  $(el).on("click", function (e) {
+    console.log("clicked tr", index);
+  });
+});
+```
+
+Add a `click` handler to the container of the collection.
+
+```javascript
+$("table#myTable").on("click", "tr", function (e) {
+  console.log(this);
+  console.log(e.target);
+  console.log(e.currentTarget);
+});
+
+```
+
+### Adding Data To Elements
+
+You can add `data` to an element using `jQuery#data` method.
+
+```javascript
+
+var $myDiv = $("div#greeting");
+$myDiv.data("count", 1);
+$myDiv.data("count") // => 1
+$myDiv.data(); // => { count: 1 }
+
+```
+
+Be sure to only remove elements from the DOM using jQuery though after you do this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
