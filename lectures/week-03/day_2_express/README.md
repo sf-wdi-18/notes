@@ -5,20 +5,32 @@
 | :---- |
 | Review and discuss the request and response cycle |
 | Describe the parts of an HTTP request and url  |
-| Apply basic routing knowledge to build a simple application |
+| Apply routing knowledge to build an express application |
 
 ## Pre-reading
 
-* [HTTP Intro](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+* [HTTP Intro](http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)
+
+## Terminology
+
+* HTTP
+* TCP
+* Resource path
+* Query string
+* HTTP verb
+* Status code
+* Network packet
+* W3C
 
 ## Outline
 
-* Intro Express
-	* A Simple App
+* Intro to Express
+	* A Hello World App
 * Routing
 	* HTTP GET  
 	* Request Params
 * Query Params
+* Calculator App
 
 ##Express Intro (15m)
 
@@ -29,11 +41,11 @@
 * But what is a *web application framework*?
 	* **A tool for handling middleware integration, routing, and other relevant concerns.**
 * How about [Express](http://expressjs.com/)?
-	* It is a configurable, minimal web framework for Node.
+	* **A configurable, minimal web framework for Node.**
 
 ###Setup
 
-Let's start up a simple **Express** application before we go forward:
+Let's start with a simple **Express** application.
 
 * Make a directory and `index.js`  
 	
@@ -43,7 +55,7 @@ Let's start up a simple **Express** application before we go forward:
 	touch index.js
 	```
 
-* Then create a `package.json`, use the method below or substitute it with `npm init`.
+* Then create a `package.json`, use the first line below or `npm init`.
 
 	```
 	echo {} > package.json		#puts an empty object into a new `package.json`
@@ -77,7 +89,7 @@ app.listen(3000, function () {
 
 ```
 
-Now you can start the web application: 
+Now you can start the server: 
 
 ```
 node index.js
@@ -113,7 +125,9 @@ Go to `localhost:3000`
 	
 	Hello World
 	```
+We can verify this with the [cURL](http://curl.haxx.se/) command: `curl -I localhost:3000`.
 
+###A request/response cycle
 ![simple_server](simple_express.gif)
 
 
