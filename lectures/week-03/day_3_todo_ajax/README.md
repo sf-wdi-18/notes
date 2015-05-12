@@ -65,7 +65,74 @@ Let's setup your application directory:
 ```
 mkdir todo_app
 cd todo_app
+touch index.js
+mkdir views
 ```
+
+Next initialize a *npm* project and install `express` and `body-parser`.
+
+```
+npm init
+npm install --save express body-parser
+```
+
+Create a simple `index.js` file for your application.
+
+`index.js`
+
+```
+var express = require("express"),
+  bodyParser = require("body-parser"),
+  path = require("path");
+
+var app = express();
+
+app.get("/", function (req, res) {
+  res.send("Hello World");
+});
+
+app.listen(3000, function () {
+  console.log("Running");
+});
+```
+
+
+Make sure this much is running by going [localhost:3000](localhost:3000)
+
+
+## Sending A File
+
+Instead of sending a `Hello World` response. Let's instead send a `home.html` in our `views/` directory.
+
+```bash
+touch views/home.html
+```
+
+Let's add the usual boilerplate HTML.
+
+```html
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo App</title>
+  </head>
+  <body>
+    Welcome!
+  </body>
+</html>
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
