@@ -357,7 +357,7 @@ It is terrible that we are not sending properly formatted HTML responses, and we
 
 ### Sending A File
 
-However, if there is a pretty stand HTML file you want to send as a response. There are ways to send files using Express.
+Sometimes there is a pretty static HTML file you want to send as a response. There are ways to send files using Express -- `res.sendFile`.
 
 
 Let's first create the file we want to send.
@@ -658,7 +658,7 @@ body {
 ```
 
 
-Then we just add `link` tag in our `home.html` or other `view` files.
+Then we just add a `link` tag in our `home.html` or other `view` files.
 
 
 ```
