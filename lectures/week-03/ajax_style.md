@@ -6,7 +6,7 @@
 
 * It is best practice to either **prefix** or **postfix** variable names that refer to jQuery objects with a `$` symbol.
 
-```
+```javascript
 var myTitle = $("h1#title"); // bad
 var $myDiv = $("div#greeting"); // good;
 var myTotal$ = $("div#total"); // okay
@@ -14,7 +14,7 @@ var myTotal$ = $("div#total"); // okay
 
 Note: don not go wild and just add `$` symbols to every variable
 
-```
+```javascript
 var $myNum = 1; // bad
 ```
 
@@ -22,26 +22,26 @@ var $myNum = 1; // bad
 
 * If you give the `$` an HTML like string it will return a jQuery wrapped collection of elements that represent it.
 
-```
+```javascript
 var $myDiv = $("<div>Hello World</div>");
 ```
 
 That would be the equivalent of writing out something like the follwoing:
 
-```
+```javascript
 var myDiv = document.createElement("div");
 var innerText = document.createTextNode("Hello World");
 myDiv.appendChild(innerText);
 ```
 * If you give jQuery a **css selector** it will find it and return it as an object wrapped in jQuery.
 
-```
+```javascript
 var $myDiv = $("div#greeting");
 ```
 
 * If you give jQuery a `function () {}` it will run that function after `document` is ready.
 
-```
+```javascript
 $(function () {
   console.log("DOCUMENT READY!");
 });
@@ -49,7 +49,7 @@ $(function () {
 
 Which is equivalent to the following:
 
-```
+```javascript
 $(document).ready("ready", function () {
   console.log("DOCUMENT READY!");
 });
@@ -61,7 +61,7 @@ $(document).ready("ready", function () {
 When setting events you should use the `jQuery#on` method.
 
 
-```
+```javascript
 var $myDiv = $("div#greeting");
 $myDiv.on("click", function (e) {
   console.log("clicked");
@@ -71,7 +71,7 @@ $myDiv.on("click", function (e) {
 Be sure to remember to `preventDefault()` for certain events
 
 
-```
+```javascript
 var $articleForm = $("form#newArticle");
 $articleForm.on("click", function (e) {
   e.preventDefault();
@@ -81,7 +81,7 @@ $articleForm.on("click", function (e) {
 
 If you just have an `input` field not in a form you might listen for a `change` event.
 
-```
+```javascript
 var $input = $("input#playerName");
 $input.on("change", function (e) {
   var $this = $(this);
@@ -93,7 +93,7 @@ $input.on("change", function (e) {
 If you want to quickly gather all the input field name and value pairs from a form you should use `jQuery#serialize`
 
 
-```
+```javascript
 var $newArticle = $("form#newArticle");
 $newArticle.on("change", function (e) {
   var $this = $(this);
@@ -102,11 +102,25 @@ $newArticle.on("change", function (e) {
 
 ```
 
+### AJAX
+
+If you can get away with using a jQuery helper method for AJAX please use it.
+
+Doing a common `GET`
+
+```
+$.get("/articles").
+  done(function (data) {
+    console.log(data);
+  });
+```
+
+or a good ole `POST`
+
+```
 
 
-
-
-
+```
 
 
 
