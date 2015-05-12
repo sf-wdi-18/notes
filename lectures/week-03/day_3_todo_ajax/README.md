@@ -16,7 +16,13 @@ We want to build a **TODO** application today.
 
 * Review related topics
 * Setup Todo Application Directory
-* Setup
+* Setup A Simple Hello World
+  * Render A `home.html` file
+  * Add `jQuery`
+* Make a JSON `GET /todos` route
+  * Use AJAX to get all `todos`.
+* Make a JSON `POST /todos` route
+  * Use AJAX to create new `todos`.
 
 ## Background
 
