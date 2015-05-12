@@ -114,6 +114,7 @@ Go to `localhost:3000`
 	
 	Hello World
 	```
+We can verify this with the [cURL](http://curl.haxx.se/) command: `curl -I localhost:3000`.
 
 ![simple_server](simple_express.gif)
 
