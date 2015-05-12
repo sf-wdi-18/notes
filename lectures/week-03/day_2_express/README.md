@@ -5,20 +5,21 @@
 | :---- |
 | Review and discuss the request and response cycle |
 | Describe the parts of an HTTP request and url  |
-| Apply basic routing knowledge to build a simple application |
+| Apply routing knowledge to build an express application |
 
 ## Pre-reading
 
-* [HTTP Intro](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+* [HTTP Intro](http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)
 
 ## Outline
 
-* Intro Express
-	* A Simple App
+* Intro to Express
+	* A Hello World App
 * Routing
 	* HTTP GET  
 	* Request Params
 * Query Params
+* Calculator App
 
 ##Express Intro (15m)
 
