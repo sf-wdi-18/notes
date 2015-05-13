@@ -194,9 +194,240 @@ bower install jquery
 and now we just need to add the `<script>` tag to our `home.html`.
 
 ```html
-  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="/jquery/dist/jquery.js"></script>
 
 ```
+
+### Thus Far
+
+`views/home.html`
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+    <script type="text/javascript" src="/jquery/dist/jquery.js"></script>
+  </head>
+  <body>
+    HELLO WORLD
+
+  </body>
+</html>
+```
+
+
+`index.js`
+
+```
+var express = require("express"),
+  bodyParser = require("body-parser"),
+  path = require("path");
+
+var app = express();
+
+app.use(express.static("public"));
+app.use(express.static("public"));
+
+var views = path.join(process.cwd(), "views");
+
+app.get("/", function (req, res) {
+  var homePath = path.join(views, "home.html");
+  res.sendFile(homePath);
+});
+
+app.listen(3000, function () {
+  console.log("Running");
+});
+```
+
+
+If you're having problems with seting up Bower then you should use a CDN for the remainder of this project. However, you should verify that your **CSS** is working before continueing.
+
+### Client Side JS
+
+We want to create an `public/javascripts/app.js` file that will have a majority of our application logic. Let's do that.
+
+```bash
+touch public/javascripts/app.js
+```
+
+And let's add some test code inside.
+
+`public/javascripts/app.js`
+
+```javascript
+$(function () {
+  alert("The Page Has Loaded!");
+});
+```
+
+Now we just need to make sure it properly linked with a script tag.
+
+`views/home.html`
+
+```html
+<script type="text/javascript" src="javascripts/app.js"></script>
+```
+
+**NOTE**: make sure your script tag above is below where you put jQuery.
+
+
+## Reading Todos
+
+* **Our first goal is to have `todos` on the server that we can render on the client side**
+
+Let's add a `todos` array in our `index.js` with some example todo objects.
+
+`index.js`
+
+```javascript
+
+var todos = [
+              {
+                index: 0,
+                title: "Finish Laundry",
+                description: "two loads left"
+              },
+              {
+                index: 1,
+                title: "Go To Gym",
+                description: "Leg Day"
+              }
+            ];
+
+```
+
+
+Now let's add a route to send all the todos when requested.
+
+`index.js`
+
+```javascript
+app.get("/todos", function (req, res) {
+  res.send(todos);
+});
+```
+
+
+Go to [/todos](localhost:3000/todos) to view all todos.
+
+
+### Using AJAX
+
+We now have a route to send all `todos` it's just a matter of adding jQuery to our `javascripts/app.js` that will make a request to our server to grab them.
+
+
+`public/javascripts/app.js`
+
+```javascript
+$(function () {
+  $.get("/todos").
+    done(function (data) {
+      console.log("RECEIVING RESPONSE");
+      console.log("DATA", data);
+    })
+});
+```
+
+You should see `todos` logged in your dev console in the browser.
+
+
+### Appending The Todos
+
+Let's go through `each` todo in the `data` and `append` them to the page.
+
+`public/javascripts/app.js`
+
+```javascript
+$(function () {
+  $.get("/todos").
+    done(function (data) {
+      console.log("RECEIVING RESPONSE");
+      console.log("DATA", data);
+      $(data).each(function (index, todo) {
+        var $todo = $("<div>" + todo.title + "</div>");
+        $("body").append($todo);
+      });
+    });
+});
+
+```
+
+We should now see todos on the page.
+
+## Exercises
+
+* Add a `div` to the `views/home.html` with class `todosCon` -- a todos container. Then `append` each `todo` to it.
+
+* Before you `append` each new `todo` to the page give it a class of `todo`.
+
+* Add some css for a the class `todo` in your `app.css`. Give each `todo` a border of `1px`.
+
+
+## Making Todos
+
+* **Our goal now that is to now be able to send `POST` requests to our server to add new todos, and then add them to the page**
+
+
+First we will need to add a trust form to our `views/home.html`
+
+```html
+<form id="newTodo">
+  <input type="text" name="todo[title]">
+  <textarea name="todo[description]"></textarea>
+  <button>Save Todo</button>
+</form>
+
+```
+
+**NOTE**: we don't care about the `action` and `method` for this form because we are going to use jQuery to submit it.
+
+Let's add some javascript to listen for the form to submit.
+
+```javascript
+
+  $("#newTodo").on("submit", function (e) {
+    var $this = $(this);
+    var formData = $this.serialize();
+    console.log(formData);
+    $.post("/todos", formData).
+      done(function (data) {
+        console.log("Success!");
+      });
+  });
+
+```
+
+However, keep in mind that we don't yet have a route on the backend to receive this post. 
+
+To receive a `POST` on the backend we will need to use `body-parser`.
+
+`index.js`
+
+```
+app.use(bodyParser.urlencoded({extended: true}))
+```
+
+Then we want to add a route to handle the post and grab the required params.
+
+`index.js`
+
+```
+app.post("/todos", function (req, res) {
+  var todo = req.body.todo;
+  todo.index = todos.length;
+  todos.push(todo);
+  res.send(todo);
+});
+```
+
+There we go. We should be all set for submitting `newTodo` data to the server.
+
+## Exercise 
+
+* When the data comes back from the server append it to the page. 
 
 
 
