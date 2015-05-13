@@ -74,6 +74,7 @@
 * Network packet
 * W3C
 * Ajax
+* JSON
 * CRUD
 * GET request
 * POST request
