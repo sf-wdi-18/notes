@@ -600,7 +600,7 @@ Instead of just responding with `Nice ...` let's actually add a burger to our li
 ```
 app.post("/burgers", function (req, res) {
 	var burger = req.body.burger;
-	burgers.push(burger);
+	burgers.push(burger.name);
 	res.send("Nice " + burger.name);
 });
 
@@ -612,7 +612,7 @@ That's pretty good! We can also send back a url where they can view their new bu
 ```
 app.post("/burgers", function (req, res) {
 	var burger = req.body.burger;
-	burgers.push(burger);
+	burgers.push(burger.name);
 	res.send("See all burgers at localhost:3000/burgers");
 });
 
@@ -623,7 +623,7 @@ Even better we could use something called a `redirect` to just send their browse
 ```
 app.post("/burgers", function (req, res) {
 	var burger = req.body.burger;
-	burgers.push(burger);
+	burgers.push(burger.name);
 	res.redirect("/burgers");
 });
 ```
