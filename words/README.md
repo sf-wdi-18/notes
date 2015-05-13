@@ -77,7 +77,9 @@
 * CRUD
 * GET request
 * POST request
-
+* HTML templating
+* interpolation
+* seperation of concerns
 
 ## People
 
