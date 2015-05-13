@@ -1,10 +1,17 @@
-# Templating & Get
+# HTML Templating
 
 | Objectives |
 | :---- |
 | Evaluate different approaches to rendering data in the frontend |
-| Explore templating using underscore  |
-| Build a node app that accepts a GET request and returns a list of items for us to render |
+| Explore templating using underscore |
+| Separate control logic from view logic |
+
+### Keywords
+
+* Concatination
+* Interpolation
+* Seperation of Concerns
+* View Logic --> html, and templating logic
 
 ## What's this all about?
 
@@ -31,7 +38,7 @@ Creating HTML documents is easy if we hard code our data. But this quickly becom
        $target.append($newEl.show());
     ```
 
-* The **"Template"** Approach: Put your template HTML in a script tag in the DOM. Grab its html, compile it, and swap out its values using interpolation.
+* The **"Templating"** Approach: Put your template HTML in a script tag in the DOM. Grab its html, compile it, and swap out its values using interpolation.
     - We'll explore the underscore documentation together to figure it out!
     - [Underscore's Template Utility Method](http://underscorejs.org/#template)
 
@@ -44,9 +51,10 @@ Today we will be working together to complete this lab:
 
 
 
-#
+
+<br><br><br>
 #SPOILERS --> NO PEEKING
-#
+<br><br><br>
 
 
 Template in `script` tag below the `body`:
