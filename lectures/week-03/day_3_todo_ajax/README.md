@@ -200,7 +200,7 @@ and now we just need to add the `<script>` tag to our `home.html`.
 
 ### Thus Far
 
-`home.html`
+`views/home.html`
 
 ```
 <!DOCTYPE html>
@@ -230,7 +230,6 @@ var app = express();
 app.use(express.static("public"));
 app.use(express.static("public"));
 
-
 var views = path.join(process.cwd(), "views");
 
 app.get("/", function (req, res) {
@@ -244,8 +243,25 @@ app.listen(3000, function () {
 ```
 
 
+If you're having problems with seting up Bower then you should use a CDN for the remainder of this project. However, you should verify that your **CSS** is working before continueing.
 
+### Client Side JS
 
+We want to create an `public/javascripts/app.js` file that will have a majority of our application logic. Let's do that.
+
+```bash
+touch public/javascripts/app.js
+```
+
+And let's add some test code inside.
+
+`public/javascripts/app.js`
+
+```
+$(function () {
+  alert("The Page Has Loaded!");
+});
+```
 
 
 
