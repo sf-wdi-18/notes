@@ -257,12 +257,111 @@ And let's add some test code inside.
 
 `public/javascripts/app.js`
 
-```
+```javascript
 $(function () {
   alert("The Page Has Loaded!");
 });
 ```
 
+Now we just need to make sure it properly linked with a script tag.
+
+`views/home.html`
+
+```html
+<script type="text/javascript" src="javascripts/app.js"></script>
+```
+
+**NOTE**: make sure your script tag above is below where you put jQuery.
+
+
+## Reading Todos
+
+* **Our first goal is to have `todos` on the server that we can render on the client side**
+
+Let's add a `todos` array in our `index.js` with some example todo objects.
+
+`index.js`
+
+```javascript
+
+var todos = [
+              {
+                title: "Finish Laundry",
+                description: "two loads left"
+              },
+              {
+                title: "Go To Gym",
+                description: "Leg Day"
+              }
+            ];
+
+```
+
+
+Now let's add a route to send all the todos when requested.
+
+`index.js`
+
+```javascript
+app.get("/todos", function (req, res) {
+  res.send(todos);
+});
+```
+
+
+Go to [/todos](localhost:3000/todos) to view all todos.
+
+
+### Using AJAX
+
+We now have a route to send all `todos` it's just a matter of adding jQuery to our `javascripts/app.js` that will make a request to our server to grab them.
+
+
+`public/javascripts/app.js`
+
+```javascript
+$(function () {
+  $.get("/todos").
+    done(function (data) {
+      console.log("RECEIVING RESPONSE");
+      console.log("DATA", data);
+    })
+});
+```
+
+You should see `todos` logged in your dev console in the browser.
+
+
+### Appending The Todos
+
+Let's go through `each` todo in the `data` and `append` them to the page.
+
+`public/javascripts/app.js`
+
+```javascript
+$(function () {
+  $.get("/todos").
+    done(function (data) {
+      console.log("RECEIVING RESPONSE");
+      console.log("DATA", data);
+      $(data).each(function (index, todo) {
+        var $todo = $("<div>" + todo.title + "</div>");
+        $("body").append($todo);
+      });
+    });
+});
+
+```
+
+We should now see todos on the page.
+
+## Exercises
+
+* Add a `div` to the `views/home.html` with class `todosCon` -- a todos container. Then `append` each `todo` to it.
+
+* Before you `append` each new `todo` to the page give it a class of `todo`.
+
+* Add some css for a the class `todo` in your `app.css`. Give each `todo` a border of `1px`.
 
 
 
