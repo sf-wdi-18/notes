@@ -196,7 +196,20 @@ Be sure to only remove elements from the DOM using jQuery though after you do th
 
 Just do not use these methods ever.
 
+### Caching jQuery Objects
 
+Just reuse the retrieved jQuery object.
+
+```javascript
+
+$("#books").addClass("read") // bad
+$("#books").html("ALL READ") // bad
+
+var $books = $("#books");
+$books.addClass("read");
+$books.html("ALL READ");
+
+```
 
 
 

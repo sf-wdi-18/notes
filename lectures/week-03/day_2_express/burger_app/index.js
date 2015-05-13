@@ -5,6 +5,8 @@ var bodyParser = require("body-parser"); // add require
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static("public"));
+app.use(express.static("bower_components"));
 
 var viewsDir = path.join(process.cwd(), "views");
 
