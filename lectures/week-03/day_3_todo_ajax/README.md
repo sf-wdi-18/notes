@@ -386,7 +386,7 @@ Let's add some javascript to listen for the form to submit.
 
 ```javascript
 
-  $("#newTodo").on("sumbit", function (e) {
+  $("#newTodo").on("submit", function (e) {
     var $this = $(this);
     var formData = $this.serialize();
     console.log(formData);
