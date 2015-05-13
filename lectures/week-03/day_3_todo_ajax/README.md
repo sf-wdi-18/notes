@@ -194,7 +194,7 @@ bower install jquery
 and now we just need to add the `<script>` tag to our `home.html`.
 
 ```html
-  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="/jquery/dist/jquery.js"></script>
 
 ```
 
@@ -207,8 +207,8 @@ and now we just need to add the `<script>` tag to our `home.html`.
 <html>
 <head>
     <title>Todo App</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+    <script type="text/javascript" src="/jquery/dist/jquery.js"></script>
   </head>
   <body>
     HELLO WORLD
@@ -362,6 +362,53 @@ We should now see todos on the page.
 * Before you `append` each new `todo` to the page give it a class of `todo`.
 
 * Add some css for a the class `todo` in your `app.css`. Give each `todo` a border of `1px`.
+
+
+## Making Todos
+
+* **Our goal now that is to now be able to send `POST` requests to our server to add new todos, and then add them to the page**
+
+
+First we will need to add a trust form to our `views/home.html`
+
+```html
+<form id="newTodo">
+  <input type="text" name="todo[title]">
+  <textarea name="todo[description]"></textarea>
+  <button>Save Todo</button>
+</form>
+
+```
+
+**NOTE**: we don't care about the `action` and `method` for this form because we are going to use jQuery to submit it.
+
+Let's add some javascript to listen for the form to submit.
+
+```javascript
+
+  $("#newTodo").on("sumbit", function (e) {
+    var $this = $(this);
+    var formData = $this.serialize();
+    console.log(formData);
+    $.post("/todos", formData).
+      done(function (data) {
+        console.log("Success!");
+      });
+  });
+
+```
+
+However, keep in mind that we don't yet have a route on the backend to receive this post. 
+
+
+
+
+
+
+
+
+
+
 
 
 
