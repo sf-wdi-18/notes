@@ -4,6 +4,7 @@
 
 ## Vocab
 
+####Week 1
 * Git
   * `git clone`
 * GitHub
@@ -27,6 +28,57 @@
 * Destructive Method
 * Side Effect (Programming)
 * Reference Type
+* HTML element
+* DOM object
+* DOM
+
+####Week 2
+* constructor
+* prototype
+* O.O.P.
+* this (keyword)
+* new (keyword)
+* iterator
+* map
+* reduce
+* each
+* callback
+* key/value
+* inheritance
+* .call (JavaScript)
+* .apply (JavaScript)
+* static property
+* .hasOwnProperty (JavaScript)
+* .instanceOf (JavaScript)
+* .isPrototypeOf (JavaScript)
+* CDN
+* minification
+* jQuery collection
+* V8
+* npm
+* Node.js
+* isomorphic JavaScript
+* event loop
+* 
+* client
+* server
+
+
+####Week 3
+* Express
+* HTTP
+* TCP
+* Resource path
+* Query string
+* HTTP verb
+* Status code
+* Network packet
+* W3C
+* Ajax
+* CRUD
+* GET request
+* POST request
+
 
 ## People
 
@@ -35,6 +87,7 @@
 * Alan Turing
 * Tim Burners Lee
 * Donald Knuth
+* Ryan Dahl
 
 
 
