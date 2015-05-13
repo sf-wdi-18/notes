@@ -1,4 +1,5 @@
-# Alternate GitHub Workflow for Tracked Contributions
+# Alternate GitHub Workflow for Tracked Contributions  
+
 Our default GitHub workflow doesn't result in many tracked contributions for students. This alternate workflow will make sure your your contributions are tracked.
 
 ##Default Workflow Drawback  
