@@ -12,30 +12,28 @@ Creating HTML documents is easy if we hard code our data. But this quickly becom
 
 ## Approaches to Templating
 
-* The "HTML String" Approach: Create a nasty html string in your javascript file and then add it to the DOM.
-* The "Placeholder" Approach: Target an existing element in the DOM, and swap out its values using javascript
-* The "Clone-And-Show" Approach: Target an existing *hidden* placeholder element in the DOM, then `clone`, swap out values using javascript, and `show`.
-* The "Template" Approach: Put your template HTML in a script tag in the DOM. Grab its html, compile it, and swap out its values using interpolation.
-## Lab
+* The **"HTML String"** Approach: Create a nasty html string in your javascript file and then add it to the DOM.
 
-```
-   $target.html("<p>" + "Hello World" + "</p>")
-```
+    ```
+       $target.html("<p>" + "Hello World" + "</p>")
+    ```
 
-```
-   $el.text("New Title to Replace Placeholder")
-```
+* The **"Placeholder"** Approach: Target an existing element in the DOM, and swap out its values using javascript
 
-```
-   $newEl = $template.clone().text("New Dynamic Title");
-   $target.append($newEl).show();
-```
+    ```
+       $el.text("New Title to Replace Placeholder")
+    ```
 
-And the the fourth option...
+* The **"Clone-And-Show"** Approach: Target an existing *hidden* placeholder element in the DOM, then `clone`, swap out values using javascript, and `show`.
 
-We'll explore the underscore documentation together to figure it out!
+    ```
+       $newEl = $template.clone().text("New Dynamic Title");
+       $target.append($newEl).show();
+    ```
 
-[Underscore's Template Utility Method](http://underscorejs.org/#template)
+* The **"Template"** Approach: Put your template HTML in a script tag in the DOM. Grab its html, compile it, and swap out its values using interpolation.
+    - We'll explore the underscore documentation together to figure it out!
+    - [Underscore's Template Utility Method](http://underscorejs.org/#template)
 
 ## Let's try it out!
 
