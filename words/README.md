@@ -59,7 +59,6 @@
 * Node.js
 * isomorphic JavaScript
 * event loop
-* 
 * client
 * server
 
