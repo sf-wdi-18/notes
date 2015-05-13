@@ -136,13 +136,69 @@ app.get("/", function (req, res) {
 
 Go to [localhost:3000](localhost:3000/) and verify it is working as expected.
 
-## Adding jQuery
+## Adding Assets
 
-We want to be able to interact with jQuery on our `index.html` page.
+We want to be able to use assets in our application, but we'll need a directory to put them in. Let's make some directories.
+
+```bash
+mkdir public
+mkdir public/javascripts
+mkdir public/stylesheets
+mkdir public/images
+```
+
+Let's make a quick `app.css` file for your todo application.
+
+`public/stylesheets/app.css`
+
+```css
+body {
+  background-color: gray;
+}
+```
+
+Then we want to let our application know about this new asset directory. Add the following to your `index.js`.
+
 
 ```javascript
+app.use(express.static("public"))
+```
+
+Now we just need to add a **CSS** link in our `home.html`.
+
+```html
+  <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
 
 ```
+
+Now we can test that this working by going to the [localhost:3000/](localhost:3000/).
+
+
+
+## Adding jQuery
+
+We want to be able to interact with jQuery on our `home.html` page. To do this we need to add a static asset server for jQuery.
+
+```javascript
+// so you can use public
+app.use(express.static("public"));
+// so you can use bower
+app.use(express.static("bower_components"));
+```
+
+Next we want to actually install jQuery.
+
+```bash
+bower install jquery
+```
+and now we just need to add the `<script>` tag to our `home.html`.
+
+```html
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+
+```
+
+
 
 
 
