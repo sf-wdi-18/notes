@@ -198,6 +198,51 @@ and now we just need to add the `<script>` tag to our `home.html`.
 
 ```
 
+### Thus Far
+
+`home.html`
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  </head>
+  <body>
+    HELLO WORLD
+
+  </body>
+</html>
+```
+
+
+`index.js`
+
+```
+var express = require("express"),
+  bodyParser = require("body-parser"),
+  path = require("path");
+
+var app = express();
+
+app.use(express.static("public"));
+app.use(express.static("public"));
+
+
+var views = path.join(process.cwd(), "views");
+
+app.get("/", function (req, res) {
+  var homePath = path.join(views, "home.html");
+  res.sendFile(homePath);
+});
+
+app.listen(3000, function () {
+  console.log("Running");
+});
+```
+
 
 
 
