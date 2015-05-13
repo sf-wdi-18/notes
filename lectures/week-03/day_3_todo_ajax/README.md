@@ -286,10 +286,12 @@ Let's add a `todos` array in our `index.js` with some example todo objects.
 
 var todos = [
               {
+                index: 0,
                 title: "Finish Laundry",
                 description: "two loads left"
               },
               {
+                index: 1,
                 title: "Go To Gym",
                 description: "Leg Day"
               }
@@ -400,10 +402,32 @@ Let's add some javascript to listen for the form to submit.
 
 However, keep in mind that we don't yet have a route on the backend to receive this post. 
 
+To receive a `POST` on the backend we will need to use `body-parser`.
 
+`index.js`
 
+```
+app.use(bodyParser.urlencoded({extended: true}))
+```
 
+Then we want to add a route to handle the post and grab the required params.
 
+`index.js`
+
+```
+app.post("/todos", function (req, res) {
+  var todo = req.body.todo;
+  todo.index = todos.length;
+  todos.push(todo);
+  res.send(todo);
+});
+```
+
+There we go. We should be all set for submitting `newTodo` data to the server.
+
+## Exercise 
+
+* When the data comes back from the server append it to the page. 
 
 
 
