@@ -28,7 +28,7 @@ Creating HTML documents is easy if we hard code our data. But this quickly becom
 
     ```
        $newEl = $template.clone().text("New Dynamic Title");
-       $target.append($newEl).show();
+       $target.append($newEl.show());
     ```
 
 * The **"Template"** Approach: Put your template HTML in a script tag in the DOM. Grab its html, compile it, and swap out its values using interpolation.
@@ -40,3 +40,32 @@ Creating HTML documents is easy if we hard code our data. But this quickly becom
 Today we will be working together to complete this lab:
 
 [templating_lab](https://github.com/sf-wdi-18/templating_lab)
+
+
+
+
+#
+#SPOILERS --> NO PEEKING
+#
+
+
+Template in `script` tag below the `body`:
+```
+<script type="text/template" id="tmpl-loop-example">
+  <p>
+    <h4><%= name %></h4>
+    <% list.forEach(function(item){ %>
+      <strong><%= item %></strong>
+    <% }) %>
+  </p>
+</script>
+```
+
+Underscore templating:
+```
+var myData = {name: "Garbanzo", list: ["hello", "world"]}
+var tmpl_str = $("#tmpl-loop-example").html();
+var compile = _.template(tmpl_str); // returns a function!
+var html_str = compile(myData);
+$("body").html(html_str)
+```
