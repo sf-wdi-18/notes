@@ -56,8 +56,8 @@ The above user story consists of several sub-tasks, so let's unpack those firsts
 
 **Hints**
 
-* Try using jQuery's `.serialize()` method to pull the information out of your form 
-* You will need to require `body-parser` in order to get the POSTed data out of your `req.body`
+* Try using jQuery's `.serialize()` method to pull the information out of your form, in order for this to work properly your inputs need a `name` HTML attribute (which acts as a key)
+* You will need to require `body-parser` in order to get the POSTed data out of your `req.body` (we already have it, so no worries)
 * Set a `food.id` property; it is recommended you increment the highest existing food.id by 1
 * In at the end of the route you use to create a new food, it is good practice to respond with a JSON object of the new food just created `res.send(JSON.stringify(newFood)))`
 * Use a `.done` to trigger a function that updates the DOM. `Food.all` is helpful, as it sends a fresh GET request to `/foods` and re-renders the HTML page with the new data.
@@ -84,7 +84,7 @@ The above user story consists of several sub-tasks, so let's unpack those firsts
 * Your `url` property will use the `data-id` attribute to ensure each button sends a request with it's own object's id in the url
 * In your express application, ensure your delete route can accept dynamic parameters with by using a `:`, such as `/foods/:id`
 * Use the `req.params.id` to search through your foods array
-	* To do this checkout underscore's `.findWhere` method (you may need to require underscore)
+	* To do this checkout underscore's `.findWhere` method (you may need to require underscore, though we should already have it)
 	* Unexpected behavior may mean there is a datatype issue
 * Render the deleted object as JSON in your `res.send` at the end of the controller, you must render something for the AJAX function to continue executing & this pattern is best practice
 * Finally, maintain state by re-render the DOM based on the updated data on the server. Don't forget the nifty `Food.all` function!
