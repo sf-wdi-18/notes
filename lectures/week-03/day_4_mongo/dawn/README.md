@@ -160,6 +160,11 @@ A MongoDB **Document** is the entry of of data stored in MongoDB; Documents are 
   });
   ```
   
+### Removing
+
+* `remove`
+* `findByIdAndRemove`
+  
 ## Reading
 
 
@@ -177,7 +182,6 @@ A MongoDB **Document** is the entry of of data stored in MongoDB; Documents are 
 
 
 * Reference the docs for more info on what you can do with Mongoose [Models](http://mongoosejs.com/docs/api.html#model_Model.findById)
-
 
 ## Storing a Query Object
 
