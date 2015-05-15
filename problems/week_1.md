@@ -15,7 +15,7 @@ y == "a"; //=> true
 
 Solution
 
-```
+```javascript
 var x = "a";
 var y = "b";
 
