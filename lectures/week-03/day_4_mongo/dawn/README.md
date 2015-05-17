@@ -254,7 +254,7 @@ homer.books.push(theIliad, theOdyssey);
 homer.books;
 ```
 
-* Note: because the books are stored *inside* on the associated Author, so we can remove the Book's property `author`
+* Note: Since the books are stored *inside* the associated Author, we can remove the Book's property `author`
 
 Wooooo NICE JOB!
 
