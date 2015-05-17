@@ -143,7 +143,7 @@ A MongoDB **Document** is the entry of of data stored in MongoDB; Documents are 
   ```
   
   
-  This is called **building** as you're playing with an object that can be saved to the database, but don't exist there yet.
+  This is called **building** as you're playing with an object that can be saved to the database, but doesn't exist there yet.
 
   Once you're done building you can `save` the book.
 
