@@ -184,7 +184,7 @@ userSchema.statics.authenticate = function(email, password, cb) {
 
     })
  }
-userSchema.methods.checkPassword: function(password) {
+userSchema.methods.checkPassword= function(password) {
         return bcrypt.compareSync(password, this.passwordDigest);
 };
 
