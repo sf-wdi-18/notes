@@ -491,20 +491,7 @@ Then create the login view
 
 ```
 
-### Adding A Profile
-
-While we are at it let's add a real profile page.
-
-`simple_login/views/profile.html`
-
-```html
-
-
-
-```
-
-Let's update the route to render this.
-
+Redirect or send data after login.
 
 `simple_login/app.js`
 
@@ -512,7 +499,7 @@ Let's update the route to render this.
 
 app.get("/profile", function (req, res) {
   req.currentUser(function (err, user) {
-        res.render("profile.ejs", {user: user});
+        res.send("Welcome " + user.email)
       });
 });
 
@@ -523,4 +510,4 @@ app.get("/profile", function (req, res) {
 ## Exercises
 
 1. Add a `GET /signup` route and view.
-2. Login a user after `signup` and redirect to `/profile`.
+2. Login a user after `signup` and redirect to a `/profile` page.
