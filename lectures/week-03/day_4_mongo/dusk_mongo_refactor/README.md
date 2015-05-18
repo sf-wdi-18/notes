@@ -9,7 +9,7 @@
 
 ## Getting Started
 
-Use the following directions
+Use the following directions at this [repo](https://github.com/sf-wdi-18/mongo_todo_refactor)
 
 * `git clone` this repo
 * `npm run setup`
