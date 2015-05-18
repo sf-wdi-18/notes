@@ -452,41 +452,7 @@ However we need to play with this in the browser to verify this is working, so i
 
 ## Adding Views
 
-First we need to add `ejs`.
-
-```bash
-npm install --save ejs
-
-```
-
-Then we need to configure our middleware
-
-`simple_login/app.js`
-
-```javascript
-
-var express = require('express'),
-    bodyParser = require('body-parser'),
-    db = require("./models"),
-    session = require("express-session"),
-    app = express();
-
-
-
-app.set("view engine", "ejs"); // <--- throw in ejs
-
-app.use(bodyParser.urlencoded({extended: true}));
-
-app.use(session({
-  secret: 'super secret',
-  resave: false,
-  saveUninitialized: true
-}));
-
-
-```
-
-Then `mkdir` for views
+First let's  `mkdir` for views
 
 
 
@@ -529,11 +495,11 @@ Then create the login view
 
 While we are at it let's add a real profile page.
 
-`simple_login/views/profile.ejs`
+`simple_login/views/profile.html`
 
 ```html
 
-  Welcome, <%= user.email %>!
+
 
 ```
 
