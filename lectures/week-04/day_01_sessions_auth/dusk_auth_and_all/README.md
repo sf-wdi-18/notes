@@ -4,16 +4,14 @@
 
 | Objectives |
 | :---- |
-| Review and apply the a simple password **authentication** strategy |
+| Intro and discuss a simple password **authentication** strategy |
 | Utilize in memory storage and cookies to create an Express application with Sessions |
-| A simple sign and signout process |
+| Begin implementing a simple sign and signout process |
 
 
 ## Background (10mins)
 
-Review Sign Up Together
-
-Explain in your own way -- using pictures, diagrams, words, dance, etc...
+Discuss Sign Up Together
 
 * What is **Authentication**?
 * Why do we **hash** passwords?
@@ -28,8 +26,7 @@ Explain in your own way -- using pictures, diagrams, words, dance, etc...
 * Express Framework: build our application and handle requests
 * Middleware:
   * 'body-parser': for handling incoming form data.
-  * (maybe) 'ejs': if we want to **render** or **template** views
-  * (maybe) 'method-override': if we want to **PUT** or **DELETE** something.
+  * 'cookie-parser': for handling incoming cookie data.
 * Models:
   * Mongoose Models: performing CRUD with Mongo
 * bcryptJS: Do you know who [Bruce Schneier](http://www.schneierfacts.com/facts/1101) is!!!!???!?
