@@ -175,6 +175,170 @@ app.get("/", function (req, res) {
 ```
 
 
+All together we have the following:
+
+
+```javascript
+
+var express      = require('express');
+var cookieParser = require('cookie-parser');
+
+var app = express();
+app.use(cookieParser());
+
+app.get("/", function (req, res) {
+  console.log(req.cookies);
+  var count = parseInt(req.cookies.count)
+  res.cookie('count', count);
+  res.send("Hello World");
+});
+
+app.listen(3000, function () {
+  console.log("UP AND RUNNING");
+});
+```
+
+
+## Sessions
+
+What if instead of storing all the information in a cookie we give each new session a **globally unique id** or **guid** and just store things in an object associated to that **guid**.
+
+
+```javascript
+
+
+
+var express      = require('express');
+var cookieParser = require('cookie-parser');
+
+var app = express();
+app.use(cookieParser());
+
+var sessions = {};
+var guid = 0;
+
+app.get("/", function (req, res) {
+  var userGuid = req.cookies.guid;
+  console.log(req.cookies.guid)
+  if (!userGuid) {
+    guid += 1;
+    userGuid = guid;
+    sessions[guid] = {
+                        count: 0
+                      };
+    res.cookie("guid", userGuid);
+  }
+  sessions[userGuid].count += 1;
+  res.send("Hello World " + sessions[userGuid].count);
+});
+
+app.listen(3000, function () {
+  console.log("UP AND RUNNING");
+});
+
+```
+
+
+In reality we would want to do this for multiple routes so this might need to become middleware.
+
+```javascript
+
+
+var checkGuid = function (req, res, next) {
+  var userGuid = req.cookies.guid;
+  console.log(req.cookies.guid)
+  if (!userGuid) {
+    guid += 1;
+    userGuid = guid;
+    sessions[guid] = {
+                        count: 0
+                      };
+    res.cookie("guid", userGuid);
+  }
+
+  req.session = sessions[userGuid];
+  next();
+}
+
+app.use(checkGuid);
+
+```
+
+
+Then what we could do is just have the following code.
+
+
+```javascript
+
+
+app.get("/", function (req, res) {
+  req.session.count += 1;
+  var count = req.session.count;
+  res.send("Hello World " + count);
+});
+
+```
+
+And all of the following:
+
+
+```javascript
+var express      = require('express');
+var cookieParser = require('cookie-parser');
+
+var app = express();
+app.use(cookieParser());
+
+var sessions = {};
+var guid = 0;
+
+var checkGuid = function (req, res, next) {
+  var userGuid = req.cookies.guid;
+  console.log(req.cookies.guid)
+  if (!userGuid) {
+    guid += 1;
+    userGuid = guid;
+    sessions[guid] = {
+                        count: 0
+                      };
+    res.cookie("guid", userGuid);
+  }
+
+  req.session = sessions[userGuid];
+  next();
+}
+
+app.use(checkGuid);
+
+app.get("/", function (req, res) {
+  req.session.count += 1;
+  var count = req.session.count;
+  res.send("Hello World " + count);
+});
+
+app.listen(3000, function () {
+  console.log("UP AND RUNNING");
+});
+
+```
+
+Now this is not sufficient for what we want to do so we will see something called `express-session` later that works much better for a production application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
