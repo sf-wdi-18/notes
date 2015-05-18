@@ -19,6 +19,10 @@ Let's start by setting up the `index.js`.
 
 
 ```javascript
+var mongoose = require("mongoose");
+
+mongoose.connect("mongodb://localhost/method_test");
+
 var Book = require("./book");
 var Author = require("./author");
 
@@ -34,7 +38,6 @@ Then let's setup a Book model.
 ```javascript
 var mongoose = require("mongoose"));
 
-mongoose.connect("mongodb://localhost/method_test");
 
 var BookSchema = new mongoose.Schema({
     title: String,
@@ -62,7 +65,6 @@ Let's create an `authorSchema` for authors.
 ```javascript
 
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/test");
 
 var authorSchema = new mongoose.Schema({
   firstName: String,
