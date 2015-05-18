@@ -14,3 +14,11 @@ var Author = require("./author");
 //    db.Book.create
 module.exports.Book = Book;
 module.exports.Author = Author;
+
+process.on("SIGINT", function () {
+  console.log("STOPPING");
+  mongoose.disconnect(function() {
+    console.log("DISCONNECTED");
+    process.exit(0);
+  });
+});
