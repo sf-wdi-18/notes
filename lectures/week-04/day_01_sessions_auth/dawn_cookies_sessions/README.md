@@ -158,7 +158,21 @@ app.use(cookieParser());
 
 ```
 
+Then we can rewrite our above example.
 
+
+```javascript
+
+
+app.get("/", function (req, res) {
+  console.log(req.cookies);
+  var count = parseInt(req.cookies.count)
+  res.cookie('count', count);
+  res.send("Hello World");
+});
+
+
+```
 
 
 
