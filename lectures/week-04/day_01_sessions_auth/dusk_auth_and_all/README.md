@@ -46,7 +46,7 @@ touch app.js
 subl .
 ```
 
-At our very least we need something like the following:
+At the very least we need something like the following:
 
 `simple_login/app.js`
 
