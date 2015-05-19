@@ -155,7 +155,7 @@ Let refactor the delete method
 
 ```javascript
 app.delete("/todos/:id", function (req, res) {
-  db.Todo.findAndRemove({
+  db.Todo.findByIdAndRemove({
     _id: req.params.id
   }, function (err, todo) {
     res.send(204) // success No Content
