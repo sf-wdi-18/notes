@@ -45,12 +45,8 @@
 * callback
 * key/value
 * inheritance
-* .call (JavaScript)
-* .apply (JavaScript)
 * static property
 * .hasOwnProperty (JavaScript)
-* .instanceOf (JavaScript)
-* .isPrototypeOf (JavaScript)
 * CDN
 * minification
 * jQuery collection
@@ -81,7 +77,7 @@
 * HTML templating
 * interpolation
 * seperation of concerns
-* form validation
+* input validation
 
 ####Week 4
 * mongoose (ODM)
@@ -94,6 +90,8 @@
 * authentication
 * authorization
 * salt (cryptography)
+* middleware
+* next()
 
 ## People
 
