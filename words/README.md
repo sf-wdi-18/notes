@@ -93,6 +93,7 @@
 * HTTPS 
 * authentication
 * authorization
+* salt (cryptography)
 
 ## People
 
