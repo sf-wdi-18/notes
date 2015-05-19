@@ -104,15 +104,22 @@ The most popular, modern convention is RESTful routing. Here is an example of an
 
 ##Queries Exercise
 
-###Goal
+#####Goal
 
-**Create and navigate relational data**
+Create and navigate through relational data in MongoDB
 
-###Steps
-
+#####Setup
+* startup mongoDB with `mongod`
 * `cd` into the folder `exercise` in this directory
-* run `node console.js` to enter into a REPL where you can interact with you DB
-* Do the following, saving your successful code in Sublime for each step:
+* `node console.js` to enter into a REPL where you can interact with you DB
+
+#####Tips
+* save your successful code in Sublime for each step
+* all your models will be inside an object `db`
+* inspect `models.js` to understand what properties each model has
+
+
+#####Steps
 
 	1) Create a user
 	
