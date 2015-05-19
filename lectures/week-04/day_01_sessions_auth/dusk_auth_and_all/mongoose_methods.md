@@ -36,7 +36,7 @@ Then let's setup a Book model.
 `models/book.js`
 
 ```javascript
-var mongoose = require("mongoose"));
+var mongoose = require("mongoose");
 
 
 var BookSchema = new mongoose.Schema({
