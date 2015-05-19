@@ -81,6 +81,19 @@
 * HTML templating
 * interpolation
 * seperation of concerns
+* form validation
+
+####Week 4
+* mongoose (ODM)
+* database schema
+* MongoDB 
+* cookie
+* session
+* hashing
+* HTTPS 
+* authentication
+* authorization
+* salt (cryptography)
 
 ## People
 
@@ -90,7 +103,7 @@
 * Tim Burners Lee
 * Donald Knuth
 * Ryan Dahl
-
+* Bruce Schneier
 
 
 

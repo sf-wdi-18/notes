@@ -152,13 +152,13 @@ var userSchema = new mongoose.Schema({
   passwordDigest: String
 });
 
-userSchema.statics.createSecure = function (params, cb) {
+userSchema.statics.createSecure = function (email, password, cb) {
   var that = this;
   bcrypt.genSalt(function (err, salt) {
-    bcrypt.hash(params.password, salt, function (err, hash) {
+    bcrypt.hash(password, salt, function (err, hash) {
       console.log(hash);
       that.create({
-        email: params.email,
+        email: email,
         passwordDigest: hash
        }, cb)
     });
@@ -184,7 +184,7 @@ userSchema.statics.authenticate = function(email, password, cb) {
 
     })
  }
-userSchema.methods.checkPassword: function(password) {
+userSchema.methods.checkPassword= function(password) {
         return bcrypt.compareSync(password, this.passwordDigest);
 };
 
