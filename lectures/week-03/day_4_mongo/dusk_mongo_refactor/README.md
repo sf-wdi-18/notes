@@ -94,7 +94,7 @@ It can be hard to do this every time you go into Node, so I make a little `conso
 var REPL = require("repl");
 var db = require("./models");
 
-varrepl = REPL.start("Todo > ");
+var repl = REPL.start("Todo > ");
 repl.context.db = db;
 
 repl.on("exit", function () {
