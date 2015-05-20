@@ -1,6 +1,6 @@
-#SF WDI 18 - Project One
+#WDI 18 SF - Project One
 
-## FIRST PROJECT DESCRIPTION
+## DESCRIPTION
 
 It's time to put everything that you've learned in the past month together! For the first project you will use your knowledge of front and back-end web development to produce an awesome web application that can be used by friends, family or any of the other billions of people who use the Internet. The type of web application you create is your choice.
 
