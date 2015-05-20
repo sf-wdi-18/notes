@@ -30,7 +30,7 @@ Make sure to do all of the following with your app.
 ## CHALLENGE ADD-ONS
 If you want to push yourself and learn something new, optionally consider doing some of the following with your app, but *please talk to an instructor* beforehand:
 
-* **External APIs.** Use an external API to integrate rich data into your app.
+* **External API** Use an external API to integrate rich data into your app.
 * **Authorization** Disallow users from CRUDing content in other users' profiles. Ie a user should not be able to delete a post if it is not theirs.
 * **Sass** Use a CSS pre-compiler to write more imperative CSS. 
 * **Web Sockets** - Use [Socket.io](http://socket.io/) to have real time behavior in your app.
