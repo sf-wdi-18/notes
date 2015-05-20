@@ -39,7 +39,7 @@ If you want to push yourself and learn something new, optionally consider doing 
 
 ## TIMELINE
 
-* **Thursday, May 22nd** - Communicate your app idea to an instructor and put it in a card on our Trello [board](https://trello.com/b/dl7VicOR/sfwdi18-project1). Be ready to talk about the scope of your project. Before beginning work on your project, your project idea and the scope of your project must be checked-off by an instructor.  You will need the following for an instructor check-off:
+* **Friday, May 22nd** - Communicate your app idea to an instructor and put it in a card on our Trello [board](https://trello.com/b/dl7VicOR/sfwdi18-project1). Be ready to talk about the scope of your project. Before beginning work on your project, your project idea and the scope of your project must be checked-off by an instructor.  You will need the following for an instructor check-off:
     * Wireframes
     * User stories
     * Models and DB design
