@@ -63,7 +63,7 @@ var ingredientSchema = new Schema({
 ```
 
 **Embedding Data**
-z
+
 ```javascript
 var tweetSchema = new Schema({
   body: {
