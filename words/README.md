@@ -92,6 +92,10 @@
 * salt (cryptography)
 * middleware
 * next()
+* RESTful routing
+* DB Relationships - Embedded
+* DB Relationships - Referenced
+* Nested resources
 
 ## People
 
