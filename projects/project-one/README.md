@@ -94,6 +94,39 @@ We will a schedule for 1:1s throughout the week. We will also do mini lessons on
 	* What are you proud of?
 	* What would you do with more time?
 	* What aspect presented the most challenges?
-	
-	
+
+##GROUPS
+
+ILIAS:
+Alex,
+Connor Slakley,
+Jeremy,
+Rebecca,
+Tae,
+Wyatt,
+Dimitriy,
+Celeste,
+Mike Tan
+
+NATHAN:
+Andreas,
+Daniel,
+Michael W.,
+Spencer,
+Tejaswi,
+Connor Stanley,
+Justin,
+David,
+Miqueas
+
+DEL:
+Charlie,
+Jared,
+Neil,
+Stephen,
+Ugo,
+Daimeon,
+Linda,
+Vanessa
+
 ###HAPPY CODING :)
