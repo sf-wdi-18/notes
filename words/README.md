@@ -85,7 +85,7 @@
 * MongoDB 
 * cookie
 * session
-* hashing
+* hashing function
 * HTTPS 
 * authentication
 * authorization
@@ -96,6 +96,11 @@
 * DB Relationships - Embedded
 * DB Relationships - Referenced
 * Nested resources
+* connection pooling
+* CAP Theorem
+* blowfish encryption
+* Advanced Encryption Standard
+* RSA Encryption
 
 ## People
 
@@ -106,6 +111,7 @@
 * Donald Knuth
 * Ryan Dahl
 * Bruce Schneier
+* Rivest-Shamir-Adleman
 
 
 
