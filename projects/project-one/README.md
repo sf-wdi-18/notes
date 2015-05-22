@@ -99,7 +99,7 @@ We will a schedule for 1:1s throughout the week. We will also do mini lessons on
 
 ILIAS:
 Alex,
-Connor Slakley,
+Connor Slakey,
 Jeremy,
 Rebecca,
 Tae,
