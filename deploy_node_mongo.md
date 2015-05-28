@@ -5,7 +5,7 @@
 
 2. Make sure you have installed the heroku toolbelt - [https://toolbelt.heroku.com/](https://toolbelt.heroku.com/)
 
-3. Then create a heroku remote repo.
+3. Then create a heroku remote repo from your project directory by running the following:
 
 	```bash
 	heroku create
@@ -38,7 +38,7 @@ In bash we want to add the following to get mongo added to our project.
  heroku addons:create mongolab
 ```
 
-Then we want to go to our `models/index.js` file and add the following to the `connect` method.
+Then we want to go to our `models/index.js` file and add the following to the `mongoose.connect` method.
 
 ```javascript
 mongoose.connect( process.env.MONGOLAB_URI ||
@@ -46,12 +46,12 @@ mongoose.connect( process.env.MONGOLAB_URI ||
 			   "YOUR OWN LOCAL URL HERE")
 ```
 
-And we are ready to integrate mongo.
+And we are ready to integrate mongolab.
 
 
 ## Adding Bower Integration
 
-Make sure to run the following or check your `package.json` to make sure that all your depenedencies are present. If something is missing install it, e.g. run the following if you don't have `bower`:
+Check your `package.json` to make sure that all your depenedencies are present. If something is missing install it, e.g. run the following if you don't have `bower`:
 
 ```bash
 npm install --save bower
