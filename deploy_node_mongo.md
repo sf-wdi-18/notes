@@ -66,7 +66,8 @@ You should now add a `start` script for your application in your `package.json`.
 ```javascript
 ...
   "scripts": {
-    "start": "npm install && bower install && node index.js"
+    "start": "node index.js",
+    "postinstall": "bower install"
    }
 ...
 ```
