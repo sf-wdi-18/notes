@@ -1,4 +1,4 @@
-## Getting set up on Heroku with Node + Sequelize 
+## Getting set up on Heroku with Node + Mongoose
 
 ### Before you do anything
 1. Make sure you have an account with heroku: https://www.heroku.com/
