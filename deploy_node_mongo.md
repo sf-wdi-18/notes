@@ -18,12 +18,12 @@
 
 * Create a `Procfile` 
 	- In terminal, run `touch Procfile`. Must be called with a capitol P
-	- make sure it is named "Procfile" (no extention) 
-	- make sure your Procfile is in the same folder as your app.js file) 
+	- make sure it is named "Procfile" (no extension) 
+	- make sure your Procfile is in the same folder as your `index.js` file) 
 	- in terminal type `echo "web: npm start" >> Procfile`
 
 
-* In your `index.js` file, where you get your server started, include the port number in your app.listen function.  Example -
+* In your `index.js` file, where you get your server started, include the `port` number in your `app.listen` function.  Example -
 
 ```javascript
 app.listen(process.env.PORT || 3000)
