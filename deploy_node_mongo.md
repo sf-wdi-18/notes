@@ -1,11 +1,12 @@
 ## Getting set up on Heroku with Node + Mongoose
 
 ### Before you do anything
+0. Your app is under version control with `git`.
 1. Make sure you have an account with heroku: https://www.heroku.com/
 
 2. Make sure you have installed the heroku toolbelt - [https://toolbelt.heroku.com/](https://toolbelt.heroku.com/)
 
-3. Then create a heroku remote repo from your project directory by running the following:
+3. We need to add a new remote to your project repository that points to heroku's servers. **(NOTE YOUR PROJECT SHOULD BE A GIT REPO AT THIS POINT)**.
 
 	```bash
 	heroku create
