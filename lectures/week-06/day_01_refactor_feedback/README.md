@@ -40,6 +40,12 @@ Review the application routes and identify those that send data to the frontend.
 * Does a user have to be signed in to view the data?
 * If there is favoriting logic then discuss how that is being handled. 
 	* What kind of checks are being made to see if `_id`'s or data posted to the server is being succesfully persisted?
+
+
+### Validating & Sanitizing User Inputs
+
+* Can a user signup with an illigitimate email address? How about a password less than 6 characters? Ensure you are validating this data before it is sent to the backend.
+* When the data reaches the server, is the email checked for uniqueness? Does the client display error messages for the user?
 * If you're templating then verify that input is being properly escaped.
 	* Can one put `HTML` or `JS` into fields on your site?
 		* Try signing up with a `User` that has an email like `<img src="http://onebigphoto.com/uploads/2014/04/cute-mini-lion-kitten.jpg">`.
