@@ -80,7 +80,7 @@ Pick one or two major areas of refactor that you've identified in each applicati
 * Make your changes
 * `git add . -A`
 * `git commit -m "description of changes"`
-* Then push this branch to heroku
+* Then push this branch to GitHub
 	* `git push origin refactoring`
 * Then submit a pull request on for that branch.
 
