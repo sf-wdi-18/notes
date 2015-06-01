@@ -1,10 +1,13 @@
 # Project 1
 ## Pair Review
 
+Utilize your knowledge of Mongoose, Express, AJAX, and Templating to refactor Project 1 with a partner.
 
 | Objectives |
 | :--- | 
-| Utilize your knowledge of Mongoose, Express, AJAX, and Templating to refactor project 1 with a partner. |
+| Identifiy & create GitHub issues for your project |
+| Prioritize the issues you will address |
+| Pair to refactor your code |
 
 ## Application Overview
 
