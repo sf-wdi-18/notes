@@ -10,9 +10,10 @@ Utilize your knowledge of Mongoose, Express, AJAX, and Templating to refactor Pr
 | Pair to refactor your code |
 
 There are three parts to this assignment:
-	1. Your project repo is on Github and has a well documented Readme.
-	2. You identify/discuss/create github issues.
-	3. You prioritize these issues and pair program to tackle them.
+
+1. Your project repo is on Github and has a well documented Readme.
+2. You identify/discuss/create github issues.
+3. You prioritize these issues and pair program to tackle them.
 
 ## 1. Application Overview
 
