@@ -9,7 +9,12 @@ Utilize your knowledge of Mongoose, Express, AJAX, and Templating to refactor Pr
 | Prioritize the issues you will address |
 | Pair to refactor your code |
 
-## Application Overview
+There are three parts to this assignment:
+	1. Your project repo is on Github and has a well documented Readme.
+	2. You identify/discuss/create github issues.
+	3. You prioritize these issues and pair program to tackle them.
+
+## 1. Application Overview
 
 Go to your projects on Github. 
 
@@ -29,6 +34,7 @@ Everyone should have a `User` model, and a `models` directory. Take time now to 
 * Note any bugs, jumbled code, or indentation problems.
 	* Create a Github issue on each repository regarding model bugs or areas to be refactored.
 
+## 2. Creating Issues
 ### Routing And Rendering
 
 Review the application routes and identify those that send data to the frontend. 
@@ -56,14 +62,14 @@ Review the application routes and identify those that send data to the frontend.
 
 At this point you should have a wealth of issues on your project repo. Each one of these can be treated as a user story for future iterations of development.
 	
-## Recfactoring Part 1
+## 3. Refactoring
 
 Pick one or two major areas of refactor that you've identified in each application. This could be something like the following:
 
 * Look at the issues already created previously for models, routing, templating, etc and consider tackling these first.
 * Working on *finishing* a bug-fix or a new feature.
 
-## Refactoring Part 2
+#### Recommended: Refactoring Secrets.
 
 Notice for login you may have some issues.
 
