@@ -25,6 +25,7 @@ Go to your projects on Github.
 * Is there a link on GitHub to the deployed application on Heroku?
 	* If none exists, plan to deploy it later.
 
+
 ### Initial Models Review
 
 Everyone should have a `User` model, and a `models` directory. Take time now to review each other's `User` model and any other models. 
@@ -69,6 +70,19 @@ Pick one or two major areas of refactor that you've identified in each applicati
 
 * Look at the issues already created previously for models, routing, templating, etc and consider tackling these first.
 * Working on *finishing* a bug-fix or a new feature.
+
+
+#### Github Workflow: Refactoring
+
+* Fork you partners GitHub repository
+* Clone your fork.
+* `git checkout -b refactoring`
+* Make your changes
+* `git add . -A`
+* `git commit -m "description of changes"`
+* Then push this branch to heroku
+	* `git push heroku refactoring`
+* Then submit a pull request on for that branch.
 
 #### Recommended: Refactoring Secrets.
 
