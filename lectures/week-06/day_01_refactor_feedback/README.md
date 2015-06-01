@@ -8,21 +8,23 @@
 
 ## Application Overview
 
-Go to project on Github. 
+Go to your projects on Github. 
 
-* Discuss what each of your applications do at a high level. This should be one or two sentences, an elevator pitch. 
-* Make sure each project has a `README` that discusses these details. 
-* Is there a link on GitHub the deployed application on Heroku?
+* Discuss what each of your applications do at a high level. This should be one or two sentences, an elevator pitch. (5m) 
+* Make sure each project has a `README` that highlights these details.
+	* If none exists, create one (10m)
+* Is there a link on GitHub to the deployed application on Heroku?
+	* If none exists, plan to deploy it later.
 
 ### Initial Models Review
 
 Everyone should have a `User` model, and a `models` directory. Take time now to review each other's `User` model and any other models. 
 
-* Note if there are any model relationships you see.
+* Note any additional model relationships.
 	* Discuss why any relationships are there.
 	* Discuss why they choose a certain type of relationship: embedded or reference.
-* Note any bugs or jumbled code.
-	* Create an issue on each repository if you discuss any model bugs or areas for clean up.
+* Note any bugs, jumbled code, or indentation problems.
+	* Create a Github issue on each repository regarding model bugs or areas to be refactored.
 
 ### Routing And Rendering
 
