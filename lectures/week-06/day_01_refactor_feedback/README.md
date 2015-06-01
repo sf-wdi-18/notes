@@ -82,7 +82,7 @@ Pick one or two major areas of refactor that you've identified in each applicati
 * `git commit -m "description of changes"`
 * Then push this branch to GitHub
 	* `git push origin refactoring`
-* Then submit a pull request on for that branch.
+* Then submit a pull request for that branch.
 
 #### Recommended: Refactoring Secrets.
 
