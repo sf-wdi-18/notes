@@ -102,12 +102,22 @@
 * Advanced Encryption Standard
 * RSA Encryption
 
-Week 6
 
-* Matz
+####Week 5
+* wireframe 
+* pull request
+* merge conflict
+* heroku
+
+
+####Week 6
 * POLS
-* Gem
 * Anti-pattern
+* Gem
+* irb
+* function names ending with **!**
+* function names ending with **?**
+
 
 ## People
 
@@ -119,6 +129,9 @@ Week 6
 * Ryan Dahl
 * Bruce Schneier
 * Rivest-Shamir-Adleman
+* Yukihiro "Matz" Matsumoto
+
+
 
 
 
