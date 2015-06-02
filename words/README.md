@@ -102,6 +102,13 @@
 * Advanced Encryption Standard
 * RSA Encryption
 
+Week 6
+
+* Matz
+* POLS
+* Gem
+* Anti-pattern
+
 ## People
 
 * Ada Lovelace
