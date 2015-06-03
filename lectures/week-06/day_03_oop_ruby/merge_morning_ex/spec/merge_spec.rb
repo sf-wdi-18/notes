@@ -37,5 +37,4 @@ describe "#merge" do
     arr2 = [4,5,6]
     expect(merge(arr1, arr2)).to eq nil
   end
-
 end
