@@ -16,8 +16,11 @@ class PlanesController < ApplicationController
   # a method to handle submitted planes
   def create
     plane = params.require(:plane).permit(:name, :design, :description)
-    Plane.create(plane)
-    redirect_to "/planes"
+    @plane = Plane.create(plane)
+
+    # send users to show page using 
+    # new plane id
+    redirect_to "/planes/#{@plane.id}"
   end
 
   def show
