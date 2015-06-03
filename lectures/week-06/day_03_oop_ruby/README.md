@@ -75,9 +75,9 @@ How would we create an instance method for Car named `color?`, which tests wheth
 alpha = Car.new
 alpha.color = "orange"
 alpha.color?("blue")
-=> true
-alpha.color?("orange")
 => false
+alpha.color?("orange")
+=> true
 ```
 
 *Hint: define a new method with the `def` keyword inside the class*
