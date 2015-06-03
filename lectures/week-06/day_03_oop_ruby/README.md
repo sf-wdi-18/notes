@@ -62,7 +62,7 @@ fiat = Car.new
 fiat.color = "hot pink"
 fiat.color
 => "hot pink"
-``
+```
 
 *Hint: Use the method `attr_accessor`*
 
