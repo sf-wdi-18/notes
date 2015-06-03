@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   # get a single plane
   get 'planes/new', to: 'planes#new'
 
+  # a route to handle submitted planes
+  post '/planes', to: 'planes#create'
 end
+

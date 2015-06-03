@@ -11,5 +11,10 @@ class PlanesController < ApplicationController
     render :new
   end
 
+  # a method to handle submitted planes
+  def create
+    redirect_to "/planes"
+  end
+
 end
 
