@@ -20,5 +20,15 @@ class PlanesController < ApplicationController
     redirect_to "/planes"
   end
 
+  def show
+    # grab the id from /planes/:id route
+    plane_id = params[:id]
+    # find the plane in the DB
+    @plane = Plane.find(plane_id)
+
+    # render that plane
+    render :show
+  end
+
 end
 
