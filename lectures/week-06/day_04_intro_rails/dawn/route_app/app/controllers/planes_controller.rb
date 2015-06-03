@@ -2,7 +2,9 @@ class PlanesController < ApplicationController
 
   # root route
   def index
-    #render text: "Hello, pilots!"
+    # grab all planes
+    @planes = Plane.all
+    # render text: "Hello, pilots!"
     render :index
   end
 

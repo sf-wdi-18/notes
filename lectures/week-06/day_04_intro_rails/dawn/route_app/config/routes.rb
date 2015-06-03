@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
+
   root to: 'planes#index'
+
+  # just to be REST-ful
+  get '/planes', to: 'planes#index'
 
   # get a single plane
   get 'planes/new', to: 'planes#new'

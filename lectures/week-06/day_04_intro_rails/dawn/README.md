@@ -508,9 +508,9 @@ Let's finally put some `erb` in our `index` view.
 	<% @planes.each do |plane| %>
 		
 		<div>
-			Name: <%= plane[:name] %> <br>
-			Type: <%= plane[:design] %> <br>
-			Description: <%= plane[:description] %>
+			Name: <%= plane.name %> <br>
+			Type: <%= plane.design %> <br>
+			Description: <%= plane.description %>
 		</div>
 	
 	<% end %>
