@@ -111,13 +111,17 @@
 
 
 ####Week 6
-* POLS
+* POLS (Principle of Least Surprise)
 * Anti-pattern
 * Gem
-* irb
-* function names ending with **!**
-* function names ending with **?**
-
+* pry
+* Methods ending in **!**
+* Methods ending in **?**
+* Hash
+* Symbol
+* Class
+* attr_accessor
+* TDD
 
 ## People
 
