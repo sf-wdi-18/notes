@@ -546,7 +546,7 @@ Let's add our `show` route.
 	end
 
 
-Is this right?? No, our `/planes/:id` path is above our `/planes/new` path, which means it will never get checked, and all requests for `/planes/new`.
+Is this right?? No, our `/planes/:id` path comes before our `/planes/new` path, which means that whenever a request for `/planes/new` is received, the application will first encounter the route `planes/:id` and will interpret `new` in the request for `/planes/new` as the `:id` parameter.  The request will be routed to `planes#show` with `"new"` as the `:id` parameter - *that's* not going to work.  **The order of your routes matters**.
 
 It should be as follows 
 
