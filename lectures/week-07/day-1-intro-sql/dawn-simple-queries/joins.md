@@ -25,7 +25,7 @@ JOINS are our means of implementing queries that join together data and show res
 
 ## Example
 
-Let's use a simple foreign key relationship as follows between `persons` and `pets` tables.
+Let's use a simple foreign key relationship as follows between `people` and `petss` tables.
 
 
 ```sql
@@ -66,12 +66,60 @@ INSERT INTO pets (name, breed, age, people_id)
 Let's try our first joins
 
 ```sql
-  SELECT * FROM person
-  INENR JOIN pet
-  ON person.id = pet.person_id;
+  SELECT * FROM people
+  INNER JOIN pets
+  ON people.id = pets.people_id;
 
-  SELECT person.name, pet.name from person
-  INNER JOIN pet 
-  ON person.id = pet.person_id;
+  SELECT people.name, pets.name from people
+  INNER JOIN pets 
+  ON people.id = pets.people_id;
 
+```
+
+**Other Types of Joins**  
+
+
+Full Outer Join  
+
+```sql
+SELECT * FROM people 
+  FULL OUTER JOIN pets
+  ON people.id = pets.people_id;
+```
+
+Left Outer Join  
+
+```sql
+
+SELECT * FROM people 
+  LEFT OUTER JOIN pets
+  ON people.id = pets.people_id;
+
+```
+
+Right Outer Join  
+
+```sql
+
+SELECT * FROM people 
+  RIGHT OUTER JOIN pets
+  ON people.id = pets.people_id;
+
+```  
+
+Left Outer Join with Where  
+
+```sql
+SELECT * FROM people
+  LEFT OUTER JOIN pets
+  ON people.id = pets.people_id
+  WHERE pets.breed = 'Unicorn';
+```
+
+Cross Join  
+
+```sql
+SELECT * FROM people
+  CROSS JOIN pets
+  WHERE people.id = 1;
 ```

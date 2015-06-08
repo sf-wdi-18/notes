@@ -290,6 +290,13 @@ SELECT DISTINCT ON (name) *
 * Aggragate
 * GROUP BY
 
+## Running A File
+
+To run a `.sql` file. Use the following:
+
+```bash
+psql -f <file_name>
+```
 
 
 

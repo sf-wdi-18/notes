@@ -1,5 +1,6 @@
 require('pg')
 
+# ORM example
 
 class Product
 
@@ -53,6 +54,7 @@ class Product
 
 end
 
-Product.all
-p Product.find(5).update_attr("name", "stuff")
+# Product.all
+# p Product.find(5)
+# p Product.find(5).update_attr("name", "stuff")
 
