@@ -8,6 +8,8 @@
 | To explain relationship concepts like `foriegn_key` and `join_table` using simple ERD |
 
 
+![Joins](images/join.png)
+
 ## Why Are Joins Important
 
 Each table in a relational database is consider a relation wherein all the data is naturally related by single set of attributes defined for it. However, in order to be relational we need to be able to make queries between relations or tables of data.
