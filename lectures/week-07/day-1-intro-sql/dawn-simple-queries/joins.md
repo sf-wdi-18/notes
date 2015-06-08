@@ -2,6 +2,7 @@
 ## JOINS
 
 | Objectives |
+|:---|
 | To discuss and explain different types of table relations in SQL |
 | To discuss and implement ways to query using relationships from two tables |
 | To explain relationship concepts like `foriegn_key` and `join_table` using simple ERD |
@@ -20,7 +21,7 @@ JOINS are our means of implementing queries that join together data and show res
 
 * Foreign Key: a foreign key is a field (or collection of fields) in one table that uniquely identifies a row of another table.[1][2][3] **In other words, a foreign key is a column or a combination of columns that is used to establish and enforce a link between the data in two tables.**
 
-![primary_foreign_key.png](/images/primary_foreign_key.png)
+![primary_foreign_key.png](images/primary_foreign_key.png)
 
 
 ## Example
