@@ -1,13 +1,4 @@
 # Know Your Relationships!
-
-## High-Level Lesson Overview
-
-Today we'll be:
-
- - Reviewing what you already learned about associations from Mongoose
- - Translatihg what you've learned into Rails
- - Discussing migrations. _This is a new concept for us!_
-
 | Objective                                                                     |  
 | :-------------------                                                          |  
 | Understand how to create one-to-many and many-to-many relationships in rails. |  
@@ -15,6 +6,11 @@ Today we'll be:
 | Understand how to create a join table                                         |  
 | Understand how to create model instances when they have associations.         |  
 
+Today we'll be:
+
+ - Reviewing what you already learned about associations from Mongoose
+ - Translatihg what you've learned into Rails
+ - Discussing migrations. _This is a new concept for us!_
 
 ---
 
@@ -42,6 +38,7 @@ Migrations provide us with a mechanism for changing/evolving our database schema
 
 
 ---
+
 ##Would you rather...
 
 | ActiveRecord | SQL |
@@ -104,7 +101,7 @@ Create our database.
 
 `rake db:create`
 
-### Generate a Models & a Migrations
+#### Generate a Models & a Migrations
 
 Create a new model called User with first_name and last_name
 properties that are strings. Look at the output and try to decifer what files it just made for you.
@@ -115,7 +112,7 @@ Migrate our database to create the **users** table.
 
 `rake db:migrate`
 
-### Familiarize yourself with the Rails Console
+#### Familiarize yourself with the Rails Console
 
 To enter, go to terminal and in the root of your rails app type
 
@@ -146,7 +143,7 @@ Exit the console.
 
 `exit`
 
-### Modify the existing DB with another Migration
+#### Modify the existing DB with another Migration
 
 Let's also store a user's age along with their names. Generate a new
 migration file named AddAgeToUsers.
@@ -178,7 +175,7 @@ NB: We can also undo the migration if we didn't like it.
 | Many-to-Many      | N:N                     | Two models. Both can be associated with many of the other.        | Libraries and books. One library can have many books, while one book can be in many libraries. |
 
 
-### Active Learning:
+#### Active Learning:
 
 Before we move into the actual syntax, let's work together for 10 minutes to come up with some examples of both one-to-one and one-to-many relationships.
 
@@ -463,6 +460,7 @@ Side note: Anyone know why we're passing `&:name` to `.map` here? (Hint, it has 
 
 To do this exercise, let's [head over to our many-to-many exercise file](associations_NtoN_exercise.md) and work together in groups of two.
 
+---
 
 # Migration Workflow
 
