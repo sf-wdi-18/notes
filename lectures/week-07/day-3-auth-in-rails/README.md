@@ -313,15 +313,11 @@ end
 * `user#show` will find the [current user](#current_user) and display their profile page
 
 
-<h2 id="session_creation">Note: Creating a Session</h2>
+<h2 id="session_creation">Note: Login a User</h2>
 
 Since creating a session is essentially what we mean when want to login, and logging out is destroying a session. We have a single controller dedicated to session managment, `SessionsController`.
 
-
-
 `app/controllers/sessions_controller.rb`
-
-
 
 ```ruby
 class SessionsController < ApplicationController
