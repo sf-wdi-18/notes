@@ -263,7 +263,6 @@ Run `rake routes` to see all your routes.
 **Challenge:** Start your application and start debugging errors until the view rendered on the `root_path` has:
 
 * A welcome message
-* A button to login
 * A button to signup
 
 ## Controllers
