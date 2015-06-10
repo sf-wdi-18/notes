@@ -32,6 +32,7 @@ rails g model user email:string password_digest:string
 ```
 rake db:create db:migrate
 ```
+
 ## Authentication Review
 
 **Authentication** is the process of verifying a user's credentials to prove they are who they say they are. This is different than **authorization**, enabling or disabling access to specific resources.
@@ -293,7 +294,7 @@ class UsersController < ApplicationController
 end
 ```
 
-##Challenge: Implement the Signup [Happy Path](#happy_path)
+##Challenge: Implement the Signup [Happy Path](#the-happy-path)
 
 ####Step 1
 
@@ -306,7 +307,7 @@ end
 ####Step 3
 
 * In `users#create` create a user and then login them in by creating a [new session](#session_creation) then redirect to `user#show`
-	* Bonus: create a condition that checks if the user was saved correctly. Hint: first build the user in memory with `.new` then check `if @user.save` proceed as normal `else` render the signup page again. You can [add flash messages](flash_msgs) later.
+	* Bonus: create a condition that checks if the user was saved correctly. Hint: first build the user in memory with `.new` then check `if @user.save` proceed as normal `else` render the signup page again. You can [add flash messages](#flash_msgs) later.
 
 ####Step 4
 
@@ -318,15 +319,11 @@ You may reference this [example](https://github.com/sf-wdi-18/barebones_rails_au
 
 ##Further Notes
 
-<h3 id="session_creation">Creating a Session</h3>
+<h3 id="session_creation">Login a user</h3>
 
 Since creating a session is essentially what we mean when want to login, and logging out is destroying a session. We have a single controller dedicated to session managment, `SessionsController`.
 
-
-
 `app/controllers/sessions_controller.rb`
-
-
 
 ```ruby
 class SessionsController < ApplicationController
@@ -355,16 +352,13 @@ class SessionsController < ApplicationController
 end
 
 ```
-
 After we authenticate someone we set `session[:user_id] = user.id`. This allows the `user.id` to be stored in a cookie for lookup later. Of course, then we have to go find they the user in our DB every time using the `user_id` in the session. With all of this in mind we separate out a lot of the logic related to `sessions` into a list of very helpful methods in `SessionsHelper`.
 
 Note: Reference the [logout](#logout) note below if you're curious how to implement that.
 
 <h3 id="current_user">`current_user` Method</h3>
 
-Every time a request is made to our server we find the current user by retrieving their `user_id` from inside session hash. It would be lovely to have a helper method `current_user` abstracts this away from us.
-
-By putting it in `ApplicationController`, we ensure that `current_user` is available in every controller given they all inherit from it.
+When logging in a user, we set `session[:user_id] = user.id`. What if we could take advantage of this fact for quicker lookup? Instead of reading the user_id from the session and then finding the correct user in the database -- every time we need the user -- what if we only did it once, and cached the result? In other words, what if we cached the `current_user`?
 
 ```ruby
 class ApplicationController < ActionController::Base
