@@ -317,7 +317,7 @@ end
 
 ####Step 3
 
-* In `users#create` create a user and then login them in by creating a [new session](#session_creation) then redirect to `user#show`
+* In `users#create` create a user and then log them in by creating a [new session](#session_creation) then redirect to `user#show`
 	* Bonus: create a condition that checks if the user was saved correctly. Hint: first build the user in memory with `.new` then check `if @user.save` proceed as normal `else` render the signup page again. You can [add flash messages](#flash_msgs) later.
 
 ####Step 4
