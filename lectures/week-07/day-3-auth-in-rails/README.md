@@ -28,6 +28,7 @@ rails g model User email password password_confirmation password_digest
 ```
 
 `email` is the natural username for our user, and the `password_digest` is a fancy term for a hashed password.
+`password` and `password_confirmation` are necessary, but will NOT be persisted to the database
 
 
 ```
