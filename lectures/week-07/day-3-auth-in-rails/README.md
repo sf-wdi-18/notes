@@ -233,16 +233,16 @@ end
 ###The Happy Path...
 
 * **Step 1**
-GET to `/signup` hits the `user#new` action and renders `/views/users/new.html.erb`.
+GET to `/signup` hits the `users#new` action and renders `/views/users/new.html.erb`.
 
 * **Step 2**
-A signup form_for POSTs to `user#create` with form data.
+A signup form_for POSTs to `users#create` with form data.
 
 * **Step 3**
-`user#create` creates a new users, logs them in, and redirects to `user#show`.
+`users#create` creates a new user, logs them in, and redirects to `user#show`.
 
 * **Step 4**
-`user#show` renders `/views/users/show.html.erb`, the user's profile page.
+`users#show` renders `/views/users/show.html.erb`, the user's profile page.
 
 
 ## Routes
@@ -307,7 +307,7 @@ end
 
 ####Step 1
 
-* For your `/sign_up` route, which hits the action `user#new`, render a file `new.html.erb` in `/views/users`
+* For your `/sign_up` route, which hits the action `users#new`, render a file `new.html.erb` in `/views/users`
 
 ####Step 2
 
@@ -320,7 +320,7 @@ end
 
 ####Step 4
 
-* `user#show` will find the [current user](#current_user) and display their profile page
+* `users#show` will find the [current user](#current_user) and display their profile page
 
 ##Fin
 
