@@ -24,11 +24,10 @@ Let's leave our controllers be for the time being and setup our models.
 NOTE: The default attribute type is string
 
 ```
-rails g model User email password password_confirmation password_digest
+rails g model User email password password_digest
 ```
 
 `email` is the natural username for our user, and the `password_digest` is a fancy term for a hashed password.
-`password` and `password_confirmation` are necessary, but will NOT be persisted to the database
 
 
 ```
