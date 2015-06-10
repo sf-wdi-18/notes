@@ -278,7 +278,7 @@ Run `rake routes` to see all your routes.
 
 ## Controllers
 
-* Skeleton out the `UsersController` with: `rail g controller users new create show`
+* Skeleton out the `UsersController` with: `rails g controller users new create show`
 
 * Add a private method that creates strong parameters by whitelisting specific attributes of the user
 
