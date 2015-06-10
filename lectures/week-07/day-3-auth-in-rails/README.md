@@ -81,6 +81,14 @@ Hopefully this helps you begin to think about how to setup an **authenticate** m
 
 ## Test Setup
 
+* Add the rspec gem to both test and development environments, then run `bundle`
+
+```
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+```
+
 * Run the command `rails g rspec:install` to initialize rspec as your testing suite.
 	* Now a `spec` directory has been created for you
 * Inside `spec` create the file `/models/user_spec.rb`, place in the below tests, & run the command `rspec`
