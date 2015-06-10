@@ -6,13 +6,13 @@ By the end of this lesson...
 
 * Implement an authentication system in Rails that securely stores users' passwords
 * Design the User model specs using TDD 
-* Build the routes, controllers, and views necessary for a user have the necessary interface to signup & login
+* Build the routes, controllers, and views necessary for a user to have the necessary interface to signup & login
 
 ## App Setup
 
 Let's start a new Rails application:
 
-* `rails new rails_auth_app -T -B -d postgresql`
+* `rails new rails_auth_app -T -B -d postgresql`   # Why -T and -B?
 * `cd rails_auth`
 * `bundle`
 * `rake db:create`
@@ -20,17 +20,19 @@ Let's start a new Rails application:
 
 ## Model Setup
 
-Let's leave our controllers be for the time being and setup our models.
+CLARIFY: When do we ever worry about controllers before we've generated models?
+Let's leave our controllers be for the time being and setup our models.  
 
+NOTE: string is the default type.  Don't have to specify
 ```
-rails g model user email:string password_digest:string
+rails g model user email:string password_digest:string   
 ```
 
 `email` is the natural username for our user, and the `password_digest` is a fancy term for a hashed password.
 
 
 ```
-rake db:create db:migrate
+rake db:migrate
 ```
 
 ## Authentication Review
