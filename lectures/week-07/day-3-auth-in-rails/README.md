@@ -85,7 +85,7 @@ Hopefully this helps you begin to think about how to setup an **authenticate** m
 
 * Add the rspec gem to both test and development environments, then run `bundle`
 
-```
+```ruby
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
