@@ -220,35 +220,31 @@ end
 
 ## Routes, Controllers, & Views for Signup
 
-Here is the flow we're aiming to produce...
-
-<img id="happy_path" src="http://i.imgur.com/AgQP8Py.png">
-
 ###The Happy Path...
 
 * **Step 1**
 GET to `/signup` hits the `user#new` action and renders `/views/users/new.html.erb`.
 
 * **Step 2**
-A signup form_for POSTs to `user#create`, creating a new user.
+A signup form_for POSTs to `user#create` with form data.
 
 * **Step 3**
-`user#create` redirects to `sessions#create`, logging the user in.
+`user#create` creates a new users, logs them in, and redirects to `user#show`.
 
 * **Step 4**
-`sessions#create` redirects to `user#show`.
-
-* **Step 5**
 `user#show` renders `/views/users/show.html.erb`, the user's profile page.
 
 
 ## Routes
 
-Let's erase everything in our `config/routes.rb` file.
+Let's edit our `config/routes.rb` file...
 
 
 ```ruby
 Rails.application.routes.draw do
+
+  root to: "welcome#index"
+
   get "/login", to: "sessions#new"
 
   post "/sessions", to: "sessions#create"
@@ -260,36 +256,15 @@ Rails.application.routes.draw do
 end
 ```
 
+Run `rake routes` to see all your routes.
 
-Remember, the above is the equivalent of writing the following:
+## Home Page
 
-```ruby
-Rails.application.routes.draw do
-  get "/login", to: "sessions#new"
+**Challenge:** Start your application and start debugging errors until the view rendered on the `root_path` has:
 
-  post "/sessions", to: "sessions#create"
-
-  get "/sign_up", to: "users#new", as: "sign_up"
-  
-  ## or write the following
-
-  get "/users", to: "users#index", as: "users"
-
-  get "/users/new", to: "users#new", as: "new_user"
-
-  get "/users/:id", to: "users#show", as: "user"
-
-  get "/users/:id/edit", to: "users#edit", as: "edit_user"
-
-  post "/users", to: "users#create"
-
-  patch "/users/:id", to: "users#update"
-
-  delete "/users/:id", to: "users#destroy"
-end
-```
-
-See for yourself! Run `rake routes` to see all your routes.
+* A welcome message
+* A button to login
+* A button to signup
 
 ## Controllers
 
@@ -319,27 +294,22 @@ class UsersController < ApplicationController
 end
 ```
 
-##Challenge: Implement the [Happy Path](#happy_path)
+##Challenge: Implement the Signup [Happy Path](#happy_path)
 
-####Step 1 (complete)
+####Step 1
 
-~~* Have a route `/sign_up` that hits the action `user#new`, which renders `new.html.erb` in `/views/users`
-~~
+* For your `/sign_up` route, which hits the action `user#new`, render a file `new.html.erb` in `/views/users`
 
 ####Step 2
 
-* In the view add a `form_for` referencing user; have it post to `users#create`
+* In that view add a `form_for` referencing user; have it post to `users#create` with `email`, `password` and `password_confirmation`
 
 ####Step 3
 
-* `user#create` should create a new user and redirect to `sessions#create` (which you will create if it doesn't exist)
+* In `users#create` create a user and then login them in by creating a [new session](#session_creation) then redirect to `user#show`
+	* Bonus: create a condition that checks if the user was saved correctly. Hint: first build the user in memory with `.new` then check `if @user.save` proceed as normal `else` render the signup page again. You can [add flash messages](flash_msgs) later.
 
 ####Step 4
-
-* Have `sessions#create` login the user by creating a [new session](#session_creation).
-* If `User.confirm` returns `user` (success), direct to the `user#show` action. If it returns `false` (failure) redirect to the `#login` action. 
-
-####Step 5
 
 * `user#show` will find the [current user](#current_user) and display their profile page
 
@@ -405,6 +375,16 @@ end
 
 The or statement, `||`, will maintain the value of `@current_user` by setting it to itself if it is already defined. Otherwise, it will evaluate the righthand side of the statement, which returns a user who's `id` matches `session[:user_id]` by executing a DB query.
 
+`current_user` is very useful for:
+
+* Conditional views based on the `current_user`'s state
+	* I.e. is a login or logout button displayed in the nav_bar?
+* Authorization to view resources
+	* I.e. test if `current_user` is the user who's resources are being CRUDed.
+
+##Note: Logout
+
+In the `session#destroy` controller action set the `session[:user_id]` to `nil` and redirect to your `root_path`  
 
 ## Refactor
 
@@ -412,7 +392,7 @@ The or statement, `||`, will maintain the value of `@current_user` by setting it
 
 ![success!](http://i.giphy.com/b6oC7bEdJD26c.gif)
 
-## Bonus: Adding Flash Errors
+<h2 id="flash_msgs">Bonus: Adding Flash Messages</h2>
 
 If someone fails to login we want to notify them, because the situation is much different than if they tried to go to `localhost:3000/users/1` and weren't logged in. The flash storage is a type of session storage that is stored between requests and then cleared each time.
 
