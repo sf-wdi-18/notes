@@ -179,7 +179,7 @@ end
 
 ## TDD Authentication
 
-* Let's code together to write tests to build our authentication system
+Let's pass the tests to build our authentication system!
 
 ```ruby
 class User < ActiveRecord::Base
