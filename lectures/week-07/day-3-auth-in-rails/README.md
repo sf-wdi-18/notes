@@ -32,7 +32,7 @@ rails g model User email password password_confirmation password_digest
 
 
 ```
-rake db:create db:migrate
+rake db:migrate
 ```
 
 ## Authentication Review
