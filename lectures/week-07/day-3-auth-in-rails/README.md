@@ -312,8 +312,13 @@ end
 
 * `user#show` will find the [current user](#current_user) and display their profile page
 
+##Fin
 
-<h2 id="session_creation">Note: Creating a Session</h2>
+You may reference this [example](https://github.com/sf-wdi-18/barebones_rails_auth) for what barebones rails app with authorization would look like.
+
+##Further Notes
+
+<h3 id="session_creation">Creating a Session</h3>
 
 Since creating a session is essentially what we mean when want to login, and logging out is destroying a session. We have a single controller dedicated to session managment, `SessionsController`.
 
@@ -331,7 +336,7 @@ class SessionsController < ApplicationController
 
   def create
     #pass in array that user_params returns as arguments using a splat
-    user = User.confirm(*user_params)
+    user = User.confirm(params[:email], params[:password])
     if user
       #this creates the session, logging in the user
       session[:user_id] = user.id
@@ -339,7 +344,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(user.id)
     else
       #there was an error logging the user in
-      redirect_to "/login"
+      redirect_to login_path
     end
   end
   
@@ -347,18 +352,15 @@ class SessionsController < ApplicationController
     #TODO: logout the current user
   end
   
-  private
-  def user_params
-  	#whitelist user's email & password, return them as an array with `.values`
-    params.require(:user).permit(:email, :password).values
-  end
 end
 
 ```
 
-In the above schemee when after we authenticate someone we set `session[:user_id] = user.id`. This allows the `user.id` to be stored in a cookie for lookup later. Of course, then we have to go find they the user in our DB every time using the `user_id` in the session. With all of this in mind we separate out a lot of the logic related to `sessions` into a list of very helpful methods in `SessionsHelper`.
+After we authenticate someone we set `session[:user_id] = user.id`. This allows the `user.id` to be stored in a cookie for lookup later. Of course, then we have to go find they the user in our DB every time using the `user_id` in the session. With all of this in mind we separate out a lot of the logic related to `sessions` into a list of very helpful methods in `SessionsHelper`.
 
-<h2 id="current_user">Note: `current_user` Method</h2>
+Note: Reference the [logout](#logout) note below if you're curious how to implement that.
+
+<h3 id="current_user">`current_user` Method</h3>
 
 Every time a request is made to our server we find the current user by retrieving their `user_id` from inside session hash. It would be lovely to have a helper method `current_user` abstracts this away from us.
 
@@ -367,12 +369,13 @@ By putting it in `ApplicationController`, we ensure that `current_user` is avail
 ```ruby
 class ApplicationController < ActionController::Base
   def current_user
-    @current_user = @current_user || User.find_by(id: session[:user_id])
+    @current_user ||= session[:user_id] && User.find_by_id(session[:user_id])
   end
+  helper_method :current_user #make it available in views
 end
 ```
 
-The or statement, `||`, will maintain the value of `@current_user` by setting it to itself if it is already defined. Otherwise, it will evaluate the righthand side of the statement, which returns a user who's `id` matches `session[:user_id]` by executing a DB query.
+Defines @current_user if it is not already defined.
 
 `current_user` is very useful for:
 
@@ -381,17 +384,19 @@ The or statement, `||`, will maintain the value of `@current_user` by setting it
 * Authorization to view resources
 	* I.e. test if `current_user` is the user who's resources are being CRUDed.
 
-##Note: Logout
+<h3 id="logout">Logout</h3>
 
-In the `session#destroy` controller action set the `session[:user_id]` to `nil` and redirect to your `root_path`  
+In the `session#destroy` controller action set the `session[:user_id]` to `nil` and redirect to your `root_path`
 
-## Refactor
+## Bonus
+
+###Refactor
 
 * Using [`has_secure_password`](http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password) can magically refactor a lot of our password storing logic in the User model. Try it out and see if the tests still pass...
 
 ![success!](http://i.giphy.com/b6oC7bEdJD26c.gif)
 
-<h2 id="flash_msgs">Bonus: Adding Flash Messages</h2>
+<h3 id="flash_msgs">Bonus: Add Flash Messages</h3>
 
 If someone fails to login we want to notify them, because the situation is much different than if they tried to go to `localhost:3000/users/1` and weren't logged in. The flash storage is a type of session storage that is stored between requests and then cleared each time.
 
