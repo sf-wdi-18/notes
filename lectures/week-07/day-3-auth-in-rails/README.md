@@ -197,7 +197,7 @@ Let's pass the tests to build our authentication system!
 class User < ActiveRecord::Base
   BCrypt::Engine.cost = 12
 
-  validates_presence_of :email, :password_digest
+  validates :email, :password_digest, presence: true
   validates_confirmation_of :password
 
   def authenticate(unencrypted_password)
