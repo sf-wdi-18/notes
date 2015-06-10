@@ -21,9 +21,10 @@ Let's start a new Rails application:
 ## Model Setup
 
 Let's leave our controllers be for the time being and setup our models.
+NOTE: The default attribute type is string
 
 ```
-rails g model user email:string password_digest:string
+rails g model User email password password_confirmation password_digest
 ```
 
 `email` is the natural username for our user, and the `password_digest` is a fancy term for a hashed password.
