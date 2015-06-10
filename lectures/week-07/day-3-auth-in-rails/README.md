@@ -153,6 +153,8 @@ describe User, type: :model do
 
   context 'Authentication' do
     before(:all) do
+      #clear all users
+      User.destroy_all
       #save a user to the database
       @user = User.create({
         email: "shmee@me.com",
