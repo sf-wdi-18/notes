@@ -8,8 +8,6 @@ By the end of this lesson...
 * Design the User model specs using TDD 
 * Build the routes, controllers, and views necessary for a user have the necessary interface to signup & login
 
-##PART 1 — User Model
-
 ## App Setup
 
 Let's start a new Rails application:
@@ -220,13 +218,13 @@ end
 ```
 
 
-## PART II — Controller and Route Setup For Auth
+## Routes, Controllers, & Views for Signup
 
 Here is the flow we're aiming to produce...
 
 <img id="happy_path" src="http://i.imgur.com/AgQP8Py.png">
 
-###Happy Path...
+###The Happy Path...
 
 * **Step 1**
 GET to `/signup` hits the `user#new` action and renders `/views/users/new.html.erb`.
@@ -244,7 +242,7 @@ A signup form_for POSTs to `user#create`, creating a new user.
 `user#show` renders `/views/users/show.html.erb`, the user's profile page.
 
 
-## Route Setup
+## Routes
 
 Let's erase everything in our `config/routes.rb` file.
 
@@ -293,7 +291,7 @@ end
 
 See for yourself! Run `rake routes` to see all your routes.
 
-## Controller Setup
+## Controllers
 
 * Skeleton out the `UsersController` with: `rail g controller users new create show`
 
@@ -321,7 +319,7 @@ class UsersController < ApplicationController
 end
 ```
 
-##Build the [Happy Path](#happy_path)
+##Challenge: Implement the [Happy Path](#happy_path)
 
 ####Step 1 (complete)
 
@@ -346,7 +344,7 @@ end
 * `user#show` will find the [current user](#current_user) and display their profile page
 
 
-<h2 id="session_creation">Creating a Session</h2>
+<h2 id="session_creation">Note: Creating a Session</h2>
 
 Since creating a session is essentially what we mean when want to login, and logging out is destroying a session. We have a single controller dedicated to session managment, `SessionsController`.
 
@@ -391,7 +389,7 @@ end
 
 In the above schemee when after we authenticate someone we set `session[:user_id] = user.id`. This allows the `user.id` to be stored in a cookie for lookup later. Of course, then we have to go find they the user in our DB every time using the `user_id` in the session. With all of this in mind we separate out a lot of the logic related to `sessions` into a list of very helpful methods in `SessionsHelper`.
 
-<h2 id="current_user">Current User Helper Method</h2>
+<h2 id="current_user">Note: `current_user` Method</h2>
 
 Every time a request is made to our server we find the current user by retrieving their `user_id` from inside session hash. It would be lovely to have a helper method `current_user` abstracts this away from us.
 
