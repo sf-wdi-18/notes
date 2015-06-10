@@ -317,7 +317,7 @@ end
 
 You may reference this [example](https://github.com/sf-wdi-18/barebones_rails_auth) for what barebones rails app with authorization would look like.
 
-##Further Notes
+##Useful Notes
 
 <h3 id="session_creation">Login a user</h3>
 
