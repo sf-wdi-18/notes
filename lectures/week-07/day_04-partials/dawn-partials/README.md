@@ -703,7 +703,7 @@ You should now test this out in the console.
 ```bash
 > user = User.first
 > user.libraries.create({name: "test"})
-> lib = libraries.create({name: "test 2"})
+> lib = Library.create({name: "test 2"})
 > lib.users.push(user)
 > LibraryUser.all.count
 #=> 2
