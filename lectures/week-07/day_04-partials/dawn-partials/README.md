@@ -771,7 +771,7 @@ Let's go back to `libraries#index` and add a button to do just that.
   <div>
     <h3><%= library.name %></h3>
     <% if @current_user %> 
-      <%= button_to library_users_path(library) %>
+      <%= button_to "Join", library_users_path(library) %>
     <% end %>
   </div>
   <br>
