@@ -380,7 +380,7 @@ module SessionsHelper
 
   def logged_in?
     if current_user == nil
-      redirect_to "/login"
+      redirect_to "/sign_in"
     end
   end
 
@@ -459,6 +459,19 @@ Sign In
   <%= f.submit "Sign In" %>
 <% end %> 
 
+```
+
+Before we go forward let's go ahead and drop in a very key piece of confirmation logic into our `user` model.
+
+```ruby
+class User < ActiveRecord::Base
+  has_secure_password
+
+  def self.confirm(params)
+    @user = User.find_by({email: params[:email]})
+    @user.try(:authenticate, params[:password])
+  end
+end
 ```
 
 Note that the form is getting submited to `POST /sessions`. We don't have a `sessions#create` however or a route to handle the post.
@@ -656,6 +669,45 @@ end
 
 We now have the ability to view all libraries, and it's up to you to create methods to `edit`, `update`, `show`, and `delete` a `library`.
 
+Before we get started joining a `library` and a `user` we need to wire together our `Library` and our `User` via associations.
+
+```ruby
+class User < ActiveRecord::Base
+  has_many :library_users
+  has_many :libraries, through: :library_users
+
+  ...
+end
+``` 
+And We do something similar for a Library.
+
+```ruby
+class Library < ActiveRecord::Base
+  has_many :library_users
+  has_many :users, through: :library_users
+end
+``` 
+
+But notice here that both models are connected through as `library_users` model. Hence we need to let that model know it belongs to both of those.
+
+
+```ruby
+class LibraryUser < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :library
+end
+```
+
+You should now test this out in the console.
+
+```bash
+> user = User.first
+> user.libraries.create({name: "test"})
+> lib = libraries.create({name: "test 2"})
+> lib.users.push(user)
+> LibraryUser.all.count
+#=> 2
+```
 Joining a library requires creating `library_users` controller
 
 ```bash
@@ -668,7 +720,188 @@ We want to be able to view all user memberships to a library. We can specify thi
 
 Rails.application.routes.draw do
   ...
-  get "/users/:user_id/libraries"
+  get "/users/:user_id/libraries", to: "library_users#index", as: "user_libraries"
 
 end
 ```
+
+We also neeed the corresponding `index` method in the `library_users` controller
+
+
+```ruby
+class LibraryUsersController < ApplicationController
+  
+  def index
+    @user = User.find(params[:user_id])
+    @libraries = @user.libraries
+
+    render :index
+  end
+end
+```
+
+Then we can have the libraries index render the user and the libraries
+
+
+```html
+
+<div><%= @user.first_name %> is a member of the following libraries</div>
+
+<ul>
+  <% @libraries.each do |lib| %>
+    <li><%= lib.name %></li>
+  <% end %>
+</ul>
+```
+
+We can test this by going to `localhost:/users/1/libraries`.
+
+
+## Add A User Lib
+
+So now that we can view, which libraries a `user` has joined we can go ahead and make a button that allows a user to `join` a library.
+
+
+Let's go back to `libraries#index` and add a button to do just that.
+
+
+```html
+
+<% @libraries.each do |library| %>
+  <div>
+    <h3><%= library.name %></h3>
+    <% if @current_user %> 
+      <%= button_to library_users_path(library) %>
+    <% end %>
+  </div>
+  <br>
+<% end %>
+```
+We will have to define `library_user_path` to `POST /libraries/:library_id/users` later. But first  we need to update the `library#index` method.
+
+```ruby
+class LibrariesController < ApplicationController
+  
+  def index
+    @libraries = Library.all
+    current_user # sets @current_user
+
+    render :index
+  end
+
+  ...
+
+end
+```
+
+Of course we now realize we don't have a `POST /libraries/:library_id/users` path, so we need to add one.
+
+
+```ruby
+Rails.application.routes.draw do
+  ...
+  get "/users/:user_id/libraries", to: "library_users#index", as: "user_libraries"
+  post "/libraries/:library_id/users", to: "library_users#create", as: "library_users"
+end
+
+```
+
+Then we need to add the `create` method to the `library_users` controller.
+
+
+```ruby
+class LibraryUsersController < ApplicationController
+  
+  ...
+
+  def create
+    @user = current_user
+    @library = Library.find(params[:library_id])
+    @user.libraries.push(@library)
+
+    redirect_to user_libraries(@user)
+  end
+end
+
+```
+
+
+## Clean Up
+
+Let's say that in order to visit a `users#show` page you have to be logged in. Then we can add a special `before_action` to check this.
+
+```ruby
+class UsersController < ApplicationController
+
+  before_action :logged_in?, only: [:show]
+
+  ...
+
+  def show
+    @user = User.find(params[:id])
+    render :show
+  end
+
+end
+```
+
+### Exercise
+
+1. Make it so a user has to be `logged_in?` before viewing anything of the `LibrariesController` actions or the `LibraryUsers` actions.
+
+2. Modify exercise one such anyone can view `libraries#index`, but cannot `create` or view `new` without being logged in.
+
+
+## Refactoring Params
+
+Every time we take in a lot of params in a controller it's tedious to write out.
+
+```ruby
+class UsersController < ApplicationController
+  
+  ... 
+
+  def create
+    user_params = params.require(:user).permit(:first_name, :last_name, :email, :password)
+    @user = User.create(user_params)
+    login(@user) 
+    redirect_to "/users/#{@user.id}" 
+  end
+
+  ...
+
+end
+
+```
+
+
+You can utilize a private method for doing this. Let's refactor.
+
+
+```ruby
+class UsersController < ApplicationController
+  
+  ... 
+
+  def create
+    @user = User.create(user_params) # calls user_params method
+    login(@user) 
+    redirect_to "/users/#{@user.id}" 
+  end
+
+  ...
+
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
+  end
+end
+
+```
+
+### Exercise
+
+* Private methods like this are simple to implement and create cleaner looking code. Rewrite `libraries#create` using this idea.
+
+

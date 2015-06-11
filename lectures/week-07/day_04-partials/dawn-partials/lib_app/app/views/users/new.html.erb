@@ -1,17 +1,18 @@
-Sign Up
+<h1>Sign Up</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for @user do |form| %>
   <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
+  <%= form.text_field :first_name, placeholder: "First Name", class: "form-control" %>
   </div>
   <div>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
+    <%= form.text_field :last_name, placeholder: "Last Name" %> 
+  </div>
+
+  <div>
+    <%= form.email_field :email, placeholder: "Email" %> 
   </div>
   <div>
-    <%= f.text_field :email, placeholder: "Email" %>
+    <%= form.password_field :password, placeholder: "Password" %> 
   </div>
-  <div>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div>
-  <%= f.submit "Sign Up" %>
-<% end %> 
+  <%= form.submit "Sign Up!" %>
+<% end %>
