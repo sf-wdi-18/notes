@@ -359,7 +359,7 @@ Signing and signing out is a concern of a new controller, the sessions controlle
 rails g controller sessions
 ```
 
-Note this will create both `sessions_controller.rb` and `user_helper.rb`.
+Note this will create both `sessions_controller.rb` and `sessions_helper.rb`.
 
 
 Now we should use the `session_helper` by adding our own logic to it. 
