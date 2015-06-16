@@ -39,14 +39,14 @@ You can only test the "seams" of your programs / isolated components (Martin Fow
 
 **Testing Methodologies:**
 
-* EDD: Error Driven Development
-        * Get an error
-        * Google it
-        * Get another error
-        * Google it
-        * When you stop getting errors... You're done!
+* **EDD**: Error Driven Development
+    * Get an error
+    * Google it
+    * Get another error
+    * Google it
+    * When you stop getting errors... You're done!
 
-* TDD: Test Driven Development
+* **TDD**: Test Driven Development
     * "Red, Green, Refactor"
     * Write the tests before you code
         * Ensures you've understood the problem space before coding a solution. 
@@ -54,7 +54,7 @@ You can only test the "seams" of your programs / isolated components (Martin Fow
     * "Ping Pong" (pair programming)
         * One person writes the test, the other person passes them.
         
-* BDD: Behavior Driven Development
+* **BDD**: Behavior Driven Development
     * Like _User Stories_, but focus on the "behavior" of objects or users.
         * What does an instance _let_ you do?
         * What does a user _do_ on a page?
@@ -65,7 +65,7 @@ You can only test the "seams" of your programs / isolated components (Martin Fow
 * Don't test everything -- 100% test coverage is a myth
 * Write tests that help you be more proficient as a developer
 
-## Rspec
+## Rspec Rails
 
 (It's always best to refer to offical documentation, see Resource#1,
 in case these instructions go out of date eventually.)
@@ -230,14 +230,6 @@ end
 ```
 
 
-**Stub Resources**
-
-- **Rspec Stubs:** https://www.relishapp.com/rspec/rspec-mocks/v/2-3/docs/method-stubs  
-
-- **Rspec Stubs Examples:** http://old.rspec.info/documentation/mocks/stubs.html  
-
-
-
 ### More Testing Tools
 **Shoulda-Matchers**
 
@@ -309,3 +301,10 @@ Now we can use our "user factory" in tests:
 5. **Matchers** https://www.relishapp.com/rspec/rspec-expectations/v/3-1/docs/built-in-matchers
 5. **Model Specs Example** https://github.com/wdi-sf-july/validation_tests
 6. **Controller Specs** https://www.relishapp.com/rspec/rspec-rails/docs/controller-specs
+
+
+**Stubbing Resources**
+
+- **Rspec Stubs:** https://www.relishapp.com/rspec/rspec-mocks/v/2-3/docs/method-stubs  
+
+- **Rspec Stubs Examples:** http://old.rspec.info/documentation/mocks/stubs.html  
