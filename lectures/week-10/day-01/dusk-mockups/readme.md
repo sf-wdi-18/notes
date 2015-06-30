@@ -18,11 +18,11 @@ Choose one of the three options that are sorted by difficulty
 
 **Instagram** — Company landing page
 
-![instagram](instagram/mockup.png)
+![brooklyn](ecardly/mockup.png)
 
 **eCardly** — Blog template
 
-![ecardly](ecardly/mockup.png)
+![brooklyn](instagram/mockup.png)
 
 ###Sass
 
