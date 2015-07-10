@@ -1,4 +1,4 @@
-#Questions In a Hat
+#Questions In a Hat!
 
 * "Explain how to create a namespace in rails. Why would that be useful?",
 * "Explain what a resource is.",
