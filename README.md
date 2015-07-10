@@ -7,3 +7,5 @@
 * There is a [/projects](/projects) directory with information on the lab descriptions for testing skills learned in a two to three week unit.
 
 ![arc](images/arc_image.png)
+
+![Students](https://files.slack.com/files-pri/T0351JZQ0-F07DTA4G5/wdi18.gif)
