@@ -111,7 +111,7 @@ Create and navigate through relational data in MongoDB
 #####Setup
 * startup mongoDB with `mongod`
 * `cd` into the folder `exercise` in this directory
-* `node console.js` to enter into a REPL where you can interact with you DB
+* `node console.js` to enter into a REPL where you can interact with your DB
 
 #####Tips
 * save your successful code in Sublime for each step
